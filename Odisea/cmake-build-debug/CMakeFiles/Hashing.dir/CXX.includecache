@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Oska/Desktop/Odyssey/Odyssey/Odisea/Hash/HashFunction.cpp
+HashFunction.h
+C:/Users/Oska/Desktop/Odyssey/Odyssey/Odisea/Hash/HashFunction.h
+
+C:/Users/Oska/Desktop/Odyssey/Odyssey/Odisea/Hash/HashFunction.h
+string
+-
+bitset
+-
+iostream
+-
+
+C:/Users/Oska/Desktop/Odyssey/Odyssey/Odisea/main.cpp
+iostream
+-
+Hash/HashFunction.h
+C:/Users/Oska/Desktop/Odyssey/Odyssey/Odisea/Hash/HashFunction.h
+
