@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Oska/Desktop/Odyssey/Odyssey/Odisea/Hash/HashFunction.cpp" "C:/Users/Oska/Desktop/Odyssey/Odyssey/Odisea/cmake-build-debug/CMakeFiles/Hashing.dir/Hash/HashFunction.cpp.obj"
-  "C:/Users/Oska/Desktop/Odyssey/Odyssey/Odisea/main.cpp" "C:/Users/Oska/Desktop/Odyssey/Odyssey/Odisea/cmake-build-debug/CMakeFiles/Hashing.dir/main.cpp.obj"
+  "/home/juno/Desktop/Odyssey/Odyssey/Odisea/Hash/HashFunction.cpp" "/home/juno/Desktop/Odyssey/Odyssey/Odisea/cmake-build-debug/CMakeFiles/Hashing.dir/Hash/HashFunction.cpp.o"
+  "/home/juno/Desktop/Odyssey/Odyssey/Odisea/main.cpp" "/home/juno/Desktop/Odyssey/Odyssey/Odisea/cmake-build-debug/CMakeFiles/Hashing.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

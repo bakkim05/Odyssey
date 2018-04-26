@@ -6,12 +6,16 @@
 #define HASHING_HASHFUNCTION_H
 
 #include <string>
-#include <bitset>
 #include <iostream>
+#include <cstdlib>
 
-//std::string string_to_hex (const std::string& input);
+class HashFunction{
 
-long double string_to_binary (const std::string& input);
-unsigned concatenate(unsigned first, unsigned last);
+public:
+
+    int Hash(std::string key);
+};
+
+
 
 #endif //HASHING_HASHFUNCTION_H

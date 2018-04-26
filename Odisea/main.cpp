@@ -1,7 +1,13 @@
-#include <iostream>
 #include "Hash/HashFunction.h"
 
+using namespace std;
+
 int main() {
-    string_to_binary("hello world");
-    //concatenate(12,34);
+    int index ;
+
+    HashFunction hashObject;
+
+    index = hashObject.Hash("Hello");
+    cout << "index: " << index << endl;
+
 }

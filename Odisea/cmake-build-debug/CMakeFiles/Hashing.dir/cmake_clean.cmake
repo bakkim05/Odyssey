@@ -1,10 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Hashing.dir/main.cpp.obj"
-  "CMakeFiles/Hashing.dir/Hash/HashFunction.cpp.obj"
+  "CMakeFiles/Hashing.dir/main.cpp.o"
+  "CMakeFiles/Hashing.dir/Hash/HashFunction.cpp.o"
   "Hashing.pdb"
-  "Hashing.exe"
-  "Hashing.exe.manifest"
-  "libHashing.dll.a"
+  "Hashing"
 )
 
 # Per-language clean rules from dependency scanning.

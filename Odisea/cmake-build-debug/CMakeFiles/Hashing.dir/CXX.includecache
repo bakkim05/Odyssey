@@ -6,21 +6,19 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Oska/Desktop/Odyssey/Odyssey/Odisea/Hash/HashFunction.cpp
+/home/juno/Desktop/Odyssey/Odyssey/Odisea/Hash/HashFunction.cpp
 HashFunction.h
-C:/Users/Oska/Desktop/Odyssey/Odyssey/Odisea/Hash/HashFunction.h
+/home/juno/Desktop/Odyssey/Odyssey/Odisea/Hash/HashFunction.h
 
-C:/Users/Oska/Desktop/Odyssey/Odyssey/Odisea/Hash/HashFunction.h
+/home/juno/Desktop/Odyssey/Odyssey/Odisea/Hash/HashFunction.h
 string
 -
-bitset
--
 iostream
+-
+cstdlib
 -
 
-C:/Users/Oska/Desktop/Odyssey/Odyssey/Odisea/main.cpp
-iostream
--
+/home/juno/Desktop/Odyssey/Odyssey/Odisea/main.cpp
 Hash/HashFunction.h
-C:/Users/Oska/Desktop/Odyssey/Odyssey/Odisea/Hash/HashFunction.h
+/home/juno/Desktop/Odyssey/Odyssey/Odisea/Hash/HashFunction.h
 
