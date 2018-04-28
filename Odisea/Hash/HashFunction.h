@@ -11,9 +11,28 @@
 
 class HashFunction{
 
+private:
+    static const int tableSize = 57;
+
+    struct item{
+
+        std::string name;
+        std::string password;
+        item* next;
+
+    };
+
+    item* HashTable[tableSize];
+
 public:
 
+    HashFunction();
     int Hash(std::string key);
+    void AddItem (std::string name , std::string password);
+    int NumberOfItemsInIndex(int index);
+    void PrintTable();
+    void PrintItemsInIndex(int index);
+
 };
 
 

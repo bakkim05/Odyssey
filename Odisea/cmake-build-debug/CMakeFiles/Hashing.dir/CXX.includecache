@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/juno/Desktop/Odyssey/Odyssey/Odisea/Hash/HashFunction.cpp
+C:/Users/Juno/Desktop/REPOS/Odyssey/Odisea/Hash/HashFunction.cpp
 HashFunction.h
-/home/juno/Desktop/Odyssey/Odyssey/Odisea/Hash/HashFunction.h
+C:/Users/Juno/Desktop/REPOS/Odyssey/Odisea/Hash/HashFunction.h
 
-/home/juno/Desktop/Odyssey/Odyssey/Odisea/Hash/HashFunction.h
+C:/Users/Juno/Desktop/REPOS/Odyssey/Odisea/Hash/HashFunction.h
 string
 -
 iostream
@@ -18,7 +18,7 @@ iostream
 cstdlib
 -
 
-/home/juno/Desktop/Odyssey/Odyssey/Odisea/main.cpp
+C:/Users/Juno/Desktop/REPOS/Odyssey/Odisea/main.cpp
 Hash/HashFunction.h
-/home/juno/Desktop/Odyssey/Odyssey/Odisea/Hash/HashFunction.h
+C:/Users/Juno/Desktop/REPOS/Odyssey/Odisea/Hash/HashFunction.h
 

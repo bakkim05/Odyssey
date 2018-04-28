@@ -1,3 +1,3 @@
-/home/juno/Desktop/Odyssey/Odyssey/Odisea/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/juno/Desktop/Odyssey/Odyssey/Odisea/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/juno/Desktop/Odyssey/Odyssey/Odisea/cmake-build-debug/CMakeFiles/Hashing.dir
+C:/Users/Juno/Desktop/REPOS/Odyssey/Odisea/cmake-build-debug/CMakeFiles/Hashing.dir
+C:/Users/Juno/Desktop/REPOS/Odyssey/Odisea/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Juno/Desktop/REPOS/Odyssey/Odisea/cmake-build-debug/CMakeFiles/rebuild_cache.dir

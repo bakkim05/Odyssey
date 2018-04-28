@@ -2,12 +2,21 @@
 
 using namespace std;
 
-int main() {
-    int index ;
+int main()
+{
+    HashFunction h;
+    //h.PrintTable();
 
-    HashFunction hashObject;
+    h.AddItem("IvanCifuentes", "Cifuentes123");
+    h.AddItem("IanCoberly", "Coberly123");
+    h.AddItem("RachidSlon", "Slon123");
+    h.AddItem("ChrsitianFonseca", "Fonseca123");
+    h.AddItem("AlessandroRamirez", "Ramirez123");
+    h.AddItem("FelipeMarin", "Marin123");
+    h.PrintTable();
+    //h.PrintItemsInIndex(0);
 
-    index = hashObject.Hash("Hello");
-    cout << "index: " << index << endl;
+    //Part 12
 
+    return 0;
 }
