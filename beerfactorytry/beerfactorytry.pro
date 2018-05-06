@@ -7,7 +7,7 @@ SOURCES += \
         main.cpp
 
 HEADERS += \
-    rapidxml_utils.hpp \
-    rapidxml.hpp \
     rapidxml_iterators.hpp \
-    rapidxml_print.hpp
+    rapidxml_print.hpp \
+    rapidxml_utils.hpp \
+    rapidxml.hpp
