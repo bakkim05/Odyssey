@@ -4,10 +4,12 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+    writedats.cpp
 
 HEADERS += \
     rapidxml_iterators.hpp \
     rapidxml_print.hpp \
     rapidxml_utils.hpp \
-    rapidxml.hpp
+    rapidxml.hpp \
+    writedats.h

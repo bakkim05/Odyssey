@@ -50,8 +50,10 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../beerfactorytry/main.cpp 
-OBJECTS       = main.o
+SOURCES       = ../beerfactorytry/main.cpp \
+		../beerfactorytry/writedats.cpp 
+OBJECTS       = main.o \
+		writedats.o
 DIST          = ../Qt/5.11.0/gcc_64/mkspecs/features/spec_pre.prf \
 		../Qt/5.11.0/gcc_64/mkspecs/common/unix.conf \
 		../Qt/5.11.0/gcc_64/mkspecs/common/linux.conf \
@@ -240,7 +242,9 @@ DIST          = ../Qt/5.11.0/gcc_64/mkspecs/features/spec_pre.prf \
 		../beerfactorytry/beerfactorytry.pro rapidxml_iterators.hpp \
 		rapidxml_print.hpp \
 		rapidxml_utils.hpp \
-		rapidxml.hpp ../beerfactorytry/main.cpp
+		rapidxml.hpp \
+		writedats.h ../beerfactorytry/main.cpp \
+		../beerfactorytry/writedats.cpp
 QMAKE_TARGET  = beerfactorytry
 DESTDIR       = 
 TARGET        = beerfactorytry
@@ -668,8 +672,13 @@ compiler_clean:
 
 ####### Compile
 
-main.o: ../beerfactorytry/main.cpp ../beerfactorytry/rapidxml.hpp
+main.o: ../beerfactorytry/main.cpp ../beerfactorytry/rapidxml.hpp \
+		../beerfactorytry/rapidxml_print.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../beerfactorytry/main.cpp
+
+writedats.o: ../beerfactorytry/writedats.cpp ../beerfactorytry/writedats.h \
+		../beerfactorytry/rapidxml.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o writedats.o ../beerfactorytry/writedats.cpp
 
 ####### Install
 
