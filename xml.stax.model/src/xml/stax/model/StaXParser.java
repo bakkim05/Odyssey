@@ -16,12 +16,15 @@ import javax.xml.stream.events.XMLEvent;
 
 
 public class StaXParser {
-	    static final String DATE = "date";
-	    static final String ITEM = "item";
-	    static final String MODE = "mode";
-	    static final String UNIT = "unit";
-	    static final String CURRENT = "current";
-	    static final String INTERACTIVE = "interactive";
+	    static final String NAME = "nombre";
+	    static final String MUSIC = "Music";
+	    static final String GENDER = "Gender";
+	    static final String ARTIST = "Artist";
+	    static final String ALBUM = "Album";
+	    static final String YEAR = "Year";
+	    static final String CATEGORY = "Category";
+	    static final String LYRICS = "Lyrics";
+	    static final String APCODE = "apCode";
 
 	    @SuppressWarnings({ "unchecked", "null" })
 	    public List<Item> readConfig(String configFile) {
@@ -41,7 +44,7 @@ public class StaXParser {
 	                if (event.isStartElement()) {
 	                    StartElement startElement = event.asStartElement();
 	                    // If we have an item element, we create a new item
-	                    if (startElement.getName().getLocalPart().equals(ITEM)) {
+	                    if (startElement.getName().getLocalPart().equals(MUSIC)) {
 	                        item = new Item();
 	                        // We read the attributes from this tag and add the date
 	                        // attribute to our object
@@ -49,7 +52,7 @@ public class StaXParser {
 	                                .getAttributes();
 	                        while (attributes.hasNext()) {
 	                            Attribute attribute = attributes.next();
-	                            if (attribute.getName().toString().equals(DATE)) {
+	                            if (attribute.getName().toString().equals(NAME)) {
 	                                item.setDate(attribute.getValue());
 	                            }
 
@@ -58,28 +61,40 @@ public class StaXParser {
 
 	                    if (event.isStartElement()) {
 	                        if (event.asStartElement().getName().getLocalPart()
-	                                .equals(MODE)) {
+	                                .equals(GENDER)) {
 	                            event = eventReader.nextEvent();
 	                            item.setMode(event.asCharacters().getData());
 	                            continue;
 	                        }
 	                    }
 	                    if (event.asStartElement().getName().getLocalPart()
-	                            .equals(UNIT)) {
+	                            .equals(ARTIST)) {
 	                        event = eventReader.nextEvent();
 	                        item.setUnit(event.asCharacters().getData());
 	                        continue;
 	                    }
 
 	                    if (event.asStartElement().getName().getLocalPart()
-	                            .equals(CURRENT)) {
+	                            .equals(ALBUM)) {
 	                        event = eventReader.nextEvent();
 	                        item.setCurrent(event.asCharacters().getData());
 	                        continue;
 	                    }
 
 	                    if (event.asStartElement().getName().getLocalPart()
-	                            .equals(INTERACTIVE)) {
+	                            .equals(YEAR)) {
+	                        event = eventReader.nextEvent();
+	                        item.setInteractive(event.asCharacters().getData());
+	                        continue;
+	                    }
+	                    if (event.asStartElement().getName().getLocalPart()
+	                            .equals(CATEGORY)) {
+	                        event = eventReader.nextEvent();
+	                        item.setInteractive(event.asCharacters().getData());
+	                        continue;
+	                    }
+	                    if (event.asStartElement().getName().getLocalPart()
+	                            .equals(LYRICS)) {
 	                        event = eventReader.nextEvent();
 	                        item.setInteractive(event.asCharacters().getData());
 	                        continue;
@@ -88,7 +103,7 @@ public class StaXParser {
 	                // If we reach the end of an item element, we add it to the list
 	                if (event.isEndElement()) {
 	                    EndElement endElement = event.asEndElement();
-	                    if (endElement.getName().getLocalPart().equals(ITEM)) {
+	                    if (endElement.getName().getLocalPart().equals(MUSIC)) {
 	                        items.add(item);
 	                    }
 	                }

@@ -6,7 +6,8 @@ public class writeTEst {
 	writer config = new writer();
     try {
     	config.setFile("config2.xml");
-        config.saveConfig();
+        config.saveConfig("Havana", "pop", "Camila Cabello", "Camila", "2018", "SERW", "latin pop", 000);
+       
     } catch (Exception e) {
         e.printStackTrace();
     }

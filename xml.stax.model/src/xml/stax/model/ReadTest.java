@@ -9,7 +9,7 @@ public class ReadTest {
 		// TODO Auto-generated method stub
 		
 		        StaXParser read = new StaXParser();
-		        List<Item> readConfig = read.readConfig("config.xml");
+		        List<Item> readConfig = read.readConfig("config2.xml");
 		        for (Item item : readConfig) {
 		            System.out.println(item);
 		        }
