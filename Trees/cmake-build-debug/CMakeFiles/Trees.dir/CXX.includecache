@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/BTree/BTNode.h
+cstdlib
+-
+
+C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/BTree/btree.h
+BTNode.h
+C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/BTree/BTNode.h
+iostream
+-
+
+C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/main.cpp
+iostream
+-
+BTree/btree.h
+C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/BTree/btree.h
+
