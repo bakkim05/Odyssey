@@ -122,6 +122,33 @@ Trees/fast:
 	$(MAKE) -f CMakeFiles\Trees.dir\build.make CMakeFiles/Trees.dir/build
 .PHONY : Trees/fast
 
+BST/bstree.obj: BST/bstree.cpp.obj
+
+.PHONY : BST/bstree.obj
+
+# target to build an object file
+BST/bstree.cpp.obj:
+	$(MAKE) -f CMakeFiles\Trees.dir\build.make CMakeFiles/Trees.dir/BST/bstree.cpp.obj
+.PHONY : BST/bstree.cpp.obj
+
+BST/bstree.i: BST/bstree.cpp.i
+
+.PHONY : BST/bstree.i
+
+# target to preprocess a source file
+BST/bstree.cpp.i:
+	$(MAKE) -f CMakeFiles\Trees.dir\build.make CMakeFiles/Trees.dir/BST/bstree.cpp.i
+.PHONY : BST/bstree.cpp.i
+
+BST/bstree.s: BST/bstree.cpp.s
+
+.PHONY : BST/bstree.s
+
+# target to generate assembly for a file
+BST/bstree.cpp.s:
+	$(MAKE) -f CMakeFiles\Trees.dir\build.make CMakeFiles/Trees.dir/BST/bstree.cpp.s
+.PHONY : BST/bstree.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -158,6 +185,9 @@ help:
 	@echo ... Trees
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... BST/bstree.obj
+	@echo ... BST/bstree.i
+	@echo ... BST/bstree.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

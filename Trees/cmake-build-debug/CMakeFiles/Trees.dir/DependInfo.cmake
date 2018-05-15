@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/BST/bstree.cpp" "C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/cmake-build-debug/CMakeFiles/Trees.dir/BST/bstree.cpp.obj"
   "C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/main.cpp" "C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/cmake-build-debug/CMakeFiles/Trees.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/BST/bstree.cpp
+iostream
+-
+bstree.hpp
+C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/BST/bstree.hpp
+
+C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/BST/bstree.hpp
+
 C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/BTree/BTNode.h
 cstdlib
 -
@@ -21,4 +29,6 @@ iostream
 -
 BTree/btree.h
 C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/BTree/btree.h
+BST/bstree.hpp
+C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/BST/bstree.hpp
 
