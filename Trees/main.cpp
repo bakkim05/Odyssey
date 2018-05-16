@@ -1,6 +1,7 @@
 #include <iostream>
 #include "BTree/btree.h"
 #include "BST/bstree.hpp"
+#include "AVLTree/AVL.hpp"
 
 using namespace std;
 
@@ -17,10 +18,18 @@ int main() {
 //    cout << "Pre Order" << endl;
 //    bt.List_PreOrder();
 
-    BSTree<int, const char*> bst;
-    bst.insert(3,"tres");
-    bst.insert(4,"cuatro");
-    bst.print(PREORDER);
+//    BSTree<int, const char*> bst;
+//    bst.insert(3,"tres");
+//    bst.insert(4,"cuatro");
+//    bst.print(PREORDER);
+
+
+    AVLTree<int> avl;
+    avl.insert(4);
+    avl.insert(5);
+    avl.printInOrder();
+
+
 
     return 0;
 }

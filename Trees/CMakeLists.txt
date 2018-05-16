@@ -5,4 +5,5 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(Trees main.cpp
         "BTree/btree.h" "BTree/BTNode.h"
-        "BST/bstree.cpp" "BST/bstree.hpp")
+        "BST/bstree.cpp" "BST/bstree.hpp"
+        "AVLTree/AVL.hpp")

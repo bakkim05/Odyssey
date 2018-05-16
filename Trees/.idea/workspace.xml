@@ -26,8 +26,46 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+            <state relative-caret-position="136">
+              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AVL.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AVLTree/AVL.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-689">
+              <caret line="86" column="46" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#164#396#1" />
+                <element signature="e#399#547#0" />
+                <element signature="e#568#1874#1" />
+                <element signature="e#1877#2139#0" />
+                <element signature="e#2141#2308#0" />
+                <element signature="e#2310#2534#0" />
+                <element signature="e#2536#3232#0" />
+                <element signature="e#3234#3813#0" />
+                <element signature="e#3815#4061#0" />
+                <element signature="e#4063#4638#0" />
+                <element signature="e#4640#4885#0" />
+                <element signature="e#4887#5077#0" />
+                <element signature="e#5079#5275#0" />
+                <element signature="e#5277#5470#0" />
+                <element signature="e#5472#6215#0" />
+                <element signature="e#6217#6538#0" />
+                <element signature="e#6540#8147#0" />
+                <element signature="e#8149#8204#0" />
+                <element signature="e#8206#8390#0" />
+                <element signature="e#8392#8521#0" />
+                <element signature="e#8523#8613#0" />
+                <element signature="e#8615#9131#0" />
+                <element signature="e#9133#9393#0" />
+                <element signature="e#9395#9493#0" />
+                <element signature="e#9495#9597#0" />
+                <element signature="e#9599#9699#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -44,18 +82,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BTNode.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BTree/BTNode.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
-              <folding>
-                <element signature="e#50#224#1" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="bstree.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BST/bstree.hpp">
           <provider selected="true" editor-type-id="text-editor">
@@ -65,29 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="btree.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BTree/btree.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1785">
-              <caret line="108" column="1" selection-start-line="108" selection-start-column="1" selection-end-line="108" selection-end-column="1" />
-              <folding>
-                <element signature="e#1788#1864#0" />
-                <element signature="e#1868#1947#0" />
-                <element signature="e#1949#2022#0" />
-                <element signature="e#2024#2101#0" />
-                <element signature="e#2104#2273#0" />
-                <element signature="e#2276#2450#0" />
-                <element signature="e#2452#2631#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+            <state relative-caret-position="51">
+              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -102,11 +110,17 @@
       <list>
         <option value="$PROJECT_DIR$/BTree/node.h" />
         <option value="$PROJECT_DIR$/BTree/BTNode.h" />
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/BTree/btree.h" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/BST/bstree.cpp" />
         <option value="$PROJECT_DIR$/BST/bstree.hpp" />
+        <option value="$PROJECT_DIR$/BackTrack/Permutations.h" />
+        <option value="$PROJECT_DIR$/BackTrack/K-Combinations.h" />
+        <option value="$PROJECT_DIR$/BackTrack/K-Combinations.cpp" />
+        <option value="$PROJECT_DIR$/BackTrack/Permutations.cpp" />
+        <option value="$PROJECT_DIR$/BackTrack/Power Set.h" />
+        <option value="$PROJECT_DIR$/BackTrack/Power Set.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -120,9 +134,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
+    <option name="x" value="760" />
+    <option name="y" value="-17" />
     <option name="width" value="980" />
-    <option name="height" value="1044" />
+    <option name="height" value="965" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -140,7 +155,7 @@
             <path>
               <item name="Trees" type="b2602c69:ProjectViewProjectNode" />
               <item name="Trees" type="462c0819:PsiDirectoryNode" />
-              <item name="BST" type="462c0819:PsiDirectoryNode" />
+              <item name="AVLTree" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -156,6 +171,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Juno\Desktop\REPOS\Odyssey\Trees\AVLTree" />
       <recent name="C:\Users\Juno\Desktop\REPOS\Odyssey\Trees\BST" />
       <recent name="C:\Users\Juno\Desktop\REPOS\Odyssey\Trees\BTree" />
       <recent name="C:\Users\Juno\Desktop\REPOS\Odyssey\Trees" />
@@ -193,12 +209,12 @@
       <updated>1526421846136</updated>
       <workItem from="1526421847491" duration="150000" />
       <workItem from="1526421998601" duration="37000" />
-      <workItem from="1526422036514" duration="2312000" />
+      <workItem from="1526422036514" duration="5707000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2499000" />
+    <option name="totallyTimeSpent" value="5894000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
@@ -206,10 +222,10 @@
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12412178" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" weight="0.32994923" />
-      <window_info anchor="bottom" id="CMake" visible="true" weight="0.3248731" />
+      <window_info anchor="bottom" id="Messages" visible="true" weight="0.32994923" />
+      <window_info anchor="bottom" id="CMake" weight="0.3248731" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36792454" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36548224" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
@@ -238,7 +254,7 @@
           <line>118</line>
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -275,13 +291,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BST/bstree.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -299,10 +308,104 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/BackTrack/Permutations.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#99#117#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BackTrack/Power Set.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+          <folding>
+            <element signature="e#93#111#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BackTrack/Power Set.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BackTrack/Permutations.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BackTrack/K-Combinations.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+          <folding>
+            <element signature="e#103#121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BackTrack/K-Combinations.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AVLTree/AVL.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-689">
+          <caret line="86" column="46" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#164#396#1" />
+            <element signature="e#399#547#0" />
+            <element signature="e#568#1874#1" />
+            <element signature="e#1877#2139#0" />
+            <element signature="e#2141#2308#0" />
+            <element signature="e#2310#2534#0" />
+            <element signature="e#2536#3232#0" />
+            <element signature="e#3234#3813#0" />
+            <element signature="e#3815#4061#0" />
+            <element signature="e#4063#4638#0" />
+            <element signature="e#4640#4885#0" />
+            <element signature="e#4887#5077#0" />
+            <element signature="e#5079#5275#0" />
+            <element signature="e#5277#5470#0" />
+            <element signature="e#5472#6215#0" />
+            <element signature="e#6217#6538#0" />
+            <element signature="e#6540#8147#0" />
+            <element signature="e#8149#8204#0" />
+            <element signature="e#8206#8390#0" />
+            <element signature="e#8392#8521#0" />
+            <element signature="e#8523#8613#0" />
+            <element signature="e#8615#9131#0" />
+            <element signature="e#9133#9393#0" />
+            <element signature="e#9395#9493#0" />
+            <element signature="e#9495#9597#0" />
+            <element signature="e#9599#9699#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+        <state relative-caret-position="51">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

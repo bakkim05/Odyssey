@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/AVLTree/AVL.hpp
+iostream
+-
+algorithm
+-
+list
+-
+
 C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/BST/bstree.cpp
 iostream
 -
@@ -31,4 +39,6 @@ BTree/btree.h
 C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/BTree/btree.h
 BST/bstree.hpp
 C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/BST/bstree.hpp
+AVLTree/AVL.hpp
+C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/AVLTree/AVL.hpp
 

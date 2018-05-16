@@ -4,6 +4,7 @@
 CMakeFiles/Trees.dir/BST/bstree.cpp.obj: ../BST/bstree.cpp
 CMakeFiles/Trees.dir/BST/bstree.cpp.obj: ../BST/bstree.hpp
 
+CMakeFiles/Trees.dir/main.cpp.obj: ../AVLTree/AVL.hpp
 CMakeFiles/Trees.dir/main.cpp.obj: ../BST/bstree.hpp
 CMakeFiles/Trees.dir/main.cpp.obj: ../BTree/BTNode.h
 CMakeFiles/Trees.dir/main.cpp.obj: ../BTree/btree.h

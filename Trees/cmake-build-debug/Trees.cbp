@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/AVLTree/AVL.hpp">
+			<Option target="Trees"/>
+		</Unit>
 		<Unit filename="C:/Users/Juno/Desktop/REPOS/Odyssey/Trees/BST/bstree.cpp">
 			<Option target="Trees"/>
 		</Unit>
