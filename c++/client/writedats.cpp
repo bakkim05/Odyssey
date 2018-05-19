@@ -3,7 +3,7 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
-
+#include <string.h>
 using namespace rapidxml;
 using namespace std;
 WriteDats::WriteDats()
@@ -11,7 +11,7 @@ WriteDats::WriteDats()
 
 }
 
-void WriteDats::escribir(char* song1, char* gender1, char* artist1, char* album1, char* year1, char* lyrics1, char* category1)
+string WriteDats::escribir(char* song1, char* gender1, char* artist1, char* album1, char* year1, char* lyrics1, char* category1)
 {
     cout<<"Writing xml Documents"<<endl;
     xml_document<> doc;
@@ -48,13 +48,16 @@ void WriteDats::escribir(char* song1, char* gender1, char* artist1, char* album1
     doc.append_node(root);
     // Convert doc to string if needed
     std::string xml_as_string;
+
     rapidxml::print(std::back_inserter(xml_as_string), doc);
+    xml = xml_as_string;
 
     // Save to file
     std::ofstream file_stored("config2.xml");
     file_stored << doc;
     file_stored.close();
     doc.clear();
+    return xml_as_string;
 }
 
 
@@ -91,22 +94,10 @@ void WriteDats::read()
     cout<<"valor de la letra: "<<lyrics->value()<<endl;
     xml_node<> * Ope = root_node->first_node("apCode");
     cout<<"valor de la operacion: "<<Ope->value()<<endl;
-    /**
-    for (xml_node<> * brewery_node = root_node->first_node("Brewery"); brewery_node; brewery_node = brewery_node->next_sibling())
-    {
-        printf("I have visited %s in %s. ",
-            brewery_node->first_attribute("name")->value(),
-            brewery_node->first_attribute("location")->value());
-            // Interate over the beers
-        for(xml_node<> * beer_node = brewery_node->first_node("Beer"); beer_node; beer_node = beer_node->next_sibling())
-        {
-            printf("On %s, I tried their %s which is a %s. ",
-                beer_node->first_attribute("dateSampled")->value(),
-                beer_node->first_attribute("name")->value(),
-                beer_node->first_attribute("description")->value());
-            printf("I gave it the following review: %s", beer_node->value());
-        }
-        cout << endl;
-    }
-    **/
+
+}
+
+string WriteDats::getXml()
+{
+    return xml;
 }

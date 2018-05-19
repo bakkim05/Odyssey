@@ -16,9 +16,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += server.cpp \
     tcpserver.cpp \
-    orderram.cpp
+    orderram.cpp \
+    writedats.cpp
 
 HEADERS += \
     tcpserver.h \
     orderram.h \
-    json.hpp
+    json.hpp \
+    writedats.h \
+    rapidxml.hpp \
+    rapidxml_utils.hpp \
+    rapidxml_print.hpp \
+    rapidxml_iterators.hpp

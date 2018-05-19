@@ -38,6 +38,7 @@ string TCPServer::receive()
         socklen_t sosize  = sizeof(clientAddress);
         newsockfd = accept(sockfd,(struct sockaddr*)&clientAddress,&sosize);
         str = inet_ntoa(clientAddress.sin_addr);
+        cout<<"quiero ver esto"<<endl;
         pthread_create(&serverThread,NULL,&Task,(void *)newsockfd);
     }
     return str;

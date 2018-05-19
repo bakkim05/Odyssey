@@ -5,7 +5,19 @@ CONFIG -= qt
 
 SOURCES += \
         main.cpp \
-    client.cpp
+    client.cpp \
+    writedats.cpp \
+    tcpclient.cpp
 
 HEADERS += \
-    client.h
+    client.h \
+    writedats.h \
+    rapidxml.hpp \
+    rapidxml_utils.hpp \
+    rapidxml_print.hpp \
+    rapidxml_iterators.hpp \
+    json.hpp \
+    tcpclient.h
+
+DISTFILES += \
+    client.pro.user
