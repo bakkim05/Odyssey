@@ -2,7 +2,7 @@ package server1;
 import java.io.*;
 import java.net.*;
 public class ConexioServer {
-final int Puerto = 8088;
+final int Puerto = 9002;
 ServerSocket sc;
 Socket so;
 
