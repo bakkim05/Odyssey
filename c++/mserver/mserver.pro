@@ -16,7 +16,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += server.cpp \
     tcpserver.cpp \
-    orderram.cpp \
     writedats.cpp \
     CreateXML.cpp \
     cJSON.c \
@@ -24,7 +23,6 @@ SOURCES += server.cpp \
 
 HEADERS += \
     tcpserver.h \
-    orderram.h \
     json.hpp \
     writedats.h \
     rapidxml.hpp \
@@ -34,4 +32,8 @@ HEADERS += \
     CreateXML.h \
     cJSON.h \
     pugixml.hpp \
-    pugiconfig.hpp
+    pugiconfig.hpp \
+    rapidxml.hpp \
+    rapidxml_utils.hpp \
+    rapidxml_print.hpp \
+    rapidxml_iterators.hpp

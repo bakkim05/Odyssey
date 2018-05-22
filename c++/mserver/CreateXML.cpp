@@ -42,8 +42,6 @@ std::string ParserXML::xmlCancion(char* song, char* gender, char* artist, char* 
 
     pugi::xml_node code = cancion.append_child("apCode");
     code.append_child(pugi::node_pcdata).set_value("0");
-
-
     //Convert to String
     std::stringstream ss;
     doc.save(ss, "");

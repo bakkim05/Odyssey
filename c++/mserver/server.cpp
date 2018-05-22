@@ -4,8 +4,8 @@
 #include "tcpserver.cpp"
 #include <QCoreApplication>
 #include <QInputDialog>
-#include <orderram.h>
 #include <writedats.h>
+#include "CreateXML.h"
 using namespace std;
 using namespace rapidxml;
 TCPServer tcp;
@@ -15,6 +15,8 @@ int SIZE;
 void *loop (void *m) {
     pthread_detach(pthread_self());
     cout<<"buscando loop"<<endl;
+    ParserXML *d = new ParserXML();
+    cout<< d->xmlCancion("havana","pop","camila","camila","1856","dsfsdfds","pop")<<endl;
     while (true){
         srand (time (NULL));
         char ch = 'a' + rand () % 26;
