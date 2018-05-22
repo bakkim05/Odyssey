@@ -46,6 +46,8 @@ string WriteDats::escribirMetadata(char* song1, char* gender1, char* artist1, ch
     root2->value("0");
     root->append_node(root2);
     doc.append_node(root);
+
+
     // Convert doc to string if needed
     std::string xml_as_string;
 

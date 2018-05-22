@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="mserver"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mserver">
+				<Option output="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/mserver.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 mserver"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mserver/fast">
+				<Option output="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/mserver.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 mserver/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/CreateXML.cpp">
+			<Option target="mserver"/>
+		</Unit>
+		<Unit filename="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/CreateXML.h">
+			<Option target="mserver"/>
+		</Unit>
+		<Unit filename="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cJSON.c">
+			<Option target="mserver"/>
+		</Unit>
+		<Unit filename="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cJSON.h">
+			<Option target="mserver"/>
+		</Unit>
+		<Unit filename="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/main.cpp">
+			<Option target="mserver"/>
+		</Unit>
+		<Unit filename="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/orderram.cpp">
+			<Option target="mserver"/>
+		</Unit>
+		<Unit filename="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/orderram.h">
+			<Option target="mserver"/>
+		</Unit>
+		<Unit filename="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/pugiconfig.hpp">
+			<Option target="mserver"/>
+		</Unit>
+		<Unit filename="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/pugixml.cpp">
+			<Option target="mserver"/>
+		</Unit>
+		<Unit filename="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/pugixml.hpp">
+			<Option target="mserver"/>
+		</Unit>
+		<Unit filename="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/server.cpp">
+			<Option target="mserver"/>
+		</Unit>
+		<Unit filename="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/tcpserver.cpp">
+			<Option target="mserver"/>
+		</Unit>
+		<Unit filename="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/tcpserver.h">
+			<Option target="mserver"/>
+		</Unit>
+		<Unit filename="C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

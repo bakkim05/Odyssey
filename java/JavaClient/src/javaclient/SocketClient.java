@@ -91,8 +91,28 @@ public class SocketClient {
             }
         }
 
-        public void requestHostname() {
-            serializeAndSendMessage(DatosCancion);
+        public void RequestMetadata() {
+        	String cadena;
+    		StringBuilder duf = new StringBuilder();
+    		FileReader f = null;
+			try {
+				f = new FileReader("config2.xml");
+				BufferedReader b = new BufferedReader(f);
+				while((cadena = b.readLine())!= null) {
+					System.out.println(cadena);
+					duf.append(cadena);
+				}
+					System.out.println(duf);
+		    		b.close();
+				
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+            serializeAndSendMessage(duf.toString());
         }
 
         public void requestMemory() {
@@ -137,7 +157,7 @@ public class SocketClient {
     }
 
     public void requestHostname() {
-        sender.requestHostname();
+        sender.RequestMetadata();
     }
 
     public void requestMemory() {
