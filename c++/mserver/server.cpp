@@ -5,9 +5,7 @@
 #include <QCoreApplication>
 #include <QInputDialog>
 #include <orderram.h>
-#include <json.hpp>
 #include <writedats.h>
-using json = nlohmann::json;
 using namespace std;
 using namespace rapidxml;
 TCPServer tcp;
