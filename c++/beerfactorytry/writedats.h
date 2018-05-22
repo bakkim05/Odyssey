@@ -12,7 +12,7 @@ class WriteDats
 {
 public:
     WriteDats();
-    void escribir(char* song1,char* gender1, char* artist1, char* album1, char* year1, char* lyrics1, char* category1);
+    void escribir(char* username,char* name, char* favSongs, char* password, char* friends, char* year1);
     void read();
 };
 

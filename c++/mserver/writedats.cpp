@@ -74,29 +74,60 @@ void WriteDats::read(string cd)
     // Parse the buffer using the xml file parsing library into doc
     doc.parse<0>(&buffer[0]);
     // Find our root node
-    root_node = doc.first_node("Data");
+   string nodoRoot = doc.first_node()->name();
+    cout<<nodoRoot<<endl;
+    if(nodoRoot == "Data"){
+        cout<<"parseo de musica"<<endl;
+        root_node = doc.first_node("Data");
+        xml_node<> * music_node = root_node->first_node("Music");
+        cout<<"Vallor nombre cancion: "<<music_node->first_attribute("nombre")->value()<<endl;
+        //print the atribute of the music
+        xml_node<> * gender = music_node->first_node("Gender");
+        cout<<"valor del genero: "<<gender->value()<<endl;
+        xml_node<> * Artist = music_node->first_node("Artist");
+        cout<<"valor del artista: "<<Artist->value()<<endl;
+        xml_node<> * Album = music_node->first_node("Album");
+        cout<<"valor del album: "<<Album->value()<<endl;
+        xml_node<> * year = music_node->first_node("Year");
+        cout<<"valor del ano: "<<year->value()<<endl;
+        xml_node<> * category = music_node->first_node("Category");
+        cout<<"valor de la categoria: "<<category->value()<<endl;
+        xml_node<> * lyrics = music_node->first_node("Lyrics");
+        cout<<"valor de la letra: "<<lyrics->value()<<endl;
+        xml_node<> * Ope = root_node->first_node("apCode");
+        cout<<"valor de la operacion: "<<Ope->value()<<endl;
+
+    }
+    if(nodoRoot == "InfoUser"){
+        cout<<"parseo de user"<<endl;
+        root_node = doc.first_node("InfoUser");
+        xml_node<> * music_node = root_node->first_node("User");
+        cout<<"Nombre usuario: "<<music_node->first_attribute("nombre")->value()<<endl;
+        //print the atribute of the music
+        xml_node<> * gender = music_node->first_node("Gender");
+        cout<<"valor del genero: "<<gender->value()<<endl;
+        xml_node<> * Artist = music_node->first_node("Artist");
+        cout<<"valor del artista: "<<Artist->value()<<endl;
+        xml_node<> * Album = music_node->first_node("Album");
+        cout<<"valor del album: "<<Album->value()<<endl;
+        xml_node<> * year = music_node->first_node("Year");
+        cout<<"valor del ano: "<<year->value()<<endl;
+        xml_node<> * category = music_node->first_node("Category");
+        cout<<"valor de la categoria: "<<category->value()<<endl;
+        xml_node<> * lyrics = music_node->first_node("Lyrics");
+        cout<<"valor de la letra: "<<lyrics->value()<<endl;
+        xml_node<> * Ope = root_node->first_node("apCode");
+        cout<<"valor de la operacion: "<<Ope->value()<<endl;
+
+    }
+    else{
+        cout<<"no pos no"<<endl;
+    }
     cout<<"mos se "<<endl;
     // Find the music
-    xml_node<> * music_node = root_node->first_node("Music");
-    cout<<"Vallor nombre cancion: "<<music_node->first_attribute("nombre")->value()<<endl;
-    //print the atribute of the music
-    xml_node<> * gender = music_node->first_node("Gender");
-    cout<<"valor del genero: "<<gender->value()<<endl;
-    xml_node<> * Artist = music_node->first_node("Artist");
-    cout<<"valor del artista: "<<Artist->value()<<endl;
-    xml_node<> * Album = music_node->first_node("Album");
-    cout<<"valor del album: "<<Album->value()<<endl;
-    xml_node<> * year = music_node->first_node("Year");
-    cout<<"valor del ano: "<<year->value()<<endl;
-    xml_node<> * category = music_node->first_node("Category");
-    cout<<"valor de la categoria: "<<category->value()<<endl;
-    xml_node<> * lyrics = music_node->first_node("Lyrics");
-    cout<<"valor de la letra: "<<lyrics->value()<<endl;
-    xml_node<> * Ope = root_node->first_node("apCode");
-    cout<<"valor de la operacion: "<<Ope->value()<<endl;
+
 
 }
-
 string WriteDats::getXml()
 {
     return xml;

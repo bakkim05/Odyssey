@@ -6,9 +6,8 @@ using namespace std;
 int main(void)
 {
     WriteDats *ur = new WriteDats();
-    ur->read();
-    ur->escribir("Havana","pop","Camila Cabello","Camila","2018","Latin pop","jugooyugf");
-    ur->read();
+    ur->escribir("Faridd","Farid Marin","Camila Cabello, howlong","12345","jung, kim","19");
+    //ur->read();
 
 
 }

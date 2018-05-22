@@ -16,6 +16,7 @@ public:
     void read(string cd);
     string getXml();
     string xml;
+    void readsong(xml_node<> *root_node);
 };
 
 #endif // WRITEDATS_H

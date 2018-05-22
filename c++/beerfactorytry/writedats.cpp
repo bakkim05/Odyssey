@@ -11,37 +11,40 @@ WriteDats::WriteDats()
 
 }
 
-void WriteDats::escribir(char* song1, char* gender1, char* artist1, char* album1, char* year1, char* lyrics1, char* category1)
+void WriteDats::escribirUser(char* username,char* name, char* favSongs, char* password, char* friends, char* year1)
 {
     cout<<"Writing xml Documents"<<endl;
     xml_document<> doc;
     xml_node<> *decl = doc.allocate_node(node_declaration);
     decl->append_attribute(doc.allocate_attribute("version", "1.0"));
+    cout<<"sed"<<endl;
     decl->append_attribute(doc.allocate_attribute("encoding","utf-8"));
-    xml_node<>* root = doc.allocate_node(node_element, "Data");
-
-    xml_node<>* root1 = doc.allocate_node(node_element, "Music");
-    root1->append_attribute(doc.allocate_attribute("nombre",song1));
+    xml_node<>* root = doc.allocate_node(node_element, "InfoUser");
+cout<<"do something1"<<endl;
+    xml_node<>* root1 = doc.allocate_node(node_element, "Username");
+    root1->append_attribute(doc.allocate_attribute("username",username));
+    cout<<"do something1"<<endl;
     root->append_node(root1);
-    xml_node<> *gender = doc.allocate_node(node_element,"Gender");
-    gender->value(gender1);
-    root1->append_node(gender);
-    xml_node<> *artist = doc.allocate_node(node_element,"Artist");
-    artist->value(artist1);
-    root1->append_node(artist);
-    xml_node<> *album = doc.allocate_node(node_element,"Album");
-    album->value(album1);
-    root1->append_node(album);
-    xml_node<> *year = doc.allocate_node(node_element,"Year");
-    year->value(year1);
-    root1->append_node(year);
-    xml_node<> *category = doc.allocate_node(node_element,"Category");
-    category->value(category1);
-    root1->append_node(category);
-    xml_node<> *lyrics = doc.allocate_node(node_element,"Lyrics");
-    lyrics->value(lyrics1);
-    root1->append_node(lyrics);
-
+    xml_node<> *Name = doc.allocate_node(node_element,"Name");
+    Name->value(name);
+    root1->append_node(Name);
+    cout<<"do something2"<<endl;
+    xml_node<> *Age = doc.allocate_node(node_element,"Age");
+    Age->value(year1);
+    root1->append_node(Age);
+    cout<<"do something3"<<endl;
+    xml_node<> *FavSongs = doc.allocate_node(node_element,"FavSongs");
+    FavSongs->value(favSongs);
+    root1->append_node(FavSongs);
+    cout<<"do something4"<<endl;
+    xml_node<> *Password = doc.allocate_node(node_element,"password");
+    Password->value(password);
+    root1->append_node(Password);
+    cout<<"do something5"<<endl;
+    xml_node<> *Friends = doc.allocate_node(node_element,"Friends");
+    Friends->value(friends);
+    root1->append_node(Friends);
+    cout<<"do something6"<<endl;
     xml_node<>* root2 = doc.allocate_node(node_element, "apCode");
     root2->value("0");
     root->append_node(root2);
@@ -51,9 +54,12 @@ void WriteDats::escribir(char* song1, char* gender1, char* artist1, char* album1
     rapidxml::print(std::back_inserter(xml_as_string), doc);
 
     // Save to file
-    std::ofstream file_stored("config2.xml");
+    std::ofstream file_stored("config1.xml");
+    cout<<"do something1"<<endl;
     file_stored << doc;
+    cout<<"do something1"<<endl;
     file_stored.close();
+    cout<<"do something1"<<endl;
     doc.clear();
 }
 
