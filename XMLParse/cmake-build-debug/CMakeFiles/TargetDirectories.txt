@@ -1,0 +1,3 @@
+C:/Users/Juno/Desktop/REPOS/Odyssey/XMLParse/cmake-build-debug/CMakeFiles/XMLParse.dir
+C:/Users/Juno/Desktop/REPOS/Odyssey/XMLParse/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Juno/Desktop/REPOS/Odyssey/XMLParse/cmake-build-debug/CMakeFiles/rebuild_cache.dir
