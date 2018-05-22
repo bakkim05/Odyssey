@@ -8,6 +8,8 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.FileChooser;
 import javafx.util.Duration;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.StackedBarChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 
@@ -67,6 +69,14 @@ public void mediaTimeListener(Slider slr_song, Label lbl_time) {
 	}
 	
 	
+
+public void mediaVisualizer(BarChart<?,?> sbc_groovbox) {
+
+	 medPly.setAudioSpectrumListener(new SpektrumListener(this.medPly, sbc_groovbox));  
+
+	
+}
+
 	
 	
 }
