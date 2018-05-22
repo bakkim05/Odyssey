@@ -1,0 +1,3 @@
+C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/CMakeFiles/mserver.dir
+C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug/CMakeFiles/rebuild_cache.dir
