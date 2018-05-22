@@ -27,6 +27,7 @@ void *loop (void *m) {
         cout<<"mesage"<<str<<endl;
         vector<char> vec1(str.begin(),str.end());
         if( str != "" ){
+
             cout<<"message difeten"<<endl;
             WriteDats *lr = new WriteDats();
             lr->read(str);
