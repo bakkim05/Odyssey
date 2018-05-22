@@ -3,6 +3,8 @@ package application;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.StackedBarChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
@@ -16,6 +18,7 @@ public class MainPController {
 	public Button btn_playPause;
 	public Slider slr_song;
 	public Label lbl_time;
+	public BarChart<?,?> sbc_groovBox;
 
 	
 
@@ -30,6 +33,7 @@ public class MainPController {
 		}else if(player.medPly.getStatus() == Status.PAUSED) {
 			
 			player.runMedia();
+			player.mediaVisualizer(sbc_groovBox);
 			player.mediaTimeListener(slr_song, lbl_time);
 			btn_playPause.setText("Pause");
 		
@@ -37,6 +41,7 @@ public class MainPController {
 		}else if(player.medPly.getStatus() == Status.READY) {
 			
 			player.runMedia();
+			player.mediaVisualizer(sbc_groovBox);
 			player.mediaTimeListener(slr_song, lbl_time);
 			btn_playPause.setText("Pause");
 			
