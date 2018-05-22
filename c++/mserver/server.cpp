@@ -12,8 +12,6 @@ TCPServer tcp;
 int PORT;
 int SIZE;
 
-
-
 void *loop (void *m) {
     pthread_detach(pthread_self());
     cout<<"buscando loop"<<endl;
@@ -50,6 +48,7 @@ int main(int argc, char *argv[]) {
         if (PORT >= 5500 && PORT <= 9000) break;
     }
     cout << "Ingrese el tamaño de la memoria en Bytes " << endl;
+    cout<<"bullshit"<<endl;
     cin >> SIZE;
     cout << "| Puerto: " << PORT << " | " << "Memory: " << SIZE << " Bytes |" << endl;
 
