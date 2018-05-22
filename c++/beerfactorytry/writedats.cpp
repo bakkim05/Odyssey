@@ -20,7 +20,7 @@ void WriteDats::escribirUser(char* username,char* name, char* favSongs, char* pa
     cout<<"sed"<<endl;
     decl->append_attribute(doc.allocate_attribute("encoding","utf-8"));
     xml_node<>* root = doc.allocate_node(node_element, "InfoUser");
-cout<<"do something1"<<endl;
+    cout<<"do something1"<<endl;
     xml_node<>* root1 = doc.allocate_node(node_element, "Username");
     root1->append_attribute(doc.allocate_attribute("username",username));
     cout<<"do something1"<<endl;

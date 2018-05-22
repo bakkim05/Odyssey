@@ -11,7 +11,7 @@ WriteDats::WriteDats()
 
 }
 
-string WriteDats::escribir(char* song1, char* gender1, char* artist1, char* album1, char* year1, char* lyrics1, char* category1)
+string WriteDats::escribirMetadata(char* song1, char* gender1, char* artist1, char* album1, char* year1, char* lyrics1, char* category1)
 {
     cout<<"Writing xml Documents"<<endl;
     xml_document<> doc;
@@ -60,6 +60,59 @@ string WriteDats::escribir(char* song1, char* gender1, char* artist1, char* albu
     return xml_as_string;
 }
 
+string WriteDats::escribirUser(char *username, char *name, char *favSongs, char *password, char *friends, char *year1)
+{
+    cout<<"Writing xml Documents"<<endl;
+    xml_document<> doc;
+    xml_node<> *decl = doc.allocate_node(node_declaration);
+    //configuracion xml
+    decl->append_attribute(doc.allocate_attribute("version", "1.0"));
+    decl->append_attribute(doc.allocate_attribute("encoding","utf-8"));
+    //primer Nodo
+    xml_node<>* root = doc.allocate_node(node_element, "InfoUser");
+    //Nombre del Usuario
+    xml_node<>* root1 = doc.allocate_node(node_element, "Username");
+    root1->append_attribute(doc.allocate_attribute("username",username));
+    //Nombre
+    root->append_node(root1);
+    xml_node<> *Name = doc.allocate_node(node_element,"Name");
+    Name->value(name);
+    root1->append_node(Name);
+    //Nodo Edad
+    xml_node<> *Age = doc.allocate_node(node_element,"Age");
+    Age->value(year1);
+    root1->append_node(Age);
+    //Nodo FavSongs
+    xml_node<> *FavSongs = doc.allocate_node(node_element,"FavSongs");
+    FavSongs->value(favSongs);
+    root1->append_node(FavSongs);
+    //Nodo password
+    xml_node<> *Password = doc.allocate_node(node_element,"password");
+    Password->value(password);
+    root1->append_node(Password);
+    //Nodo lista amigos
+    xml_node<> *Friends = doc.allocate_node(node_element,"Friends");
+    Friends->value(friends);
+    root1->append_node(Friends);
+    //Nodo apCode
+    xml_node<>* root2 = doc.allocate_node(node_element, "apCode");
+    root2->value("0");
+    root->append_node(root2);
+    doc.append_node(root);
+    // Convert doc to string if needed
+    std::string xml_as_string;
+    rapidxml::print(std::back_inserter(xml_as_string), doc);
+
+    // Save to file
+    std::ofstream file_stored("config1.xml");
+    cout<<"do something1"<<endl;
+    file_stored << doc;
+    cout<<"do something1"<<endl;
+    file_stored.close();
+    cout<<"do something1"<<endl;
+    doc.clear();
+}
+
 
 
 void WriteDats::read(string cd)
@@ -101,21 +154,19 @@ void WriteDats::read(string cd)
     if(nodoRoot == "InfoUser"){
         cout<<"parseo de user"<<endl;
         root_node = doc.first_node("InfoUser");
-        xml_node<> * music_node = root_node->first_node("User");
-        cout<<"Nombre usuario: "<<music_node->first_attribute("nombre")->value()<<endl;
+        xml_node<> * music_node = root_node->first_node("Username");
+        cout<<"Nombre usuario: "<<music_node->first_attribute("username")->value()<<endl;
         //print the atribute of the music
-        xml_node<> * gender = music_node->first_node("Gender");
+        xml_node<> * gender = music_node->first_node("Name");
         cout<<"valor del genero: "<<gender->value()<<endl;
-        xml_node<> * Artist = music_node->first_node("Artist");
+        xml_node<> * Artist = music_node->first_node("Age");
         cout<<"valor del artista: "<<Artist->value()<<endl;
-        xml_node<> * Album = music_node->first_node("Album");
+        xml_node<> * Album = music_node->first_node("FavSongs");
         cout<<"valor del album: "<<Album->value()<<endl;
-        xml_node<> * year = music_node->first_node("Year");
+        xml_node<> * year = music_node->first_node("password");
         cout<<"valor del ano: "<<year->value()<<endl;
-        xml_node<> * category = music_node->first_node("Category");
+        xml_node<> * category = music_node->first_node("Friends");
         cout<<"valor de la categoria: "<<category->value()<<endl;
-        xml_node<> * lyrics = music_node->first_node("Lyrics");
-        cout<<"valor de la letra: "<<lyrics->value()<<endl;
         xml_node<> * Ope = root_node->first_node("apCode");
         cout<<"valor de la operacion: "<<Ope->value()<<endl;
 
