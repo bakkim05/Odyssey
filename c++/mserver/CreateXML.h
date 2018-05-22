@@ -10,8 +10,9 @@
 class ParserXML
 {
 public:
-    std::string xmlCancion(char* song1, char* gender1, char* artist1, char* album1, char* year1, char* lyrics1, char* category1);
 
+    std::string xmlCancion(char* song, char* gender, char* artist, char* album, char* year, char* lyrics, char* category);
+    std::string xmlUsuario(char* username, char* name, char* favSongs, char* password, char* friends, char* age);
 
 };
 

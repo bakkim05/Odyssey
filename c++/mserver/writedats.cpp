@@ -1,9 +1,11 @@
+
 #include "writedats.h"
 #include "rapidxml_print.hpp"
 #include <vector>
 #include <fstream>
 #include <sstream>
 #include <string.h>
+
 using namespace rapidxml;
 using namespace std;
 WriteDats::WriteDats()
@@ -122,12 +124,15 @@ void WriteDats::read(string cd)
     cout << "Parsing songs..." << endl;
     xml_document<> doc;
     xml_node<> * root_node;
+
     // Read the xml file into a vector
     ifstream theFile ("config2.xml");
     vector<char> buffer(cd.begin(),cd.end());
     buffer.push_back('\0');
+
     // Parse the buffer using the xml file parsing library into doc
     doc.parse<0>(&buffer[0]);
+
     // Find our root node
    string nodoRoot = doc.first_node()->name();
     cout<<nodoRoot<<endl;
@@ -136,6 +141,7 @@ void WriteDats::read(string cd)
         root_node = doc.first_node("Data");
         xml_node<> * music_node = root_node->first_node("Music");
         cout<<"Vallor nombre cancion: "<<music_node->first_attribute("nombre")->value()<<endl;
+
         //print the atribute of the music
         xml_node<> * gender = music_node->first_node("Gender");
         cout<<"valor del genero: "<<gender->value()<<endl;
@@ -179,8 +185,8 @@ void WriteDats::read(string cd)
     cout<<"mos se "<<endl;
     // Find the music
 
-
 }
+
 string WriteDats::getXml()
 {
     return xml;
