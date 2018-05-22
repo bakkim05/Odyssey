@@ -74,7 +74,7 @@ public class SocketClient {
     	
         static final String DatosCancion = "<Data><Music nombre=\"Havana\"><Gender>pop</Gender><Artist>Camila Cabello</Artist><Album>Camila</Album><Year>2018</Year><Category>latin pop</Category><Lyrics>SERW</Lyrics></Music><apCode>0</apCode></Data>";
         static final String InfoUser = "<InfoUser><Username username=\"Faridd\"><Name>Farid Marin</Name><Age>19</Age><FavSongs>Camila Cabello, howlong</FavSongs><password>12345</password><Friends>jung, kim</Friends></Username><apCode>0</apCode></InfoUser>";
-        static final String RANDOM_NUM = "<Request><Name>GetRandomNumber</Name></Request>";
+        static final String Streaming = "<Request><Name>GetRandomNumber</Name></Request>";
         
         Socket conn;
         BufferedOutputStream os = null;
@@ -100,7 +100,7 @@ public class SocketClient {
         }
 
         public void requestRandomNumber() {
-            serializeAndSendMessage(RANDOM_NUM);
+            serializeAndSendMessage(Streaming);
         }
 
         private void serializeAndSendMessage(String msg) {

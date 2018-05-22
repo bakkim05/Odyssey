@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="JavaClient/src"/>
+	<classpathentry kind="src" path="JsonParser/src"/>
+	<classpathentry kind="src" path="server/src"/>
+	<classpathentry kind="src" path="xml.stax.model/src"/>
+	<classpathentry kind="lib" path="JavaClient/dist/JavaClient.jar"/>
+	<classpathentry kind="lib" path="JavaClient/dist/lib/appframework-1.0.3.jar"/>
+	<classpathentry kind="lib" path="JavaClient/dist/lib/swing-worker-1.1.jar"/>
+	<classpathentry kind="output" path="JavaClient/build/classes"/>
+</classpath>
