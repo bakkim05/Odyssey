@@ -24,6 +24,7 @@ void *loop (void *m) {
         string str = tcp.getMessage();
         cout<<"mesage"<<str<<endl;
         vector<char> vec1(str.begin(),str.end());
+
         if( str != "" ){
 
             cout<<"message difeten"<<endl;
@@ -39,8 +40,6 @@ void *loop (void *m) {
 
     tcp.detach();
 }
-
-
 
 int main(int argc, char *argv[]) {
     QCoreApplication a(argc, argv);
