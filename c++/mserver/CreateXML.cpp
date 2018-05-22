@@ -4,10 +4,18 @@
 
 #include "CreateXML.h"
 #include <iostream>
+#include <sstream>
+#include <fstream>
 
-void create(char* song, char* gender, char* artist, char* album, char* year, char* lyrics, char* category)
+std::string ParserXML::xmlCancion(char* song, char* gender, char* artist, char* album, char* year, char* lyrics, char* category)
 {
+    std::cout << "Writing XML Documents" << std::endl;
+
     pugi::xml_document doc;
+
+    pugi::xml_node declaration = doc.append_child(pugi::node_declaration);
+    declaration.append_attribute("version") = "1.0";
+    declaration.append_attribute("encoding") = "UTF-8";
 
     pugi::xml_node root = doc.append_child("Data");
 
@@ -32,6 +40,20 @@ void create(char* song, char* gender, char* artist, char* album, char* year, cha
     pugi::xml_node letra = cancion.append_child("Lyrics");
     letra.append_child(pugi::node_pcdata).set_value(lyrics);
 
-    doc.print(std::cout);
+    pugi::xml_node code = cancion.append_child("apCode");
+    code.append_child(pugi::node_pcdata).set_value("0");
+
+
+    //Convert to String
+    std::stringstream ss;
+    doc.save(ss, "");
+
+    std::string xml_as_string;
+    xml_as_string = ss.str();
+
+    //Save to File
+     doc.save_file("../xmlCancion.xml");
+
+     return xml_as_string;
 
 }
