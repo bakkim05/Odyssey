@@ -27,27 +27,19 @@ public class writer {
 	        // create XMLEventWriter
 	        XMLEventWriter eventWriter = outputFactory.createXMLEventWriter(new FileOutputStream(configFile));
 	        // create an EventFactory
-	        XMLEventFactory eventFactory = XMLEventFactory.newInstance();
-	        XMLEvent end = eventFactory.createDTD("\n");
+	       
 	        // create and write Start Tag
-	        StartDocument startDocument = eventFactory.createStartDocument();
-	        eventWriter.add(startDocument);
+	       
 
-	        // create config open tag
-	        StartElement configStartElement = eventFactory.createStartElement("",
-	                "", "Data");
-	        eventWriter.add(configStartElement);
-	        eventWriter.add(end);
-	        // Write the different nodes
-	        createMusic(eventFactory, eventWriter, song, gender, artist, album, year, lyrics, category);
-	        CreateOperative(eventWriter, ope);
-	        eventWriter.add(eventFactory.createEndElement("", "", "Data"));
-	        eventWriter.add(end);
-	        eventWriter.add(eventFactory.createEndDocument());
-	        eventWriter.close();
+	       if(this.configFile.compareTo("config2.xml") !=0) {
+	        // Write the Music
+	        createMusic( eventWriter, song, gender, artist, album, year, lyrics, category,ope);
+	       }else {
+	    	   
+	       }
 			
 	    }
-	    private void createMusic(XMLEventFactory node, XMLEventWriter eventWriter, String song, String genero, String Artist, String Album, String year, String Lyrics, String Category) throws XMLStreamException {
+	    private void createUser(XMLEventFactory node, XMLEventWriter eventWriter, String song, String genero, String Artist, String Album, String year, String Lyrics, String Category) throws XMLStreamException {
 	    	XMLEvent ens = node.createDTD("\n");
 	    	XMLEvent tab = node.createDTD("\t");
 	    	StartElement sElem = node.createStartElement("", "", "Music");
@@ -66,6 +58,37 @@ public class writer {
 	        eventWriter.add(ens);
 	        eventWriter.add(eElement);
 	        
+	    }
+	    private void createMusic (XMLEventWriter eventWriter, String song, String genero, String Artist, String Album, String year, String Lyrics, String Category, int ope) throws XMLStreamException {
+	    	XMLEventFactory node = XMLEventFactory.newInstance();
+		    XMLEvent end = node.createDTD("\n");
+	    	StartDocument startDocument = node.createStartDocument();
+		    eventWriter.add(startDocument);
+		    // create config open tag
+	        StartElement configStartElement = node.createStartElement("","", "Data");
+	        eventWriter.add(configStartElement);
+	        eventWriter.add(end);
+	    	XMLEvent ens = node.createDTD("\n");
+	    	XMLEvent tab = node.createDTD("\t");
+	    	StartElement sElem = node.createStartElement("", "", "Music");
+	        Attribute prueba = node.createAttribute("nombre",song);
+	        eventWriter.add(tab);
+	        eventWriter.add(sElem);
+	        eventWriter.add(prueba);
+	        createChild(eventWriter, "Gender", genero);
+	        createChild(eventWriter, "Artist", Artist);
+	        createChild(eventWriter, "Album", Album);
+	        createChild(eventWriter, "Year", year);
+	        createChild(eventWriter, "Category", Category);
+	        createChild(eventWriter, "Lyrics", Lyrics);
+	        EndElement eElement = node.createEndElement("","", "Music");
+	        eventWriter.add(ens);
+	        eventWriter.add(eElement);
+	        CreateOperative(eventWriter, ope);
+	        eventWriter.add(node.createEndElement("", "", "Data"));
+	        eventWriter.add(end);
+	        eventWriter.add(node.createEndDocument());
+	        eventWriter.close();
 	    }
 	    private void createChild(XMLEventWriter eventWriter, String name, String value) throws XMLStreamException {
 
