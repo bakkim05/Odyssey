@@ -1,6 +1,15 @@
 package mediaPlayer;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.util.Base64;
+
+import org.apache.commons.io.FileUtils;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -20,22 +29,54 @@ public class Player {
 	public MediaPlayer medPly = null;
 	Media media = null;
 	
-	public void setMedia() {
+	public void setMediaFromFileChooser() {
 		
 		FileChooser fc = new FileChooser();
 		//fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("*.mp3"));
 		File file = fc.showOpenDialog(null);
 		String path = file.getAbsolutePath();
-		path = path.replace("\\", "/");
-		this.media = new Media(new File(path).toURI().toString());
-		
-		setMedPly();
+		path = path.replace("\\", "/");		
+		medPly = new MediaPlayer(new Media(new File(path).toURI().toString()));
 	}
 	
-	private void setMedPly() {
+	
+	
+	
+	public void setMediaFromEncodedFile(String EncodedFile) {
+		byte[] decodedMedia = null;
+		File MediaReady = null;
 		
-		medPly = new MediaPlayer(media);
-		//this.medPly.stop();
+		// Decodes the media 
+		try {
+			decodedMedia = Decode(EncodedFile);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		// Creates a .mp3 File for the Decoded media
+		try {
+			MediaReady = File.createTempFile("music", ".mp3");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		// Fills the new .mp3 File with its information (Decoded Media)
+		FileOutputStream outP;
+		try {
+			outP = new FileOutputStream(MediaReady);
+			outP.write(decodedMedia);
+			outP.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+		medPly = new MediaPlayer(new Media( new File(MediaReady.getAbsolutePath().replace("\\", "/") ).toURI().toString() ));
+		
 		
 	}
 	
@@ -77,6 +118,32 @@ public void mediaVisualizer(BarChart<?,?> sbc_groovbox) {
 	
 }
 
+
+
+public String Encode() throws IOException {
 	
+	FileChooser fc = new FileChooser();
+	File file = fc.showOpenDialog(null);
+	
+	byte[] bytes = FileUtils.readFileToByteArray(file);
+
+	String encoded = Base64.getEncoder().encodeToString(bytes);                                       
+
+return encoded;
+	
+}
+
+
+
+public byte[] Decode(String toDecode) throws IOException {
+	
+	byte[] decoded = Base64.getDecoder().decode(toDecode);
+
+	return decoded;
+	
+}
+	
+
+
 	
 }

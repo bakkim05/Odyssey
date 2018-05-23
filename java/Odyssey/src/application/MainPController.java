@@ -1,6 +1,8 @@
 package application;
 
 
+import java.io.IOException;
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.chart.BarChart;
@@ -55,7 +57,11 @@ public class MainPController {
 	
 	public void loadASong() {
 		
-		player.setMedia();
+		try {
+			player.setMediaFromEncodedFile(player.Encode());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 		//load listeners
 		
