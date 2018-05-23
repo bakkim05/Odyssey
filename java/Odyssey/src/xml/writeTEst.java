@@ -1,5 +1,5 @@
 package xml;
-import xml.writer;
+
 
 public class writeTEst {
 	public static void main(String[] args) {
