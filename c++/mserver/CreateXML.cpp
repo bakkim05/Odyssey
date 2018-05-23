@@ -108,4 +108,5 @@ void ParserXML::readXML(std::string cd)
     std::ifstream theFile ("config2.xml");
     std::vector<char> buffer(cd.begin(), cd.end());
     buffer.push_back('\0');
+
 }
