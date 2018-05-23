@@ -55,17 +55,6 @@ CMAKE_BINARY_DIR = C:\Users\Oska\Desktop\Odisea\Odyssey\c++\mserver\cmake-build-
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	C:\Users\Oska\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\173.4127.32\bin\cmake\bin\cmake.exe -E echo "No interactive CMake dialog available."
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -76,6 +65,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	C:\Users\Oska\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\173.4127.32\bin\cmake\bin\cmake.exe -E echo "No interactive CMake dialog available."
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -110,44 +110,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named mserver
+# Target rules for targets named Test
 
 # Build rule for target.
-mserver: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 mserver
-.PHONY : mserver
+Test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 Test
+.PHONY : Test
 
 # fast build rule for target.
-mserver/fast:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/build
-.PHONY : mserver/fast
+Test/fast:
+	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/build
+.PHONY : Test/fast
 
-CreateXML.obj: CreateXML.cpp.obj
+Maker.obj: Maker.cpp.obj
 
-.PHONY : CreateXML.obj
+.PHONY : Maker.obj
 
 # target to build an object file
-CreateXML.cpp.obj:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/CreateXML.cpp.obj
-.PHONY : CreateXML.cpp.obj
+Maker.cpp.obj:
+	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/Maker.cpp.obj
+.PHONY : Maker.cpp.obj
 
-CreateXML.i: CreateXML.cpp.i
+Maker.i: Maker.cpp.i
 
-.PHONY : CreateXML.i
+.PHONY : Maker.i
 
 # target to preprocess a source file
-CreateXML.cpp.i:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/CreateXML.cpp.i
-.PHONY : CreateXML.cpp.i
+Maker.cpp.i:
+	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/Maker.cpp.i
+.PHONY : Maker.cpp.i
 
-CreateXML.s: CreateXML.cpp.s
+Maker.s: Maker.cpp.s
 
-.PHONY : CreateXML.s
+.PHONY : Maker.s
 
 # target to generate assembly for a file
-CreateXML.cpp.s:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/CreateXML.cpp.s
-.PHONY : CreateXML.cpp.s
+Maker.cpp.s:
+	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/Maker.cpp.s
+.PHONY : Maker.cpp.s
 
 cJSON.obj: cJSON.c.obj
 
@@ -155,7 +155,7 @@ cJSON.obj: cJSON.c.obj
 
 # target to build an object file
 cJSON.c.obj:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/cJSON.c.obj
+	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/cJSON.c.obj
 .PHONY : cJSON.c.obj
 
 cJSON.i: cJSON.c.i
@@ -164,7 +164,7 @@ cJSON.i: cJSON.c.i
 
 # target to preprocess a source file
 cJSON.c.i:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/cJSON.c.i
+	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/cJSON.c.i
 .PHONY : cJSON.c.i
 
 cJSON.s: cJSON.c.s
@@ -173,7 +173,7 @@ cJSON.s: cJSON.c.s
 
 # target to generate assembly for a file
 cJSON.c.s:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/cJSON.c.s
+	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/cJSON.c.s
 .PHONY : cJSON.c.s
 
 main.obj: main.cpp.obj
@@ -182,7 +182,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/main.cpp.obj
+	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -191,7 +191,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -200,35 +200,8 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/main.cpp.s
 .PHONY : main.cpp.s
-
-pugixml.obj: pugixml.cpp.obj
-
-.PHONY : pugixml.obj
-
-# target to build an object file
-pugixml.cpp.obj:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/pugixml.cpp.obj
-.PHONY : pugixml.cpp.obj
-
-pugixml.i: pugixml.cpp.i
-
-.PHONY : pugixml.i
-
-# target to preprocess a source file
-pugixml.cpp.i:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/pugixml.cpp.i
-.PHONY : pugixml.cpp.i
-
-pugixml.s: pugixml.cpp.s
-
-.PHONY : pugixml.s
-
-# target to generate assembly for a file
-pugixml.cpp.s:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/pugixml.cpp.s
-.PHONY : pugixml.cpp.s
 
 server.obj: server.cpp.obj
 
@@ -236,7 +209,7 @@ server.obj: server.cpp.obj
 
 # target to build an object file
 server.cpp.obj:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/server.cpp.obj
+	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/server.cpp.obj
 .PHONY : server.cpp.obj
 
 server.i: server.cpp.i
@@ -245,7 +218,7 @@ server.i: server.cpp.i
 
 # target to preprocess a source file
 server.cpp.i:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/server.cpp.i
+	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/server.cpp.i
 .PHONY : server.cpp.i
 
 server.s: server.cpp.s
@@ -254,7 +227,7 @@ server.s: server.cpp.s
 
 # target to generate assembly for a file
 server.cpp.s:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/server.cpp.s
+	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/server.cpp.s
 .PHONY : server.cpp.s
 
 tcpserver.obj: tcpserver.cpp.obj
@@ -263,7 +236,7 @@ tcpserver.obj: tcpserver.cpp.obj
 
 # target to build an object file
 tcpserver.cpp.obj:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/tcpserver.cpp.obj
+	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/tcpserver.cpp.obj
 .PHONY : tcpserver.cpp.obj
 
 tcpserver.i: tcpserver.cpp.i
@@ -272,7 +245,7 @@ tcpserver.i: tcpserver.cpp.i
 
 # target to preprocess a source file
 tcpserver.cpp.i:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/tcpserver.cpp.i
+	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/tcpserver.cpp.i
 .PHONY : tcpserver.cpp.i
 
 tcpserver.s: tcpserver.cpp.s
@@ -281,7 +254,7 @@ tcpserver.s: tcpserver.cpp.s
 
 # target to generate assembly for a file
 tcpserver.cpp.s:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/tcpserver.cpp.s
+	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/tcpserver.cpp.s
 .PHONY : tcpserver.cpp.s
 
 writedats.obj: writedats.cpp.obj
@@ -290,7 +263,7 @@ writedats.obj: writedats.cpp.obj
 
 # target to build an object file
 writedats.cpp.obj:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/writedats.cpp.obj
+	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/writedats.cpp.obj
 .PHONY : writedats.cpp.obj
 
 writedats.i: writedats.cpp.i
@@ -299,7 +272,7 @@ writedats.i: writedats.cpp.i
 
 # target to preprocess a source file
 writedats.cpp.i:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/writedats.cpp.i
+	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/writedats.cpp.i
 .PHONY : writedats.cpp.i
 
 writedats.s: writedats.cpp.s
@@ -308,7 +281,7 @@ writedats.s: writedats.cpp.s
 
 # target to generate assembly for a file
 writedats.cpp.s:
-	$(MAKE) -f CMakeFiles\mserver.dir\build.make CMakeFiles/mserver.dir/writedats.cpp.s
+	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/writedats.cpp.s
 .PHONY : writedats.cpp.s
 
 # Help Target
@@ -317,21 +290,18 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... mserver
-	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... CreateXML.obj
-	@echo ... CreateXML.i
-	@echo ... CreateXML.s
+	@echo ... Test
+	@echo ... edit_cache
+	@echo ... Maker.obj
+	@echo ... Maker.i
+	@echo ... Maker.s
 	@echo ... cJSON.obj
 	@echo ... cJSON.i
 	@echo ... cJSON.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... pugixml.obj
-	@echo ... pugixml.i
-	@echo ... pugixml.s
 	@echo ... server.obj
 	@echo ... server.i
 	@echo ... server.s

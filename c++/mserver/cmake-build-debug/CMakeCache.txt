@@ -143,7 +143,7 @@ CMAKE_OBJCOPY:FILEPATH=C:/MinGW/bin/objcopy.exe
 CMAKE_OBJDUMP:FILEPATH=C:/MinGW/bin/objdump.exe
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=mserver
+CMAKE_PROJECT_NAME:STATIC=Test
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=C:/MinGW/bin/ranlib.exe
@@ -225,6 +225,12 @@ Qt5Widgets_DIR:PATH=Qt5Widgets_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for Qt5.
 Qt5_DIR:PATH=Qt5_DIR-NOTFOUND
+
+//Value Computed by CMake
+Test_BINARY_DIR:STATIC=C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug
+
+//Value Computed by CMake
+Test_SOURCE_DIR:STATIC=C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver
 
 //Value Computed by CMake
 mserver_BINARY_DIR:STATIC=C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug
