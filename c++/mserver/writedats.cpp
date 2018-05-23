@@ -143,7 +143,7 @@ int WriteDats::read(string cd)
         cout<<"Valor nombre cancion: "<<music_node->first_attribute("nombre")->value()<<endl;
 
         //print the atribute of the music
-        char* gender =music_node->first_node()->name();
+
         xml_node<> * gender = music_node->first_node("Gender");
         cout<<"valor del genero: "<<gender->value()<<endl;
         xml_node<> * Artist = music_node->first_node("Artist");
