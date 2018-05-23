@@ -14,7 +14,7 @@ public:
     WriteDats();
     string escribirMetadata(char* song1,char* gender1, char* artist1, char* album1, char* year1, char* lyrics1, char* category1);
     string escribirUser(char* username,char* name, char* favSongs, char* password, char* friends, char* year1);
-    void read(string cd);
+    int read(string cd);
     string getXml();
     string xml;
     void readsong(xml_node<> *root_node);

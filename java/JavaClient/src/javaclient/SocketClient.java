@@ -34,28 +34,10 @@ public class SocketClient {
                 System.out.println("prueba de listener");
                 InputStream is = conn.getInputStream();
                 InputStreamReader isr = new InputStreamReader(is);
-                BufferedReader br = new BufferedReader(isr);
-                String message = br.readLine();
-                System.out.println("Message received from the server : " +message);
-                System.out.println("listener: "+reader.readLine());
-                while ( listening ) {
-                    String xml = reader.readLine();
-                    System.out.println("listener: "+xml);
-                    if ( xml == null ) {
-                        // Connection lost
-                        return;
-                    }
-
-                    System.out.println("Xds: " + xml + "\n\n");
-
-                    // Hand off to the UI
-                    if ( xml.indexOf("HostnameResponse") != -1 )
-                        viewer.onHostnameResponse(xml);
-                    else if ( xml.indexOf("MemoryResponse") != -1 )
-                        viewer.onMemoryResponse(xml);
-                    else if ( xml.indexOf("RandomNumberResponse") != -1 )
-                        viewer.onRandomNumberResponse(xml);
+                while(reader.read() != 0) {
+                	System.out.print(Character.toString ((char) isr.read()));
                 }
+                System.out.println("mierdita");
             }
             catch ( StreamCorruptedException sce) {
                 // skip over the bad bytes
@@ -76,9 +58,9 @@ public class SocketClient {
 //clase sender 
     class Sender {
     	
-        static final String DatosCancion = "<Data><Music nombre=\"Havana\"><Gender>pop</Gender><Artist>Camila Cabello</Artist><Album>Camila</Album><Year>2018</Year><Category>latin pop</Category><Lyrics>SERW</Lyrics></Music><apCode>0</apCode></Data>";
+        static final String DatosCancion = "<Data><Music nombre=\"Havana\"><Gender>pop</Gender><Artist>Camila Cabello</Artist><Album>Camila</Album><Year>2018</Year><Category>latin pop</Category></Music><apCode>0</apCode></Data>";
         static final String InfoUser = "<InfoUser><Username username=\"Faridd\"><Name>Farid Marin</Name><Age>19</Age><FavSongs>Camila Cabello, howlong</FavSongs><password>12345</password><Friends>jung, kim</Friends></Username><apCode>0</apCode></InfoUser>";
-        static final String Streaming = "<Request><Name>GetRandomNumber</Name></Request>";
+        static final String Streaming = "Streaming";
         
         Socket conn;
         BufferedOutputStream os = null;
@@ -116,7 +98,7 @@ public class SocketClient {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-            serializeAndSendMessage(duf.toString());
+            serializeAndSendMessage(DatosCancion);
         }
 
         public void InfoUser(String file) {

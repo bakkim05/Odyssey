@@ -23,15 +23,60 @@ void *loop (void *m) {
         string s(1,ch);
         string str = tcp.getMessage();
         cout<<"mesage"<<str<<endl;
-        vector<char> vec1(str.begin(),str.end());
 
+
+        //tcp.Send("prueba bebe");
+        usleep(2000);
         if( str != "" ){
 
             cout<<"message difeten"<<endl;
             WriteDats *lr = new WriteDats();
-            lr->read(str);
-            //jung aqui tiene que enlazar con la estructura de datos!!!!!!!!!
-            tcp.Send(str);
+            int descision = lr->read(str);
+            switch (descision) {
+            case 0:
+               cout<<"Buscar cancion.. aqui agregar busqueda"<<endl;
+                //aqui se debe buscar la cancion y devolver la metadata de la cancion
+                break;
+            case 1:
+                cout<<"Agregar cancion"<<endl;
+                //aqui se debe agregar la cancion, crear la estructura y el json
+                tcp.Send("agregada");
+                break;
+            case 2:
+                cout<<"Eliminar cancion"<<endl;
+                //aqui debe buscar y eliminar
+                tcp.Send("eliminada");
+                break;
+            case 3:
+                cout<<"Actualizar"<<endl;
+                //aqui debe mdoficicar el json y enviar la nueva metadata
+                tcp.Send("Archivo Modificado");
+                break;
+            case 4:
+                cout<<"Reproducir"<<endl;
+                //se envia el nombre de la cancion y se debe empezar a enviar los chunks
+                tcp.Send("streaming pronto");
+                break;
+            case 10:
+                cout<<"Usuario nuevo"<<endl;
+                //Aqui se debe hacer todas las verificaciones del caso y crear el hash para la contrsena
+                tcp.Send("Usuario creado");
+                break;
+            case 11:
+                cout<<"Log In"<<endl;
+                //verificar todo
+                tcp.Send("Login success");
+                break;
+            case 12:
+                //aqui eliminar de la lista de usuarios
+                cout<<"Eliminar usuario"<<endl;
+                tcp.Send("Usuario eliminado");
+                break;
+            default:
+
+                break;
+            }
+            tcp.Send("buenas");
             tcp.clean();
         }
         usleep(100000);

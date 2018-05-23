@@ -13,7 +13,7 @@ public:
 
     std::string xmlCancion(char* song, char* gender, char* artist, char* album, char* year, char* lyrics, char* category);
     std::string xmlUsuario(char* username, char* name, char* favSongs, char* password, char* friends, char* age);
-
+    void readXML(std::string);
 };
 
 
