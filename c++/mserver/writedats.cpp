@@ -143,30 +143,20 @@ int WriteDats::read(string cd)
         cout<<"Vallor nombre cancion: "<<music_node->first_attribute("nombre")->value()<<endl;
 
         //print the atribute of the music
-        if(music_node->first_node()->name() =="Gender"){
-            xml_node<> * gender = music_node->first_node("Gender");
-            cout<<"valor del genero: "<<gender->value()<<endl;
-        }
-        if(music_node->first_node()->name() == "Artist"){
-            xml_node<> * Artist = music_node->first_node("Artist");
-            cout<<"valor del artista: "<<Artist->value()<<endl;
-        }
-        if(music_node->first_node()->name() == "Album"){
-            xml_node<> * Album = music_node->first_node("Album");
-            cout<<"valor del album: "<<Album->value()<<endl;
-        }
-        if(music_node->first_node()->name() == "Year"){
-            xml_node<> * year = music_node->first_node("Year");
-            cout<<"valor del ano: "<<year->value()<<endl;
-        }
-        if(music_node->first_node()->name() == "Category"){
+        char* gender =music_node->first_node()->name();
+        xml_node<> * gender = music_node->first_node("Gender");
+        cout<<"valor del genero: "<<gender->value()<<endl;
+        xml_node<> * Artist = music_node->first_node("Artist");
+        cout<<"valor del artista: "<<Artist->value()<<endl;
+        xml_node<> * Album = music_node->first_node("Album");
+        cout<<"valor del album: "<<Album->value()<<endl;
+        xml_node<> * year = music_node->first_node("Year");
+        cout<<"valor del ano: "<<year->value()<<endl;
         xml_node<> * category = music_node->first_node("Category");
         cout<<"valor de la categoria: "<<category->value()<<endl;
-        }
-        if(music_node->first_node()->name() == "Lyrics"){
-            xml_node<> * lyrics = music_node->first_node("Lyrics");
-            cout<<"valor de la letra: "<<lyrics->value()<<endl;
-        }
+        xml_node<> * lyrics = music_node->first_node("Lyrics");
+        cout<<"valor de la letra: "<<lyrics->value()<<endl;
+
         xml_node<> * Ope = root_node->first_node("apCode");
         cout<<"valor de la operacion: "<<Ope->value()<<endl;
         char* ap = Ope->value();
@@ -206,8 +196,8 @@ int WriteDats::read(string cd)
         char* ap = Ope->value();
         int apcode = atoi(ap);
         cout<<"valor del apcode: "<<apcode<<endl;
+        //xml = buffer;
         return apcode;
-
     }
     else{
         cout<<"no pos no"<<endl;

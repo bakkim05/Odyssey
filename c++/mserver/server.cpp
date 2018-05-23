@@ -30,6 +30,7 @@ void *loop (void *m) {
         if( str != "" ){
 
             cout<<"message difeten"<<endl;
+           // WriteDats *es = new
             WriteDats *lr = new WriteDats();
             int descision = lr->read(str);
             switch (descision) {
