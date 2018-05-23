@@ -14,10 +14,11 @@ int main() {
     //cout <<wd.xml << endl;
 
     cJSON* a = m.musicJSON("Quiero Repetir", "Reggaeton", "Ozuna", "Odisea", "2017", "Categoria", "Quiero Repetir...");
-
-    m.treeSong(a);
-    m.treeAlbum(a);
-    m.treeArtist(a);
+    cout << cJSON_Print(a);
+    
+//    m.treeSong(a);
+//    m.treeAlbum(a);
+//    m.treeArtist(a);
 
 
 

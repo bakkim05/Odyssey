@@ -4,17 +4,27 @@
 
 #include "Maker.h"
 
+int num_songs = 1;
+
 cJSON* Maker::musicJSON(char* nombre, char* genero,char* artista, char* album, char* agno, char* categoria, char* letra)
 {
     cJSON* root = cJSON_CreateObject();
+    cJSON* Music = cJSON_CreateArray();
+    cJSON_AddItemToObjectCS(root,"Music",Music);
+    for (int i; i < num_songs ; i++)
+    {
+        cJSON* song = cJSON_CreateObject();
+        cJSON_AddItemToArray(Music,song);
+        cJSON_AddItemToObject(song,"nombre", cJSON_CreateString(nombre));
+        cJSON_AddItemToObject(song,"Gender", cJSON_CreateString(genero));
+        cJSON_AddItemToObject(song,"Artist", cJSON_CreateString(artista));
+        cJSON_AddItemToObject(song,"Album", cJSON_CreateString(album));
+        cJSON_AddItemToObject(song,"Year", cJSON_CreateString(agno));
+        cJSON_AddItemToObject(song,"Category", cJSON_CreateString(categoria));
+        cJSON_AddItemToObject(song,"Lyrics", cJSON_CreateString(letra));
+    }
 
-    cJSON_AddItemToObject(root,"nombre", cJSON_CreateString(nombre));
-    cJSON_AddItemToObject(root,"Gender", cJSON_CreateString(genero));
-    cJSON_AddItemToObject(root,"Artist", cJSON_CreateString(artista));
-    cJSON_AddItemToObject(root,"Album", cJSON_CreateString(album));
-    cJSON_AddItemToObject(root,"Year", cJSON_CreateString(agno));
-    cJSON_AddItemToObject(root,"Category", cJSON_CreateString(categoria));
-    cJSON_AddItemToObject(root,"Lyrics", cJSON_CreateString(letra));
+
 
     return root;
 }

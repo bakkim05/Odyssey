@@ -9,6 +9,8 @@ CMakeFiles/Test.dir/Maker.cpp.obj: ../BTree/btree.h
 CMakeFiles/Test.dir/Maker.cpp.obj: ../Maker.cpp
 CMakeFiles/Test.dir/Maker.cpp.obj: ../Maker.h
 CMakeFiles/Test.dir/Maker.cpp.obj: ../cJSON.h
+CMakeFiles/Test.dir/Maker.cpp.obj: ../rapidxml.hpp
+CMakeFiles/Test.dir/Maker.cpp.obj: ../writedats.h
 
 CMakeFiles/Test.dir/main.cpp.obj: ../BTree/BTNode.h
 CMakeFiles/Test.dir/main.cpp.obj: ../BTree/btree.h
@@ -17,13 +19,6 @@ CMakeFiles/Test.dir/main.cpp.obj: ../cJSON.h
 CMakeFiles/Test.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/Test.dir/main.cpp.obj: ../rapidxml.hpp
 CMakeFiles/Test.dir/main.cpp.obj: ../writedats.h
-
-CMakeFiles/Test.dir/server.cpp.obj: ../server.cpp
-CMakeFiles/Test.dir/server.cpp.obj: ../tcpserver.cpp
-CMakeFiles/Test.dir/server.cpp.obj: ../tcpserver.h
-
-CMakeFiles/Test.dir/tcpserver.cpp.obj: ../tcpserver.cpp
-CMakeFiles/Test.dir/tcpserver.cpp.obj: ../tcpserver.h
 
 CMakeFiles/Test.dir/writedats.cpp.obj: ../rapidxml.hpp
 CMakeFiles/Test.dir/writedats.cpp.obj: ../rapidxml_print.hpp
