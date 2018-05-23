@@ -126,7 +126,6 @@ int WriteDats::read(string cd)
     xml_node<> * root_node;
 
     // Read the xml file into a vector
-    ifstream theFile ("config2.xml");
     vector<char> buffer(cd.begin(),cd.end());
      cout<<"holi"<<endl;
     buffer.push_back('\0');
@@ -141,7 +140,7 @@ int WriteDats::read(string cd)
         cout<<"parseo de musica"<<endl;
         root_node = doc.first_node("Data");
         xml_node<> * music_node = root_node->first_node("Music");
-        cout<<"Vallor nombre cancion: "<<music_node->first_attribute("nombre")->value()<<endl;
+        cout<<"Valor nombre cancion: "<<music_node->first_attribute("nombre")->value()<<endl;
 
         //print the atribute of the music
         char* gender =music_node->first_node()->name();

@@ -7,11 +7,11 @@ C_FLAGS = -g
 
 C_DEFINES = 
 
-C_INCLUDES = @CMakeFiles/mserver.dir/includes_C.rsp
+C_INCLUDES = 
 
-CXX_FLAGS = -g   -std=gnu++1z
+CXX_FLAGS = -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = @CMakeFiles/mserver.dir/includes_CXX.rsp
+CXX_INCLUDES = 
 

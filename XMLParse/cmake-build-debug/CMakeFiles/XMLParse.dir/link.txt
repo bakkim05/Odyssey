@@ -1,3 +1,0 @@
-C:\Users\Juno\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\181.4668.70\bin\cmake\bin\cmake.exe -E remove -f CMakeFiles\XMLParse.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\XMLParse.dir/objects.a @CMakeFiles\XMLParse.dir\objects1.rsp
-C:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\XMLParse.dir/objects.a -Wl,--no-whole-archive  -o XMLParse.exe -Wl,--out-implib,libXMLParse.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\XMLParse.dir\linklibs.rsp

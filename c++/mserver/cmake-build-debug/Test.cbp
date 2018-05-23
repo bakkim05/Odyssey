@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6"/>
 	<Project>
-		<Option title="mserver"/>
+		<Option title="Test"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
 		<Option virtualFolders="CMake Files\;"/>
@@ -12,64 +12,6 @@
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="mserver">
-				<Option output="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/mserver.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug"/>
-					<Add directory="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 mserver"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="mserver/fast">
-				<Option output="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/mserver.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug"/>
-					<Add directory="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
-					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 mserver/fast"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
 					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -85,69 +27,123 @@
 					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="Test">
+				<Option output="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Test.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 Test"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Test/fast">
+				<Option output="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Test.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 Test/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
-		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/CreateXML.cpp">
-			<Option target="mserver"/>
+		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/BTree/BTNode.h">
+			<Option target="Test"/>
 		</Unit>
-		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/CreateXML.h">
-			<Option target="mserver"/>
+		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/BTree/btree.h">
+			<Option target="Test"/>
+		</Unit>
+		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/Maker.cpp">
+			<Option target="Test"/>
+		</Unit>
+		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/Maker.h">
+			<Option target="Test"/>
 		</Unit>
 		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cJSON.c">
-			<Option target="mserver"/>
+			<Option target="Test"/>
 		</Unit>
 		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cJSON.h">
-			<Option target="mserver"/>
+			<Option target="Test"/>
 		</Unit>
 		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/main.cpp">
-			<Option target="mserver"/>
+			<Option target="Test"/>
 		</Unit>
 		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/mserver.pro">
-			<Option target="mserver"/>
+			<Option target="Test"/>
 		</Unit>
 		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/mserver.pro.user">
-			<Option target="mserver"/>
+			<Option target="Test"/>
+		</Unit>
+		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/mserver.pro.user.24ade14">
+			<Option target="Test"/>
 		</Unit>
 		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/mserver.pro.user.50d93ab">
-			<Option target="mserver"/>
-		</Unit>
-		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/pugiconfig.hpp">
-			<Option target="mserver"/>
-		</Unit>
-		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/pugixml.cpp">
-			<Option target="mserver"/>
-		</Unit>
-		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/pugixml.hpp">
-			<Option target="mserver"/>
+			<Option target="Test"/>
 		</Unit>
 		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/rapidxml.hpp">
-			<Option target="mserver"/>
+			<Option target="Test"/>
 		</Unit>
 		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/rapidxml_iterators.hpp">
-			<Option target="mserver"/>
+			<Option target="Test"/>
 		</Unit>
 		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/rapidxml_print.hpp">
-			<Option target="mserver"/>
+			<Option target="Test"/>
 		</Unit>
 		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/rapidxml_utils.hpp">
-			<Option target="mserver"/>
+			<Option target="Test"/>
 		</Unit>
 		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/server">
-			<Option target="mserver"/>
+			<Option target="Test"/>
 		</Unit>
 		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/server.cpp">
-			<Option target="mserver"/>
+			<Option target="Test"/>
 		</Unit>
 		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/tcpserver.cpp">
-			<Option target="mserver"/>
+			<Option target="Test"/>
 		</Unit>
 		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/tcpserver.h">
-			<Option target="mserver"/>
+			<Option target="Test"/>
 		</Unit>
 		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/writedats.cpp">
-			<Option target="mserver"/>
+			<Option target="Test"/>
 		</Unit>
 		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/writedats.h">
-			<Option target="mserver"/>
+			<Option target="Test"/>
 		</Unit>
 		<Unit filename="C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
