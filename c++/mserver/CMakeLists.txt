@@ -1,11 +1,11 @@
-cmake_minimum_required(VERSION 3.10)
-project(mserver)
+cmake_minimum_required(VERSION 3.9)
+project(Test)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 11)
 
-add_executable(mserver main.cpp
-        cJSON.h cJSON.c
-        pugiconfig.hpp pugixml.cpp pugixml.hpp
-        CreateXML.cpp CreateXML.h
-        orderram.cpp orderram.h
-        server.cpp tcpserver.cpp tcpserver.h)
+add_executable(Test main.cpp
+        rapidxml_utils.hpp rapidxml_print.hpp rapidxml_iterators.hpp rapidxml.hpp
+        writedats.cpp writedats.h Maker.cpp Maker.h
+        cJSON.c cJSON.h
+        "BTree/BTNode.h" "BTree/btree.h"
+        AVLTree/AVL_Tree.h)

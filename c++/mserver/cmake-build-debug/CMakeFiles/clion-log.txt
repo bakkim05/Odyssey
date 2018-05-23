@@ -1,18 +1,23 @@
-C:\Users\Juno\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\181.4668.70\bin\cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Juno\Desktop\REPOS\Odyssey\c++\mserver
--- The C compiler identification is GNU 6.3.0
--- The CXX compiler identification is GNU 6.3.0
--- Check for working C compiler: C:/MinGW/bin/gcc.exe
--- Check for working C compiler: C:/MinGW/bin/gcc.exe -- works
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Detecting C compile features
--- Detecting C compile features - done
--- Check for working CXX compiler: C:/MinGW/bin/g++.exe
--- Check for working CXX compiler: C:/MinGW/bin/g++.exe -- works
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Detecting CXX compile features
--- Detecting CXX compile features - done
+C:\Users\Oska\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\173.4127.32\bin\cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Oska\Desktop\Odisea\Odyssey\c++\mserver
+-- Could NOT find Qt5Widgets (missing: Qt5Widgets_DIR)
 -- Configuring done
+CMake Error at CMakeLists.txt:24 (add_executable):
+  Target "mserver" links to target "Qt5::Core" but the target was not found.
+  Perhaps a find_package() call is missing for an IMPORTED target, or an
+  ALIAS target is missing?
+
+
+CMake Error at CMakeLists.txt:24 (add_executable):
+  Target "mserver" links to target "Qt5::Widgets" but the target was not
+  found.  Perhaps a find_package() call is missing for an IMPORTED target, or
+  an ALIAS target is missing?
+
+
+CMake Error at CMakeLists.txt:24 (add_executable):
+  Target "mserver" links to target "Qt5::Gui" but the target was not found.
+  Perhaps a find_package() call is missing for an IMPORTED target, or an
+  ALIAS target is missing?
+
+
 -- Generating done
--- Build files have been written to: C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/cmake-build-debug
+-- Build files have been written to: C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug

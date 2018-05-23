@@ -6,33 +6,51 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/CreateXML.cpp
-CreateXML.h
-C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/CreateXML.h
+..//writedats.h
+rapidxml.hpp
+../rapidxml.hpp
+string.h
+-
+stdio.h
+-
 iostream
 -
 
-C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/CreateXML.h
-pugixml.hpp
-C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/pugixml.hpp
+../rapidxml.hpp
+cstdlib
+-
+cassert
+-
+new
+-
+exception
+-
 
-C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/main.cpp
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/CreateXML.cpp
+CreateXML.h
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/CreateXML.h
+iostream
+-
+sstream
+-
+fstream
+-
+vector
+-
+
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/CreateXML.h
+pugixml.hpp
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/pugixml.hpp
+
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/main.cpp
 QCoreApplication
 -
 
-C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/orderram.cpp
-orderram.h
-C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/orderram.h
-server.cpp
-C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/server.cpp
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/pugiconfig.hpp
 
-C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/orderram.h
-
-C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/pugiconfig.hpp
-
-C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/pugixml.cpp
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/pugixml.cpp
 pugixml.hpp
-C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/pugixml.hpp
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/pugixml.hpp
 stdlib.h
 -
 stdio.h
@@ -60,9 +78,9 @@ new
 stdint.h
 -
 
-C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/pugixml.hpp
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/pugixml.hpp
 pugiconfig.hpp
-C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/pugiconfig.hpp
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/pugiconfig.hpp
 stddef.h
 -
 exception
@@ -74,7 +92,25 @@ iosfwd
 string
 -
 
-C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/server.cpp
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/rapidxml.hpp
+cstdlib
+-
+cassert
+-
+new
+-
+exception
+-
+
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/rapidxml_print.hpp
+rapidxml.hpp
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/rapidxml.hpp
+ostream
+-
+iterator
+-
+
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/server.cpp
 iostream
 -
 string
@@ -82,21 +118,21 @@ string
 fstream
 -
 tcpserver.cpp
-C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/tcpserver.cpp
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/tcpserver.cpp
 QCoreApplication
 -
 QInputDialog
 -
-orderram.h
--
 writedats.h
 -
+CreateXML.h
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/CreateXML.h
 
-C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/tcpserver.cpp
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/tcpserver.cpp
 tcpserver.h
-C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/tcpserver.h
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/tcpserver.h
 
-C:/Users/Juno/Desktop/REPOS/Odyssey/c++/mserver/tcpserver.h
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/tcpserver.h
 iostream
 -
 vector
@@ -120,5 +156,29 @@ string.h
 arpa/inet.h
 -
 pthread.h
+-
+
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/writedats.cpp
+writedats.h
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/writedats.h
+rapidxml_print.hpp
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/rapidxml_print.hpp
+vector
+-
+fstream
+-
+sstream
+-
+string.h
+-
+
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/writedats.h
+rapidxml.hpp
+C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/rapidxml.hpp
+string.h
+-
+stdio.h
+-
+iostream
 -
 
