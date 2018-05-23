@@ -6,7 +6,7 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
-
+#include <vector>
 std::string ParserXML::xmlCancion(char* song, char* gender, char* artist, char* album, char* year, char* lyrics, char* category)
 {
     std::cout << "Writing XML Cancion" << std::endl;
@@ -60,7 +60,6 @@ std::string ParserXML::xmlUsuario(char* username, char* name, char* favSongs, ch
     std::cout << "Writing XML Usuario" << std::endl;
 
     pugi::xml_document doc;
-
     pugi::xml_node declaration = doc.append_child(pugi::node_declaration);
     declaration.append_attribute("version") = "1.0";
     declaration.append_attribute("encoding") = "UTF-8";
@@ -100,4 +99,14 @@ std::string ParserXML::xmlUsuario(char* username, char* name, char* favSongs, ch
     doc.save_file("../xmlUsuario.xml");
 
     return xml_as_string;
+}
+
+void ParserXML::readXML(std::string cd)
+{
+    pugi::xml_document doc;
+    pugi::xml_node rootnode;
+    std::ifstream theFile ("config2.xml");
+    std::vector<char> buffer(cd.begin(), cd.end());
+    buffer.push_back('\0');
+
 }
