@@ -31,4 +31,6 @@ HEADERS += \
     rapidxml.hpp \
     rapidxml_utils.hpp \
     rapidxml_print.hpp \
-    rapidxml_iterators.hpp
+    rapidxml_iterators.hpp \
+    BTree/btree.h \
+    BTree/BTNode.h
