@@ -128,11 +128,12 @@ int WriteDats::read(string cd)
     // Read the xml file into a vector
     ifstream theFile ("config2.xml");
     vector<char> buffer(cd.begin(),cd.end());
+     cout<<"holi"<<endl;
     buffer.push_back('\0');
-
+    cout<<"holi"<<endl;
     // Parse the buffer using the xml file parsing library into doc
     doc.parse<0>(&buffer[0]);
-
+    cout<<"holi"<<endl;
     // Find our root node
    string nodoRoot = doc.first_node()->name();
     cout<<nodoRoot<<endl;
