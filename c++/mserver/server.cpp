@@ -24,7 +24,7 @@ void *loop (void *m) {
 
 
         //tcp.Send("prueba bebe");
-        usleep(2000);
+
         if( str != "" ){
 
             cout<<"message difeten"<<endl;
@@ -57,8 +57,8 @@ void *loop (void *m) {
                 //se envia el nombre de la cancion y se debe empezar a enviar los chunks
                 streaming *stream = new streaming();
                 stream->setFile("charlie-puth-how-long.mp3");
-                stream->streamin(30);
-                tcp.Send("streaming pronto");
+                tcp.Send(stream->streamin(30));
+                tcp.clean();
                 break;
             }
             case 10:
@@ -80,7 +80,7 @@ void *loop (void *m) {
 
                 break;
             }
-            tcp.Send("buenas");
+
             tcp.clean();
         }
         usleep(100000);

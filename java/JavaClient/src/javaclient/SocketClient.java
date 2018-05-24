@@ -35,9 +35,10 @@ public class SocketClient {
                 InputStream is = conn.getInputStream();
                 InputStreamReader isr = new InputStreamReader(is);
                 while(reader.read() != 0) {
-                	System.out.print(Character.toString ((char) isr.read()));
+                	String message = Character.toString ((char) isr.read());
+                	System.out.print(message);
                 }
-                System.out.println("mierdita");
+
             }
             catch ( StreamCorruptedException sce) {
                 // skip over the bad bytes
@@ -58,7 +59,7 @@ public class SocketClient {
 //clase sender 
     class Sender {
     	
-        static final String DatosCancion = "<Data><Music nombre=\"dfgdf\"><Gender>pop</Gender><Artist>Camila Ca</Artist><Album>Camila</Album><Year>2018</Year><Category>latin pop</Category></Music><apCode>0</apCode></Data>";
+        static final String DatosCancion = "<Data><Music nombre=\"dfgdf\"><Gender>pop</Gender><Artist>Camila Ca</Artist><Album>Camila</Album><Year>2018</Year><Category>latin pop</Category><Lyrics>dsfsdfds</Lyrics></Music><apCode>4</apCode></Data>";
         static final String InfoUser = "<InfoUser><Username username=\"Faridd\"><Name>Farid Marin</Name><Age>19</Age><FavSongs>Camila Cabello, howlong</FavSongs><password>12345</password><Friends>jung, kim</Friends></Username><apCode>0</apCode></InfoUser>";
         static final String Streaming = "Streaming";
         
