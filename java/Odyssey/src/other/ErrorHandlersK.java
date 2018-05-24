@@ -1,5 +1,8 @@
 package other;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
 public class ErrorHandlersK {
 
 	public String createUserErrors(String Username, String Password, String RepPassword) {
@@ -40,6 +43,31 @@ public String loadUserError(String Username, String Password) {
 		return "good";
 	}
 	
+public String createMusicError(String songName, String songArtist) {
+	Alert alert = new Alert(AlertType.ERROR);
+	alert.setTitle("Odyssey Help!");
+	
+	if(songName.equals("")) {
+		
+		alert.setHeaderText("Error searching music");
+		alert.setContentText("Dont forget to add a song");
+		alert.show();
+		return "bad";
+		
+	}else if(songArtist.equals("")) {
+		
+		alert.setHeaderText("Error searching music");
+		alert.setContentText("Dont forget to add an artist");
+		alert.show();
+		return "bad";
+		
+	}else {
+		
+		return "good";
+		
+	}
+
+}
 	
 	
 }

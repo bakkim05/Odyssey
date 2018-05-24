@@ -50,9 +50,15 @@ public class GenPController {
 			population.TestPopulation();
 			population.SaveTheAdapted();
 			showPopulation(population.showPopulation(),population.showbestIndividual());
+			for(popmember ppmbr : population.showPopulation()) {
+				if(ppmbr.Word.equals(txt_wordToFind.getText().toString())) {
+					num = 20000;
+					break;
+				}
+			}
 			population.MateThePopulation();
 			
-			num++;
+			//num++;
 		}
 			
 		
@@ -68,6 +74,12 @@ public class GenPController {
 		list_Population.getItems().clear();
 		list_Population.setItems(items);
 		lbl_closestWord.setText(Bestindividual);
+		for(popmember ppmbr : population) {
+			if(ppmbr.Word.equals(txt_wordToFind.getText().toString())) {
+				lbl_closestWord.setText(ppmbr.Word.toString());
+				break;
+			}
+		}
 		
 		
 		

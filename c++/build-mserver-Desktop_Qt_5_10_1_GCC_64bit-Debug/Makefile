@@ -52,14 +52,10 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../mserver/server.cpp \
 		../mserver/writedats.cpp \
-		../mserver/CreateXML.cpp \
-		../mserver/cJSON.c \
-		../mserver/pugixml.cpp 
+		../mserver/cJSON.c 
 OBJECTS       = server.o \
 		writedats.o \
-		CreateXML.o \
-		cJSON.o \
-		pugixml.o
+		cJSON.o
 DIST          = /home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/common/unix.conf \
 		/home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/common/linux.conf \
@@ -223,6 +219,7 @@ DIST          = /home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/spec_pre.prf
 		/home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/qt_config.prf \
 		/home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/spec_post.prf \
+		../mserver/.qmake.stash \
 		/home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/toolchain.prf \
 		/home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -249,18 +246,15 @@ DIST          = /home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/spec_pre.prf
 		../mserver/rapidxml_utils.hpp \
 		../mserver/rapidxml_print.hpp \
 		../mserver/rapidxml_iterators.hpp \
-		../mserver/CreateXML.h \
 		../mserver/cJSON.h \
-		../mserver/pugixml.hpp \
-		../mserver/pugiconfig.hpp \
 		../mserver/rapidxml.hpp \
 		../mserver/rapidxml_utils.hpp \
 		../mserver/rapidxml_print.hpp \
-		../mserver/rapidxml_iterators.hpp ../mserver/server.cpp \
+		../mserver/rapidxml_iterators.hpp \
+		../mserver/BTree/btree.h \
+		../mserver/BTree/BTNode.h ../mserver/server.cpp \
 		../mserver/writedats.cpp \
-		../mserver/CreateXML.cpp \
-		../mserver/cJSON.c \
-		../mserver/pugixml.cpp
+		../mserver/cJSON.c
 QMAKE_TARGET  = mserver
 DESTDIR       = 
 TARGET        = mserver
@@ -435,6 +429,7 @@ Makefile: ../mserver/mserver.pro /home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/linu
 		/home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/qt_config.prf \
 		/home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/toolchain.prf \
 		/home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -622,6 +617,7 @@ Makefile: ../mserver/mserver.pro /home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/linu
 /home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/qt_config.prf:
 /home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/linux-g++/qmake.conf:
 /home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/exclusive_builds.prf:
 /home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/toolchain.prf:
 /home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/default_pre.prf:
@@ -660,8 +656,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../mserver/tcpserver.h json.hpp ../mserver/writedats.h ../mserver/rapidxml.hpp ../mserver/rapidxml_utils.hpp ../mserver/rapidxml_print.hpp ../mserver/rapidxml_iterators.hpp ../mserver/CreateXML.h ../mserver/cJSON.h ../mserver/pugixml.hpp ../mserver/pugiconfig.hpp ../mserver/rapidxml.hpp ../mserver/rapidxml_utils.hpp ../mserver/rapidxml_print.hpp ../mserver/rapidxml_iterators.hpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../mserver/server.cpp ../mserver/writedats.cpp ../mserver/CreateXML.cpp ../mserver/cJSON.c ../mserver/pugixml.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../mserver/tcpserver.h json.hpp ../mserver/writedats.h ../mserver/rapidxml.hpp ../mserver/rapidxml_utils.hpp ../mserver/rapidxml_print.hpp ../mserver/rapidxml_iterators.hpp ../mserver/cJSON.h ../mserver/rapidxml.hpp ../mserver/rapidxml_utils.hpp ../mserver/rapidxml_print.hpp ../mserver/rapidxml_iterators.hpp ../mserver/BTree/btree.h ../mserver/BTree/BTNode.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../mserver/server.cpp ../mserver/writedats.cpp ../mserver/cJSON.c $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -828,10 +824,7 @@ server.o: ../mserver/server.cpp ../mserver/tcpserver.cpp \
 		/home/farida/IDEs/QT/5.10.1/gcc_64/include/QtGui/qtextoption.h \
 		/home/farida/IDEs/QT/5.10.1/gcc_64/include/QtWidgets/qdialog.h \
 		../mserver/writedats.h \
-		../mserver/rapidxml.hpp \
-		../mserver/CreateXML.h \
-		../mserver/pugixml.hpp \
-		../mserver/pugiconfig.hpp
+		../mserver/rapidxml.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o server.o ../mserver/server.cpp
 
 writedats.o: ../mserver/writedats.cpp ../mserver/writedats.h \
@@ -839,17 +832,8 @@ writedats.o: ../mserver/writedats.cpp ../mserver/writedats.h \
 		../mserver/rapidxml_print.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o writedats.o ../mserver/writedats.cpp
 
-CreateXML.o: ../mserver/CreateXML.cpp ../mserver/CreateXML.h \
-		../mserver/pugixml.hpp \
-		../mserver/pugiconfig.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o CreateXML.o ../mserver/CreateXML.cpp
-
 cJSON.o: ../mserver/cJSON.c ../mserver/cJSON.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o cJSON.o ../mserver/cJSON.c
-
-pugixml.o: ../mserver/pugixml.cpp ../mserver/pugixml.hpp \
-		../mserver/pugiconfig.hpp
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o pugixml.o ../mserver/pugixml.cpp
 
 ####### Install
 
