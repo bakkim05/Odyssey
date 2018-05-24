@@ -65,6 +65,10 @@ cJSON* Maker::addMusicJSON(cJSON* metadata , char* nombre, char* genero,char* ar
     cJSON_AddItemToObject(songName, "Category", cJSON_CreateString(categoria));
     cJSON_AddItemToObject(songName, "Lyrics", cJSON_CreateString(letra));
 
+    treeSong(nombre);
+    treeArtist(artista);
+    treeAlbum(album);
+
 
 
 }
@@ -96,25 +100,34 @@ void Maker::searchsong(char* nombreCancion) {
 }
 
 
-void Maker::treeSong (cJSON* root)
+void Maker::treeSong (char* song)
 {
-    BTree <std::string> songTree;
-    songTree.Insert(cJSON_GetObjectItem(root,"nombre")->valuestring);
-    songTree.List_InOrder();
+    if (!songTree.search(song))
+    {
+        songTree.insert(song);
+    }
+
 }
 
-void Maker::treeArtist (cJSON* root)
+void Maker::treeArtist (char* artist)
 {
-    BTree <std::string> artistTree;
-    artistTree.Insert(cJSON_GetObjectItem(root,"Artist")->valuestring);
-    artistTree.List_InOrder();
+    if (!songTree.search(artist))
+    {
+        songTree.insert(artist);
+    }
 }
 
-void Maker::treeAlbum (cJSON* root)
+void Maker::treeAlbum (char* album)
 {
-    BTree <std::string> albumTree;
-    albumTree.Insert(cJSON_GetObjectItem(root,"Album")->valuestring);
-    albumTree.List_InOrder();
+    if (!songTree.search(album))
+    {
+        songTree.insert(album);
+    }
+}
+
+void Maker::loadTree(cJSON *root)
+{
+    //
 }
 
 

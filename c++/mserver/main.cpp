@@ -21,14 +21,7 @@ int main() {
 //    m.addMusicJSON("Candy", "Reggaeton", "Plan B", "Love and Sex", "2014", "Categoria", "Ella es fanatica de lo sensual...");
 
     //wd.escribirMetadata("Quiero Repetir", "Reggaeton", "Ozuna", "Odisea", "2017","Quiero Repetir..." ,"hi" );
-    m.searchsong("Quiero Repetir");
-
-
-
-    
-//    m.treeSong(a);
-//    m.treeAlbum(a);
-//    m.treeArtist(a);
+    //m.searchsong("Quiero Repetir");
 
 
 
