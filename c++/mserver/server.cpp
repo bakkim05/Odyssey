@@ -5,7 +5,7 @@
 #include <QCoreApplication>
 #include <QInputDialog>
 #include <writedats.h>
-
+#include <streaming.h>
 using namespace std;
 using namespace rapidxml;
 TCPServer tcp;
@@ -52,10 +52,15 @@ void *loop (void *m) {
                 tcp.Send("Archivo Modificado");
                 break;
             case 4:
+            {
                 cout<<"Reproducir"<<endl;
                 //se envia el nombre de la cancion y se debe empezar a enviar los chunks
+                streaming *stream = new streaming();
+                stream->setFile("charlie-puth-how-long.mp3");
+                stream->streamin(30);
                 tcp.Send("streaming pronto");
                 break;
+            }
             case 10:
                 cout<<"Usuario nuevo"<<endl;
                 //Aqui se debe hacer todas las verificaciones del caso y crear el hash para la contrsena

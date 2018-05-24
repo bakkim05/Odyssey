@@ -18,6 +18,7 @@ SOURCES += server.cpp \
     tcpserver.cpp \
     writedats.cpp \
     cJSON.c \
+    streaming.cpp
 
 HEADERS += \
     tcpserver.h \
@@ -33,4 +34,5 @@ HEADERS += \
     rapidxml_print.hpp \
     rapidxml_iterators.hpp \
     BTree/btree.h \
-    BTree/BTNode.h
+    BTree/BTNode.h \
+    streaming.h
