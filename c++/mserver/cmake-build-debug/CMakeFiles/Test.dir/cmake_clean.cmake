@@ -3,8 +3,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Test.dir/writedats.cpp.obj"
   "CMakeFiles/Test.dir/Maker.cpp.obj"
   "CMakeFiles/Test.dir/cJSON.c.obj"
-  "CMakeFiles/Test.dir/server.cpp.obj"
-  "CMakeFiles/Test.dir/tcpserver.cpp.obj"
   "Test.pdb"
   "Test.exe"
   "Test.exe.manifest"

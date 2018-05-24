@@ -203,60 +203,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-server.obj: server.cpp.obj
-
-.PHONY : server.obj
-
-# target to build an object file
-server.cpp.obj:
-	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/server.cpp.obj
-.PHONY : server.cpp.obj
-
-server.i: server.cpp.i
-
-.PHONY : server.i
-
-# target to preprocess a source file
-server.cpp.i:
-	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/server.cpp.i
-.PHONY : server.cpp.i
-
-server.s: server.cpp.s
-
-.PHONY : server.s
-
-# target to generate assembly for a file
-server.cpp.s:
-	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/server.cpp.s
-.PHONY : server.cpp.s
-
-tcpserver.obj: tcpserver.cpp.obj
-
-.PHONY : tcpserver.obj
-
-# target to build an object file
-tcpserver.cpp.obj:
-	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/tcpserver.cpp.obj
-.PHONY : tcpserver.cpp.obj
-
-tcpserver.i: tcpserver.cpp.i
-
-.PHONY : tcpserver.i
-
-# target to preprocess a source file
-tcpserver.cpp.i:
-	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/tcpserver.cpp.i
-.PHONY : tcpserver.cpp.i
-
-tcpserver.s: tcpserver.cpp.s
-
-.PHONY : tcpserver.s
-
-# target to generate assembly for a file
-tcpserver.cpp.s:
-	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/tcpserver.cpp.s
-.PHONY : tcpserver.cpp.s
-
 writedats.obj: writedats.cpp.obj
 
 .PHONY : writedats.obj
@@ -302,12 +248,6 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... server.obj
-	@echo ... server.i
-	@echo ... server.s
-	@echo ... tcpserver.obj
-	@echo ... tcpserver.i
-	@echo ... tcpserver.s
 	@echo ... writedats.obj
 	@echo ... writedats.i
 	@echo ... writedats.s

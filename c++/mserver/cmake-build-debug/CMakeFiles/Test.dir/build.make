@@ -152,62 +152,12 @@ CMakeFiles/Test.dir/cJSON.c.obj.provides: CMakeFiles/Test.dir/cJSON.c.obj.requir
 CMakeFiles/Test.dir/cJSON.c.obj.provides.build: CMakeFiles/Test.dir/cJSON.c.obj
 
 
-CMakeFiles/Test.dir/server.cpp.obj: CMakeFiles/Test.dir/flags.make
-CMakeFiles/Test.dir/server.cpp.obj: ../server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Oska\Desktop\Odisea\Odyssey\c++\mserver\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Test.dir/server.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Test.dir\server.cpp.obj -c C:\Users\Oska\Desktop\Odisea\Odyssey\c++\mserver\server.cpp
-
-CMakeFiles/Test.dir/server.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Test.dir/server.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Oska\Desktop\Odisea\Odyssey\c++\mserver\server.cpp > CMakeFiles\Test.dir\server.cpp.i
-
-CMakeFiles/Test.dir/server.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Test.dir/server.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Oska\Desktop\Odisea\Odyssey\c++\mserver\server.cpp -o CMakeFiles\Test.dir\server.cpp.s
-
-CMakeFiles/Test.dir/server.cpp.obj.requires:
-
-.PHONY : CMakeFiles/Test.dir/server.cpp.obj.requires
-
-CMakeFiles/Test.dir/server.cpp.obj.provides: CMakeFiles/Test.dir/server.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/server.cpp.obj.provides.build
-.PHONY : CMakeFiles/Test.dir/server.cpp.obj.provides
-
-CMakeFiles/Test.dir/server.cpp.obj.provides.build: CMakeFiles/Test.dir/server.cpp.obj
-
-
-CMakeFiles/Test.dir/tcpserver.cpp.obj: CMakeFiles/Test.dir/flags.make
-CMakeFiles/Test.dir/tcpserver.cpp.obj: ../tcpserver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Oska\Desktop\Odisea\Odyssey\c++\mserver\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Test.dir/tcpserver.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Test.dir\tcpserver.cpp.obj -c C:\Users\Oska\Desktop\Odisea\Odyssey\c++\mserver\tcpserver.cpp
-
-CMakeFiles/Test.dir/tcpserver.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Test.dir/tcpserver.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Oska\Desktop\Odisea\Odyssey\c++\mserver\tcpserver.cpp > CMakeFiles\Test.dir\tcpserver.cpp.i
-
-CMakeFiles/Test.dir/tcpserver.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Test.dir/tcpserver.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Oska\Desktop\Odisea\Odyssey\c++\mserver\tcpserver.cpp -o CMakeFiles\Test.dir\tcpserver.cpp.s
-
-CMakeFiles/Test.dir/tcpserver.cpp.obj.requires:
-
-.PHONY : CMakeFiles/Test.dir/tcpserver.cpp.obj.requires
-
-CMakeFiles/Test.dir/tcpserver.cpp.obj.provides: CMakeFiles/Test.dir/tcpserver.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\Test.dir\build.make CMakeFiles/Test.dir/tcpserver.cpp.obj.provides.build
-.PHONY : CMakeFiles/Test.dir/tcpserver.cpp.obj.provides
-
-CMakeFiles/Test.dir/tcpserver.cpp.obj.provides.build: CMakeFiles/Test.dir/tcpserver.cpp.obj
-
-
 # Object files for target Test
 Test_OBJECTS = \
 "CMakeFiles/Test.dir/main.cpp.obj" \
 "CMakeFiles/Test.dir/writedats.cpp.obj" \
 "CMakeFiles/Test.dir/Maker.cpp.obj" \
-"CMakeFiles/Test.dir/cJSON.c.obj" \
-"CMakeFiles/Test.dir/server.cpp.obj" \
-"CMakeFiles/Test.dir/tcpserver.cpp.obj"
+"CMakeFiles/Test.dir/cJSON.c.obj"
 
 # External object files for target Test
 Test_EXTERNAL_OBJECTS =
@@ -216,13 +166,11 @@ Test.exe: CMakeFiles/Test.dir/main.cpp.obj
 Test.exe: CMakeFiles/Test.dir/writedats.cpp.obj
 Test.exe: CMakeFiles/Test.dir/Maker.cpp.obj
 Test.exe: CMakeFiles/Test.dir/cJSON.c.obj
-Test.exe: CMakeFiles/Test.dir/server.cpp.obj
-Test.exe: CMakeFiles/Test.dir/tcpserver.cpp.obj
 Test.exe: CMakeFiles/Test.dir/build.make
 Test.exe: CMakeFiles/Test.dir/linklibs.rsp
 Test.exe: CMakeFiles/Test.dir/objects1.rsp
 Test.exe: CMakeFiles/Test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Oska\Desktop\Odisea\Odyssey\c++\mserver\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Test.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Oska\Desktop\Odisea\Odyssey\c++\mserver\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Test.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Test.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -234,8 +182,6 @@ CMakeFiles/Test.dir/requires: CMakeFiles/Test.dir/main.cpp.obj.requires
 CMakeFiles/Test.dir/requires: CMakeFiles/Test.dir/writedats.cpp.obj.requires
 CMakeFiles/Test.dir/requires: CMakeFiles/Test.dir/Maker.cpp.obj.requires
 CMakeFiles/Test.dir/requires: CMakeFiles/Test.dir/cJSON.c.obj.requires
-CMakeFiles/Test.dir/requires: CMakeFiles/Test.dir/server.cpp.obj.requires
-CMakeFiles/Test.dir/requires: CMakeFiles/Test.dir/tcpserver.cpp.obj.requires
 
 .PHONY : CMakeFiles/Test.dir/requires
 

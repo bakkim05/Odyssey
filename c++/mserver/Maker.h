@@ -16,12 +16,23 @@ public:
 
     Maker();
     cJSON* musicJSON ();
+
     cJSON* addMusicJSON(cJSON* metadata, char* nombre, char* genero,char* artista, char* album, char* agno, char* categoria, char* letra);
-    void treeSong (char* song);
-    void treeArtist (char* artist);
-    void treeAlbum (char* album);
+    void searchSong(char* nombreCancion);
+    void deleteSong(char* nombreCancion);
+    void editSong(char* nombreCancion, cJSON* metadata, char* nombre, char* genero,char* artista, char* album, char* agno, char* categoria, char* letra);
+
+    void addTreeSong (char* song);
+    void addTreeArtist (char* artist);
+    void addTreeAlbum (char* album);
+
+    void deleteTreeSong (char* song);
+    void deleteTreeArtist (char* artist);
+    void deleteTreeAlbum (char* album);
+
     void loadTree (cJSON* root);
-    void searchsong(char* nombreCancion);
+
+
 //    void trackLyrics (cJSON* root);
 };
 

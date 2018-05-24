@@ -17,8 +17,8 @@ int main() {
 
     //cout <<wd.xml << endl;
 
-//    m.addMusicJSON("Quiero Repetir", "Reggaeton", "Ozuna", "Odisea", "2017", "Categoria", "Quiero Repetir...");
-//    m.addMusicJSON("Candy", "Reggaeton", "Plan B", "Love and Sex", "2014", "Categoria", "Ella es fanatica de lo sensual...");
+    //m.addMusicJSON(cJSON* metadata,"Quiero Repetir", "Reggaeton", "Ozuna", "Odisea", "2017", "Categoria", "Quiero Repetir...");
+    //m.addMusicJSON(cJSON* metadata,"Candy", "Reggaeton", "Plan B", "Love and Sex", "2014", "Categoria", "Ella es fanatica de lo sensual...");
 
     //wd.escribirMetadata("Quiero Repetir", "Reggaeton", "Ozuna", "Odisea", "2017","Quiero Repetir..." ,"hi" );
     //m.searchsong("Quiero Repetir");

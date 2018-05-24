@@ -11,48 +11,30 @@ using namespace std;
 
 Maker::Maker()
 {
-
     root = cJSON_CreateObject();
     metadata = cJSON_CreateArray();
     cJSON_AddItemToObject(root, "metadata", metadata);
 
     addMusicJSON(metadata,"Quiero Repetir", "Reggaeton", "Ozuna", "Odisea", "2017","hi" ,"Quiero Repetir..."  );
     addMusicJSON(metadata,"Candy", "Reggaeton", "Plan B", "Love and Sex", "2014", "cate", "Ella es fanatica de lo sensual");
+    addMusicJSON(metadata,"Aprender A Quererte", "Latin Pop", "Morat", "Sobre El Amor Y Sus Efectos Secundarios", "2016","hi" ,"No se nada de tu historia ni de tu filosofia..."  );
 
-    //cout << cJSON_Print(metadata);
+    cout << cJSON_Print(metadata) << endl;
 
+    editSong("Candy", metadata, "Amorfoda",  "Trap", "Bad Bunny", "Amorfoda", "2018", "5 Estrellas", "Un Buen Trap");
+
+    cout << cJSON_Print(metadata) << endl;
 }
 
-//cJSON* Maker::musicJSON() {
-//    //std::cout<<cJSON_Print(root)<< std::endl;
-//
-////    if (strcmp(cJSON_GetArrayItem(root->child->child,0)->valuestring,"Quiero Repetir")==0)
-////    {
-////        for (int i = 0; i < cJSON_GetArraySize(root->child->child) ; i++)
-////        {
-////            cout << cJSON_GetArrayItem(root->child->child,i)->string << ": ";
-////            cout << cJSON_GetArrayItem(root->child->child,i)->valuestring << endl;
-////        }
-////    }
-//
-//    //std::cout << cJSON_GetArrayItem(root->child->child,0)->string;
-//
-////    fstream fs;
-////    fs.open("songJSON.json",fstream::in | fstream::out | fstream::app);
-////    fs << cJSON_Print(root);
-////    fs.close();
-//
-//    return root;
-//}
+cJSON* Maker::musicJSON() {
 
-cJSON* Maker::musicJSON()
-{
-    Maker* maker;
-
-
+//    fstream fs;
+//    fs.open("songJSON.json",fstream::in | fstream::out | fstream::app);
+//    fs << cJSON_Print(root);
+//    fs.close();
+//
+//
 }
-
-
 
 cJSON* Maker::addMusicJSON(cJSON* metadata , char* nombre, char* genero,char* artista, char* album, char* agno,char* categoria, char* letra)
 {
@@ -65,15 +47,16 @@ cJSON* Maker::addMusicJSON(cJSON* metadata , char* nombre, char* genero,char* ar
     cJSON_AddItemToObject(songName, "Category", cJSON_CreateString(categoria));
     cJSON_AddItemToObject(songName, "Lyrics", cJSON_CreateString(letra));
 
-    treeSong(nombre);
-    treeArtist(artista);
-    treeAlbum(album);
+    addTreeSong(nombre);
+    addTreeArtist(artista);
+    addTreeAlbum(album);
 
 
 
 }
 
-void Maker::searchsong(char* nombreCancion) {
+void Maker::searchSong(char* nombreCancion)
+{
     WriteDats wd;
     char* input[7];
 
@@ -99,8 +82,87 @@ void Maker::searchsong(char* nombreCancion) {
     //cout << cJSON_GetArrayItem(metadata,1)->child->valuestring;
 }
 
+void Maker::deleteSong(char *nombreCancion)
+{
+    char* input[7];
 
-void Maker::treeSong (char* song)
+    for (int i = 0; i < cJSON_GetArraySize(metadata); i++)
+    {
+        if (strcmp(cJSON_GetArrayItem(metadata, i)->child->valuestring, nombreCancion) == 0)
+        {
+
+            cJSON* current = cJSON_GetArrayItem(metadata,i)->child;
+
+            for (int j = 0; j < cJSON_GetArraySize(root->child->child); j++)
+            {
+                input[j] = current->valuestring;
+                current = current->next;
+            }
+
+            cJSON_DeleteItemFromArray(metadata,i);
+
+            if (!i == 0){
+                deleteTreeSong(input[0]);
+                deleteTreeArtist(input[2]);
+                deleteTreeAlbum(input[3]);
+
+            }else{
+                deleteTreeSong(input[0]);
+                deleteTreeArtist(input[2]);
+            }
+        }
+    }
+}
+
+void Maker::editSong(char* nombreCancion, cJSON* metadata, char* nombre, char* genero,char* artista, char* album, char* agno, char* categoria, char* letra)
+{
+    WriteDats wd;
+
+    for (int i = 0; i < cJSON_GetArraySize(metadata); i++) {
+        if (strcmp(cJSON_GetArrayItem(metadata, i)->child->valuestring, nombreCancion) == 0) {
+            cJSON *current = cJSON_GetArrayItem(metadata, i)->child;
+            for (int j = 0; j < cJSON_GetArraySize(root->child->child); j++) {
+                if (j == 0) {
+                    deleteTreeSong(current->valuestring);
+                    addTreeSong(nombre);
+                    current->valuestring = nombre;
+                }
+                if (j == 1) {
+                    current->valuestring = genero;
+                }
+                if (j == 2) {
+                    deleteTreeArtist(current->valuestring);
+                    addTreeArtist(artista);
+                    current->valuestring = artista;
+                }
+                if (j == 3) {
+                    if (i != 0)
+                    {
+                        deleteTreeAlbum(current->valuestring);
+                        addTreeAlbum(album);
+                    }
+                    current->valuestring = album;
+                }
+                if (j == 4) {
+                    current->valuestring = agno;
+                }
+                if (j == 5) {
+                    current->valuestring = categoria;
+                }
+                if (j == 6) {
+                    current->valuestring = letra;
+                }
+
+                current = current->next;
+            }
+        }
+    }
+
+    wd.escribirMetadata(nombre, genero, artista, album, agno, categoria, letra);
+
+}
+
+void Maker::addTreeSong (char* song)
 {
     if (!songTree.search(song))
     {
@@ -109,19 +171,43 @@ void Maker::treeSong (char* song)
 
 }
 
-void Maker::treeArtist (char* artist)
+void Maker::addTreeArtist (char* artist)
 {
-    if (!songTree.search(artist))
+    if (!artistTree.search(artist))
     {
-        songTree.insert(artist);
+        artistTree.insert(artist);
     }
 }
 
-void Maker::treeAlbum (char* album)
+void Maker::addTreeAlbum (char* album)
 {
-    if (!songTree.search(album))
+    if (!albumTree.search(album))
     {
-        songTree.insert(album);
+        albumTree.insert(album);
+    }
+}
+
+void Maker::deleteTreeSong (char* song)
+{
+    if (songTree.search(song))
+    {
+        songTree.remove(song);
+    }
+}
+
+void Maker::deleteTreeArtist (char* artist)
+{
+    if (artistTree.search(artist))
+    {
+        artistTree.remove(artist);
+    }
+}
+
+void Maker::deleteTreeAlbum (char* album)
+{
+    if (albumTree.search(album))
+    {
+        albumTree.remove(album);
     }
 }
 

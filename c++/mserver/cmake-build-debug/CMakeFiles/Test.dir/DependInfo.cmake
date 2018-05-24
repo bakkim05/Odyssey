@@ -15,8 +15,6 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/Maker.cpp" "C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/CMakeFiles/Test.dir/Maker.cpp.obj"
   "C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/main.cpp" "C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/CMakeFiles/Test.dir/main.cpp.obj"
-  "C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/server.cpp" "C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/CMakeFiles/Test.dir/server.cpp.obj"
-  "C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/tcpserver.cpp" "C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/CMakeFiles/Test.dir/tcpserver.cpp.obj"
   "C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/writedats.cpp" "C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/CMakeFiles/Test.dir/writedats.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

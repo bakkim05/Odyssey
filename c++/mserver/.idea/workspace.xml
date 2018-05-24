@@ -22,108 +22,58 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.50208336">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="writedats.h" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/writedats.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="22" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="rapidxml.hpp" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/rapidxml.hpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-4794">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="server.cpp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/server.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="40" column="80" lean-forward="false" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="80" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Maker.cpp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Maker.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1394">
-                  <caret line="85" column="34" lean-forward="false" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Maker.h" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Maker.h">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="writedats.cpp" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/writedats.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="816">
-                  <caret line="59" column="4" lean-forward="false" selection-start-line="59" selection-start-column="4" selection-end-line="63" selection-end-column="25" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/main.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-                  <folding>
-                    <element signature="e#0#19#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="config1.xml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/config1.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="writedats.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/writedats.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rapidxml.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/rapidxml.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4794">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="50" column="73" lean-forward="true" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Maker.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Maker.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1462">
+              <caret line="89" column="34" lean-forward="false" selection-start-line="89" selection-start-column="34" selection-end-line="89" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -229,12 +179,12 @@
       <updated>1526968137371</updated>
       <workItem from="1526968138620" duration="752000" />
       <workItem from="1526969034549" duration="6865000" />
-      <workItem from="1527054155325" duration="11036000" />
+      <workItem from="1527054155325" duration="11663000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18653000" />
+    <option name="totallyTimeSpent" value="19280000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1288" y="50" width="1296" height="696" extended-state="6" />
@@ -285,7 +235,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="27" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -331,24 +281,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config1.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="40" column="80" lean-forward="false" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="80" />
+        <state relative-caret-position="153">
+          <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -363,8 +297,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Maker.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1394">
-          <caret line="85" column="34" lean-forward="false" selection-start-line="85" selection-start-column="34" selection-end-line="85" selection-end-column="34" />
+        <state relative-caret-position="1462">
+          <caret line="89" column="34" lean-forward="false" selection-start-line="89" selection-start-column="34" selection-end-line="89" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/writedats.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="59" column="4" lean-forward="false" selection-start-line="59" selection-start-column="4" selection-end-line="63" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -377,20 +319,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tcpserver.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/writedats.cpp">
+    <entry file="file://$PROJECT_DIR$/config1.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="59" column="4" lean-forward="false" selection-start-line="59" selection-start-column="4" selection-end-line="63" selection-end-column="25" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="50" column="73" lean-forward="true" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="73" />
           <folding />
         </state>
       </provider>
