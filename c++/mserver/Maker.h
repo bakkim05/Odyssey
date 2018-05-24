@@ -10,10 +10,15 @@
 
 class Maker{
 public:
-    cJSON* musicJSON (char* nombre, char* genero,char* artista, char* album, char* agno, char* categoria, char* letra);
+    cJSON *root, *metadata, *songName;
+
+    Maker();
+    cJSON* musicJSON ();
+    cJSON* addMusicJSON(cJSON* metadata, char* nombre, char* genero,char* artista, char* album, char* agno, char* categoria, char* letra);
     void treeSong (cJSON* root);
     void treeArtist (cJSON* root);
     void treeAlbum (cJSON* root);
+    void searchsong(char* nombreCancion);
 //    void trackLyrics (cJSON* root);
 };
 

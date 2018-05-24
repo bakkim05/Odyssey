@@ -2,32 +2,99 @@
 // Created by Oska on 5/23/2018.
 //
 
+#include <cstring>
+#include <fstream>
 #include "Maker.h"
+#include "writedats.h"
 
-int num_songs = 1;
+using namespace std;
 
-cJSON* Maker::musicJSON(char* nombre, char* genero,char* artista, char* album, char* agno, char* categoria, char* letra)
+Maker::Maker()
 {
-    cJSON* root = cJSON_CreateObject();
-    cJSON* Music = cJSON_CreateArray();
-    cJSON_AddItemToObjectCS(root,"Music",Music);
-    for (int i; i < num_songs ; i++)
+
+    root = cJSON_CreateObject();
+    metadata = cJSON_CreateArray();
+    cJSON_AddItemToObject(root, "metadata", metadata);
+
+    addMusicJSON(metadata,"Quiero Repetir", "Reggaeton", "Ozuna", "Odisea", "2017","hi" ,"Quiero Repetir..."  );
+    addMusicJSON(metadata,"Candy", "Reggaeton", "Plan B", "Love and Sex", "2014", "cate", "Ella es fanatica de lo sensual");
+
+    //cout << cJSON_Print(metadata);
+
+}
+
+//cJSON* Maker::musicJSON() {
+//    //std::cout<<cJSON_Print(root)<< std::endl;
+//
+////    if (strcmp(cJSON_GetArrayItem(root->child->child,0)->valuestring,"Quiero Repetir")==0)
+////    {
+////        for (int i = 0; i < cJSON_GetArraySize(root->child->child) ; i++)
+////        {
+////            cout << cJSON_GetArrayItem(root->child->child,i)->string << ": ";
+////            cout << cJSON_GetArrayItem(root->child->child,i)->valuestring << endl;
+////        }
+////    }
+//
+//    //std::cout << cJSON_GetArrayItem(root->child->child,0)->string;
+//
+////    fstream fs;
+////    fs.open("songJSON.json",fstream::in | fstream::out | fstream::app);
+////    fs << cJSON_Print(root);
+////    fs.close();
+//
+//    return root;
+//}
+
+cJSON* Maker::musicJSON()
+{
+    Maker* maker;
+
+
+}
+
+
+
+cJSON* Maker::addMusicJSON(cJSON* metadata , char* nombre, char* genero,char* artista, char* album, char* agno,char* categoria, char* letra)
+{
+    cJSON_AddItemToArray(metadata, songName = cJSON_CreateObject());
+    cJSON_AddItemToObject(songName, "nombre", cJSON_CreateString(nombre));
+    cJSON_AddItemToObject(songName, "Genre", cJSON_CreateString(genero));
+    cJSON_AddItemToObject(songName, "Artist", cJSON_CreateString(artista));
+    cJSON_AddItemToObject(songName, "Album", cJSON_CreateString(album));
+    cJSON_AddItemToObject(songName, "Year", cJSON_CreateString(agno));
+    cJSON_AddItemToObject(songName, "Category", cJSON_CreateString(categoria));
+    cJSON_AddItemToObject(songName, "Lyrics", cJSON_CreateString(letra));
+
+
+
+}
+
+void Maker::searchsong(char* nombreCancion) {
+    WriteDats wd;
+    char* input[7];
+
+    for (int i = 0; i < cJSON_GetArraySize(metadata); i++)
     {
-        cJSON* song = cJSON_CreateObject();
-        cJSON_AddItemToArray(Music,song);
-        cJSON_AddItemToObject(song,"nombre", cJSON_CreateString(nombre));
-        cJSON_AddItemToObject(song,"Gender", cJSON_CreateString(genero));
-        cJSON_AddItemToObject(song,"Artist", cJSON_CreateString(artista));
-        cJSON_AddItemToObject(song,"Album", cJSON_CreateString(album));
-        cJSON_AddItemToObject(song,"Year", cJSON_CreateString(agno));
-        cJSON_AddItemToObject(song,"Category", cJSON_CreateString(categoria));
-        cJSON_AddItemToObject(song,"Lyrics", cJSON_CreateString(letra));
+        if (strcmp(cJSON_GetArrayItem(metadata,i)->child->valuestring,nombreCancion)==0)
+        {
+            cJSON* current = cJSON_GetArrayItem(metadata,i)->child;
+            for (int j = 0; j < cJSON_GetArraySize(root->child->child); j++)
+            {
+                //cout << cJSON_GetArrayItem(metadata,1)->child->valuestring;
+                //cout << current->string << ": ";
+                //cout << current->valuestring << endl;
+                input[j] = current->valuestring;
+                current = current->next;
+            }
+        }
     }
 
+    wd.escribirMetadata(input[0],input[1],input[2],input[3],input[4],input[6], input[5]);
 
 
-    return root;
+    //cout << cJSON_GetArrayItem(metadata,1)->child->valuestring;
 }
+
 
 void Maker::treeSong (cJSON* root)
 {
