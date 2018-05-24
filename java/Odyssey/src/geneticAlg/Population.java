@@ -115,23 +115,34 @@ public Population(String searchedWord, int mutationRate, int populationSize) {
 	
 	private String createSon(List<String> genePool) {
 		String son = "r";
-		String l1 = null, l2 = null;
+		String l1 = null, l2 = "";
+		List<String> vocalPool = new ArrayList<>();
+		List<String> consonantPool = new ArrayList<>();
+		
+		for(String le : genePool) {
+			if(le.equals("a")||le.equals("e")||le.equals("i")||le.equals("o")||le.equals("u")){
+				vocalPool.add(le);
+			}else {
+				consonantPool.add(le);
+			}	
+		}
+
 
 		for(int i=1; i<=this.searchedWordLength; i++) {
 			l1 = genePool.get(0 + (int)(Math.random() * ((genePool.size() - 1) + 1)));
 			
-			if(l1=="a"||l1=="e"||l1 =="i"||l1=="o"||l1=="u") {
+			if(l1.equals("a")||l1.equals("e")||l1.equals("i")||l1.equals("o")||l1.equals("u")) {
 				son = son + l1;
 				l2 = l1;
-			}else if(l1!="a"||l1!="e"||l1!="i"||l1!="o"||l1!="u"&&l2=="a"||l2=="e"||l2=="i"||l2=="o"||l2=="u") {
-				son = son + l1;
-				l2 = l1;
-			}else {
-				i--;
+			}else if(!(l1.equals("a")||l1.equals("e")||l1.equals("i")||l1.equals("o")||l1.equals("u"))) {
+				if(l2.equals("a")||l2.equals("e")||l2.equals("i")||l2.equals("o")||l2.equals("u")) {
+					son = son + l1;
+					l2 = l1;
+				}else {
+					i--;
+				}
 			}
 			
-			 
-		
 		}
 		son = son.substring(1);
 		return son;

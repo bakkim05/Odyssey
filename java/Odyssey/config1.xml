@@ -1,11 +1,9 @@
-<InfoUser>
-	<Username username="Faridd">
-		<Name>Farid Marin</Name>
-		<Age>19</Age>
-		<FavSongs>Camila Cabello, howlong</FavSongs>
-		<password>12345</password>
-		<Friends>jung, kim</Friends>
-	</Username>
-	<apCode>0</apCode>
-</InfoUser>
+<?xml version="1.0" encoding="UTF-8"?><InfoUser>
+	<Username username="farid">	<Name></Name>
+	<Age></Age>
+	<FavSongs></FavSongs>
+	<password>123</password>
+	<Friends></Friends>
 
+</Username>	<apCode>11</apCode>
+</InfoUser>

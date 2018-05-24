@@ -1,12 +1,25 @@
 package application;
 
+import java.io.IOException;
+
+import javax.xml.stream.XMLStreamException;
+
 import org.json.simple.JSONObject;
 
+import javafx.event.ActionEvent;
 import jSON.CreateJson;
+import javaclient.SocketClient;
+import javafx.event.Event;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 import other.ErrorHandlersK;
+import xml.writer;
 
 public class StartPController {
 
@@ -18,14 +31,28 @@ public class StartPController {
 	public TextField txt_username;
 	
 	
-	public void LogInButtonClicked() {
+	public void LogInButtonClicked() throws XMLStreamException, IOException {
 		
-		CreateJson createJson = new CreateJson();
 		
 		String err = errorHands.loadUserError(txt_username.getText().toString(), txt_password.getText().toString());
 		if(err == "good") {
-			JSONObject js = createJson.loadUser(txt_username.getText().toString(), txt_password.getText().toString());
-			System.out.println(js);
+			
+			// load Variables
+						String userName = txt_username.getText().toString();
+						String passw = txt_password.getText().toString();
+
+				//Create XML
+						writer Writer = new writer();
+						Writer.setFile("config1.xml");
+						Writer.createUser(userName, "","", "", passw, "", 11);
+						
+				//Sends the XML
+						SocketClient sock = new SocketClient("localhost");
+						sock.requestMemory();
+						
+				//changes stages
+						headToMainPage();
+			
 		}else {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Odyssey Help!");
@@ -39,15 +66,26 @@ public class StartPController {
 	
 	
 	
-	public void SignInButtonClicked() {
+	public void SignInButtonClicked() throws XMLStreamException {
 			
-		CreateJson createJson = new CreateJson();
 		
 		String err = null;
 		 err = errorHands.createUserErrors(txt_createUser.getText().toString(), txt_createPass.getText().toString(), txt_repeatPass.getText().toString());
 		if(err == "good") {
-			JSONObject js = createJson.createUser(txt_createUser.getText().toString(), txt_createPass.getText().toString());
-			System.out.println(js);
+			
+			// load Variables
+			String userName = txt_createUser.getText().toString();
+			String passw = txt_createPass.getText().toString();
+
+	//Create XML
+			writer Writer = new writer();
+			Writer.setFile("config1.xml");
+			Writer.createUser(userName, "","", "", passw, "", 10);
+			
+	//Sends the XML
+			SocketClient sock = new SocketClient("localhost");
+			sock.requestMemory();
+			
 		}else {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Odyssey Help!");
@@ -59,6 +97,18 @@ public class StartPController {
 	}
 	
 	
+	
+	private void headToMainPage() throws IOException {
+		
+		Parent gui = FXMLLoader.load(getClass().getResource("/odyGUI/MainPage.fxml"));
+		Scene mainPage = new Scene(gui);
+		
+		//this line optains the stage information
+		Stage window = (Stage)txt_createUser.getScene().getWindow();
+		window.setScene(mainPage); // txt_createUser is needed here to obtain the window its in
+		window.show();
+		
+	}
 	
 	
 	

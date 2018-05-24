@@ -15,6 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.media.MediaPlayer.Status;
 import javafx.util.Duration;
 import mediaPlayer.Player;
+import other.ErrorHandlersK;
 import xml.writer;
 
 public class MainPController {
@@ -26,6 +27,7 @@ public class MainPController {
 	public Slider slr_song;
 	public Label lbl_time;
 	public BarChart<?,?> sbc_groovBox;
+	ErrorHandlersK errHand = new ErrorHandlersK();
 
 	
 
@@ -78,20 +80,23 @@ public class MainPController {
 	
 	
 	public void searchSong() throws Exception{
+		
+	if("good" == errHand.createMusicError(txt_songName.getText().toString(), txt_songArtist.getText().toString())) {
 		// load Variables
-		String songName = txt_songName.getText().toString();
-		String songArtist = txt_songArtist.getText().toString();
+				String songName = txt_songName.getText().toString();
+				String songArtist = txt_songArtist.getText().toString();
 
 		//Create XML
-		writer Writer = new writer();
-		Writer.setFile("config2.xml");
-		Writer.saveConfig(songName, "", songArtist, "", "", "", "", 0);
-		
+				writer Writer = new writer();
+				Writer.setFile("config2.xml");
+				Writer.createMusic(songName, "", songArtist, "", "", "", "", 0);
+				
 		//Sends the XML
-		SocketClient sock = new SocketClient("localhost");
-		sock.requestHostname();
+				SocketClient sock = new SocketClient("localhost");
+				sock.requestHostname();
+	}
 		
-	
+		
 	}
 	
 	
