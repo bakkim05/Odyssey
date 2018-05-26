@@ -6,6 +6,8 @@
 #include <QInputDialog>
 #include <writedats.h>
 #include <streaming.h>
+#include <sstream>
+#include <string.h>
 using namespace std;
 using namespace rapidxml;
 TCPServer tcp;
@@ -28,12 +30,12 @@ void *loop (void *m) {
         if( str != "" ){
 
             cout<<"message difeten"<<endl;
-           // WriteDats *es = new
+            // WriteDats *es = new
             WriteDats *lr = new WriteDats();
             int descision = lr->read(str);
             switch (descision) {
             case 0:
-               cout<<"Buscar cancion.. aqui agregar busqueda"<<endl;
+                cout<<"Buscar cancion.. aqui agregar busqueda"<<endl;
                 //aqui se debe buscar la cancion y devolver la metadata de la cancion
                 break;
             case 1:
