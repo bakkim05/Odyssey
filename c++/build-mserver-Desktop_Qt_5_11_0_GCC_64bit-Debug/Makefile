@@ -53,11 +53,13 @@ OBJECTS_DIR   = ./
 SOURCES       = ../mserver/server.cpp \
 		../mserver/writedats.cpp \
 		../mserver/cJSON.c \
-		../mserver/streaming.cpp 
+		../mserver/streaming.cpp \
+		../mserver/maker.cpp 
 OBJECTS       = server.o \
 		writedats.o \
 		cJSON.o \
-		streaming.o
+		streaming.o \
+		maker.o
 DIST          = ../../../Qt/5.11.0/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.11.0/gcc_64/mkspecs/common/unix.conf \
 		../../../Qt/5.11.0/gcc_64/mkspecs/common/linux.conf \
@@ -263,10 +265,13 @@ DIST          = ../../../Qt/5.11.0/gcc_64/mkspecs/features/spec_pre.prf \
 		../mserver/rapidxml_iterators.hpp \
 		../mserver/BTree/btree.h \
 		../mserver/BTree/BTNode.h \
-		../mserver/streaming.h ../mserver/server.cpp \
+		../mserver/streaming.h \
+		../mserver/maker.h \
+		../mserver/BTree/bt.h ../mserver/server.cpp \
 		../mserver/writedats.cpp \
 		../mserver/cJSON.c \
-		../mserver/streaming.cpp
+		../mserver/streaming.cpp \
+		../mserver/maker.cpp
 QMAKE_TARGET  = mserver
 DESTDIR       = 
 TARGET        = mserver
@@ -684,8 +689,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/5.11.0/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../mserver/tcpserver.h json.hpp ../mserver/writedats.h ../mserver/rapidxml.hpp ../mserver/rapidxml_utils.hpp ../mserver/rapidxml_print.hpp ../mserver/rapidxml_iterators.hpp ../mserver/cJSON.h ../mserver/rapidxml.hpp ../mserver/rapidxml_utils.hpp ../mserver/rapidxml_print.hpp ../mserver/rapidxml_iterators.hpp ../mserver/BTree/btree.h ../mserver/BTree/BTNode.h ../mserver/streaming.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../mserver/server.cpp ../mserver/writedats.cpp ../mserver/cJSON.c ../mserver/streaming.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../mserver/tcpserver.h json.hpp ../mserver/writedats.h ../mserver/rapidxml.hpp ../mserver/rapidxml_utils.hpp ../mserver/rapidxml_print.hpp ../mserver/rapidxml_iterators.hpp ../mserver/cJSON.h ../mserver/rapidxml.hpp ../mserver/rapidxml_utils.hpp ../mserver/rapidxml_print.hpp ../mserver/rapidxml_iterators.hpp ../mserver/BTree/btree.h ../mserver/BTree/BTNode.h ../mserver/streaming.h ../mserver/maker.h ../mserver/BTree/bt.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../mserver/server.cpp ../mserver/writedats.cpp ../mserver/cJSON.c ../mserver/streaming.cpp ../mserver/maker.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -851,7 +856,8 @@ server.o: ../mserver/server.cpp ../mserver/tcpserver.cpp \
 		../../../Qt/5.11.0/gcc_64/include/QtGui/qtextoption.h \
 		../../../Qt/5.11.0/gcc_64/include/QtWidgets/qdialog.h \
 		../mserver/writedats.h \
-		../mserver/rapidxml.hpp
+		../mserver/rapidxml.hpp \
+		../mserver/streaming.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o server.o ../mserver/server.cpp
 
 writedats.o: ../mserver/writedats.cpp ../mserver/writedats.h \
@@ -864,6 +870,13 @@ cJSON.o: ../mserver/cJSON.c ../mserver/cJSON.h
 
 streaming.o: ../mserver/streaming.cpp ../mserver/streaming.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o streaming.o ../mserver/streaming.cpp
+
+maker.o: ../mserver/maker.cpp ../mserver/writedats.h \
+		../mserver/rapidxml.hpp \
+		../mserver/maker.h \
+		../mserver/cJSON.h \
+		../mserver/BTree/bt.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o maker.o ../mserver/maker.cpp
 
 ####### Install
 
