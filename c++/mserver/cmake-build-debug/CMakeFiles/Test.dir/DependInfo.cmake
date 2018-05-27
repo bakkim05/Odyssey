@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cJSON.c" "C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/CMakeFiles/Test.dir/cJSON.c.obj"
+  "C:/Users/Juno/Desktop/Test/cJSON.c" "C:/Users/Juno/Desktop/Test/cmake-build-debug/CMakeFiles/Test.dir/cJSON.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -13,9 +13,9 @@ set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_TARGET_INCLUDE_PATH
   )
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/Maker.cpp" "C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/CMakeFiles/Test.dir/Maker.cpp.obj"
-  "C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/main.cpp" "C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/CMakeFiles/Test.dir/main.cpp.obj"
-  "C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/writedats.cpp" "C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug/CMakeFiles/Test.dir/writedats.cpp.obj"
+  "C:/Users/Juno/Desktop/Test/Maker.cpp" "C:/Users/Juno/Desktop/Test/cmake-build-debug/CMakeFiles/Test.dir/Maker.cpp.obj"
+  "C:/Users/Juno/Desktop/Test/main.cpp" "C:/Users/Juno/Desktop/Test/cmake-build-debug/CMakeFiles/Test.dir/main.cpp.obj"
+  "C:/Users/Juno/Desktop/Test/writedats.cpp" "C:/Users/Juno/Desktop/Test/cmake-build-debug/CMakeFiles/Test.dir/writedats.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

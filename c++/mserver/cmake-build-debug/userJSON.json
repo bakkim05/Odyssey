@@ -1,0 +1,17 @@
+{
+	"Usuarios":	[{
+			"Username":	"karilang1999",
+			"Name":	"Karina Lang",
+			"Age":	"18",
+			"FavSongs":	"Waves",
+			"password":	"4180379611",
+			"friend":	"Mari Lu"
+		}, {
+			"Username":	"Beatvc",
+			"Name":	"Beatriz Vargas",
+			"Age":	"20",
+			"FavSongs":	"It's a Beautiful Day",
+			"password":	"4006602746",
+			"friend":	"Ivannia Herrera"
+		}]
+}

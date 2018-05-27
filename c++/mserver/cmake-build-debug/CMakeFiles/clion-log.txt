@@ -1,4 +1,4 @@
-C:\Users\Oska\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\173.4127.32\bin\cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Oska\Desktop\Odisea\Odyssey\c++\mserver
+C:\Users\Juno\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\181.4668.70\bin\cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Juno\Desktop\Test
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cmake-build-debug
+-- Build files have been written to: C:/Users/Juno/Desktop/Test/cmake-build-debug

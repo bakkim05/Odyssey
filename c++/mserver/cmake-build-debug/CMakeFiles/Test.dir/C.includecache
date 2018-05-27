@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cJSON.c
+C:/Users/Juno/Desktop/Test/cJSON.c
 string.h
 -
 stdio.h
@@ -24,9 +24,9 @@ ctype.h
 locale.h
 -
 cJSON.h
-C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cJSON.h
+C:/Users/Juno/Desktop/Test/cJSON.h
 
-C:/Users/Oska/Desktop/Odisea/Odyssey/c++/mserver/cJSON.h
+C:/Users/Juno/Desktop/Test/cJSON.h
 stddef.h
 -
 
