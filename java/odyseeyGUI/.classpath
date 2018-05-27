@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+<<<<<<< HEAD
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path=".JAVAFX_CONTAINER"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+	<classpathentry kind="lib" path="/home/farida/Documents/gitKraken repositories/Odyseey/Odyssey/java/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="/home/farida/Documents/gitKraken repositories/Odyseey/Odyssey/java/org.apache.commons.io.jar"/>
+>>>>>>> f9d002f7494a4b54acdb88b2346f662cd88a861b
 	<classpathentry kind="output" path="bin"/>
 </classpath>
