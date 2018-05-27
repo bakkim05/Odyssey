@@ -23,7 +23,7 @@ std::string streaming::streamin(int current)
      std::cout<<size<<std::endl;
      if(current < size){
          mp3In.seekg(size-current, std::ios::cur);
-         mp3In.read(marca,10);
+         mp3In.read(marca,30);
          std::cout<<"no pos guau"<<marca<<std::endl;
         mp3In.close();
         std::string str(marca);
