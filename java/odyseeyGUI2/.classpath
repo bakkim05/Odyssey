@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+<<<<<<< HEAD:java/odyseeyGUI/.classpath
 <<<<<<< HEAD
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path=".JAVAFX_CONTAINER"/>
@@ -11,5 +12,11 @@
 	<classpathentry kind="lib" path="/home/farida/Documents/gitKraken repositories/Odyseey/Odyssey/java/json-simple-1.1.jar"/>
 	<classpathentry kind="lib" path="/home/farida/Documents/gitKraken repositories/Odyseey/Odyssey/java/org.apache.commons.io.jar"/>
 >>>>>>> f9d002f7494a4b54acdb88b2346f662cd88a861b
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_172"/>
+	<classpathentry kind="lib" path="/home/farida/Documents/gitKraken repositories/Odyseey/Odyssey/java/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="/home/farida/Documents/gitKraken repositories/Odyseey/Odyssey/java/org.apache.commons.io.jar"/>
+	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+>>>>>>> 0fb8ca4f792af2bec10aef2441eff74adfd85c89:java/odyseeyGUI2/.classpath
 	<classpathentry kind="output" path="bin"/>
 </classpath>
