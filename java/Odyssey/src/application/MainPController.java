@@ -92,6 +92,7 @@ public class MainPController {
 		try {
 			String message = callForMedia();		
 			if(message != null) {
+				System.out.println(message);
 				player.setMediaFromEncodedFile(message);
 			}
 		} catch (XMLStreamException e) {
