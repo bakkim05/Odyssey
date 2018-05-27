@@ -1,4 +1,5 @@
 #include "streaming.h"
+#include "base64.h"
 
 streaming::streaming()
 {
@@ -26,9 +27,13 @@ std::string streaming::streamin(int current)
          mp3In.read(marca,30);
          std::cout<<"no pos guau"<<marca<<std::endl;
         mp3In.close();
+        const std::string s= "abec";
+        std::string enconde = base64_encode(reinterpret_cast<const unsigned char*>(s.c_str()),s.length());
+
         std::string str(marca);
         str = marca;
-        return str;
+        std::cout<<"encode"<<enconde<<std::endl;
+        return enconde;
      }else{
          std::cout<<"excede el tamano del archivo"<<std::endl;
          mp3In.close();

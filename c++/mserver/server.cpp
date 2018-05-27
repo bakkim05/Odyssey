@@ -8,6 +8,8 @@
 #include <streaming.h>
 #include <sstream>
 #include <string.h>
+#include <base64.h>
+
 using namespace std;
 using namespace rapidxml;
 TCPServer tcp;
@@ -20,9 +22,12 @@ void *loop (void *m) {
     while (true){
         srand (time (NULL));
         char ch = 'a' + rand () % 26;
+        char const* p2 = "Bertha";
         string s(1,ch);
         string str = tcp.getMessage();
         cout<<"mesage"<<str<<endl;
+        //base64 *nose = new base64();
+       // nose->encode(p2, 11);
 
 
         //tcp.Send("prueba bebe");

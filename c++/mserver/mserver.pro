@@ -19,7 +19,9 @@ SOURCES += server.cpp \
     writedats.cpp \
     cJSON.c \
     streaming.cpp \
-    maker.cpp
+    maker.cpp \
+    base64.cpp \
+
 
 HEADERS += \
     tcpserver.h \
@@ -38,4 +40,5 @@ HEADERS += \
     BTree/BTNode.h \
     streaming.h \
     maker.h \
-    BTree/bt.h
+    BTree/bt.h \
+    base64.h \
