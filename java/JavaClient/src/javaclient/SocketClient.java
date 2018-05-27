@@ -34,6 +34,7 @@ public class SocketClient {
                 System.out.println("prueba de listener");
                 InputStream is = conn.getInputStream();
                 InputStreamReader isr = new InputStreamReader(is);
+                System.out.println(reader.read());
                 while(reader.read() != 0) {
                 	String message = Character.toString ((char) isr.read());
                 	System.out.print(message);
@@ -42,6 +43,7 @@ public class SocketClient {
             }
             catch ( StreamCorruptedException sce) {
                 // skip over the bad bytes
+            	System.out.println("voy al catch");
                 try {
                     if ( instream != null )
                         instream.skip(instream.available());
