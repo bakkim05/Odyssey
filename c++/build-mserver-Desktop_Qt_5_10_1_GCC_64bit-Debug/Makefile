@@ -52,10 +52,12 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../mserver/server.cpp \
 		../mserver/writedats.cpp \
-		../mserver/cJSON.c 
+		../mserver/cJSON.c \
+		../mserver/streaming.cpp 
 OBJECTS       = server.o \
 		writedats.o \
-		cJSON.o
+		cJSON.o \
+		streaming.o
 DIST          = /home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/common/unix.conf \
 		/home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/common/linux.conf \
@@ -252,9 +254,11 @@ DIST          = /home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/spec_pre.prf
 		../mserver/rapidxml_print.hpp \
 		../mserver/rapidxml_iterators.hpp \
 		../mserver/BTree/btree.h \
-		../mserver/BTree/BTNode.h ../mserver/server.cpp \
+		../mserver/BTree/BTNode.h \
+		../mserver/streaming.h ../mserver/server.cpp \
 		../mserver/writedats.cpp \
-		../mserver/cJSON.c
+		../mserver/cJSON.c \
+		../mserver/streaming.cpp
 QMAKE_TARGET  = mserver
 DESTDIR       = 
 TARGET        = mserver
@@ -656,8 +660,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /home/farida/IDEs/QT/5.10.1/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../mserver/tcpserver.h json.hpp ../mserver/writedats.h ../mserver/rapidxml.hpp ../mserver/rapidxml_utils.hpp ../mserver/rapidxml_print.hpp ../mserver/rapidxml_iterators.hpp ../mserver/cJSON.h ../mserver/rapidxml.hpp ../mserver/rapidxml_utils.hpp ../mserver/rapidxml_print.hpp ../mserver/rapidxml_iterators.hpp ../mserver/BTree/btree.h ../mserver/BTree/BTNode.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../mserver/server.cpp ../mserver/writedats.cpp ../mserver/cJSON.c $(DISTDIR)/
+	$(COPY_FILE) --parents ../mserver/tcpserver.h json.hpp ../mserver/writedats.h ../mserver/rapidxml.hpp ../mserver/rapidxml_utils.hpp ../mserver/rapidxml_print.hpp ../mserver/rapidxml_iterators.hpp ../mserver/cJSON.h ../mserver/rapidxml.hpp ../mserver/rapidxml_utils.hpp ../mserver/rapidxml_print.hpp ../mserver/rapidxml_iterators.hpp ../mserver/BTree/btree.h ../mserver/BTree/BTNode.h ../mserver/streaming.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../mserver/server.cpp ../mserver/writedats.cpp ../mserver/cJSON.c ../mserver/streaming.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -824,7 +828,8 @@ server.o: ../mserver/server.cpp ../mserver/tcpserver.cpp \
 		/home/farida/IDEs/QT/5.10.1/gcc_64/include/QtGui/qtextoption.h \
 		/home/farida/IDEs/QT/5.10.1/gcc_64/include/QtWidgets/qdialog.h \
 		../mserver/writedats.h \
-		../mserver/rapidxml.hpp
+		../mserver/rapidxml.hpp \
+		../mserver/streaming.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o server.o ../mserver/server.cpp
 
 writedats.o: ../mserver/writedats.cpp ../mserver/writedats.h \
@@ -834,6 +839,9 @@ writedats.o: ../mserver/writedats.cpp ../mserver/writedats.h \
 
 cJSON.o: ../mserver/cJSON.c ../mserver/cJSON.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o cJSON.o ../mserver/cJSON.c
+
+streaming.o: ../mserver/streaming.cpp ../mserver/streaming.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o streaming.o ../mserver/streaming.cpp
 
 ####### Install
 

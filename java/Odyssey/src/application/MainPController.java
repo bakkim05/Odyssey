@@ -2,12 +2,15 @@ package application;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.stream.XMLStreamException;
 
 import javaclient.SocketClient;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.chart.BarChart;
-import javafx.scene.chart.StackedBarChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
@@ -28,6 +31,7 @@ public class MainPController {
 	public Label lbl_time;
 	public BarChart<?,?> sbc_groovBox;
 	ErrorHandlersK errHand = new ErrorHandlersK();
+	List MetaSongsList = new ArrayList<>();
 
 	
 
@@ -62,20 +66,42 @@ public class MainPController {
 		
 	}
 	
+	
+	//player.Encode()
+
+	
 	public void loadASong() {
 		
 		try {
-			player.setMediaFromEncodedFile(player.Encode());
-		} catch (IOException e) {
+			String message = callForMedia();		
+			if(message != null) {
+				player.setMediaFromEncodedFile(message);
+			}
+		} catch (XMLStreamException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		//load listeners
-		
+		//load listeners	
 		startAllListeners();
 		
 	}
 	
+	private String callForMedia() throws XMLStreamException {
+		
+		//Create XML
+		writer Writer = new writer();
+		Writer.setFile("config2.xml");
+		Writer.createMusic("", "", "", "", "", "", "", 4);
+		
+		//Sends the XML
+		SocketClient sock = new SocketClient("localhost");
+		sock.requestHostname();
+		
+		System.out.println(sock.message);
+		
+		return sock.message;
+	}
 	
 	
 	
@@ -94,10 +120,15 @@ public class MainPController {
 		//Sends the XML
 				SocketClient sock = new SocketClient("localhost");
 				sock.requestHostname();
+				
+				
+				
 	}
 		
 		
 	}
+	
+	
 	
 	
 	
