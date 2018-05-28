@@ -74,6 +74,7 @@
                <TextField fx:id="txt_songName" layoutY="14.0" promptText="Song Name" />
                <TextField fx:id="txt_songArtist" layoutX="171.0" layoutY="14.0" promptText="Artist" />
                <Button layoutX="342.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchSong" text="Search" />
+               <Button layoutX="421.0" layoutY="14.0" mnemonicParsing="false" onAction="#connectToServer" text="Take me somewere beautifull" />
          </children>
     </AnchorPane>
   </children>

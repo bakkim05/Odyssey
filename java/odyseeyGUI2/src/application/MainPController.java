@@ -32,6 +32,7 @@ import xml.writer;
 public class MainPController {
 	
 	Player player = new Player();
+	SocketClient sock;
 	public ChoiceBox<String> cb_Options;
 	public Button btn_playPause;
 	public TextField txt_songName;
@@ -42,6 +43,7 @@ public class MainPController {
 	ErrorHandlersK errHand = new ErrorHandlersK();
 	List MetaSongsList = new ArrayList<>();
 	@FXML
+	
 	private void initialize() {
 		
 		cb_Options.setItems(FXCollections.observableArrayList(
@@ -113,7 +115,7 @@ public class MainPController {
 		Writer.createMusic("", "", "", "", "", "", "", 4);
 		
 		//Sends the XML
-		SocketClient sock = new SocketClient("localhost");
+		//SocketClient sock = new SocketClient("localhost");
 		sock.requestHostname();
 		
 		System.out.println(sock.message);
@@ -134,13 +136,22 @@ public class MainPController {
 				Writer.createMusic(songName, "", songArtist, "", "", "", "", 0);
 				
 		//Sends the XML
-				SocketClient sock = new SocketClient("localhost");
+				//SocketClient sock = new SocketClient("localhost");
 				sock.requestHostname();
 				
 				
 				
 	}
+	
+	
+	
 		
+	}
+	
+	
+	public void connectToServer() {
+		
+		sock = new SocketClient("localhost");
 		
 	}
 	
