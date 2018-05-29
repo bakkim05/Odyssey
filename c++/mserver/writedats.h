@@ -19,6 +19,7 @@ public:
     string getSong(string cd);
     string xml;
     void readsong(xml_node<> *root_node);
+    string writeStreaming(string song, string encode);
 };
 
 #endif // WRITEDATS_H

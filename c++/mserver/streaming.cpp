@@ -1,5 +1,6 @@
 #include "streaming.h"
 #include "base64.h"
+#include "writedats.h"
 
 streaming::streaming()
 {
@@ -33,7 +34,6 @@ std::string streaming::streamin(int current)
         std::string enconde = base64_encode(reinterpret_cast<const unsigned char*>(str.c_str()),str.length());
         //retorno el valor encodificado
         std::cout<<"encode"<<enconde<<std::endl;
-
         return enconde;
 
      }else{

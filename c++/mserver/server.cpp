@@ -66,7 +66,9 @@ void *loop (void *m) {
                 string song = lr->getSong(str);
                 //aqui debo colocar en setFile el nombre de la cancion, que se debe almacenar con exactamente el mismo nombre.
                 stream->setFile("charlie-puth-how-long.mp3");
-                tcp.Send(stream->streamin(30));
+                string encode =stream->streamin(30);
+                string loadXml = lr->writeStreaming(song,encode);
+                tcp.Send(loadXml);
                 tcp.clean();
                 break;
             }

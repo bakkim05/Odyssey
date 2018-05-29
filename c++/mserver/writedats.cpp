@@ -242,3 +242,30 @@ string WriteDats::getSong(string cd)
 
 
 }
+
+string WriteDats::writeStreaming(string song, string encode)
+{
+    cout<<"Writing xml Documents"<<endl;
+    xml_document<> doc;
+    xml_node<> *decl = doc.allocate_node(node_declaration);
+    decl->append_attribute(doc.allocate_attribute("version", "1.0"));
+    decl->append_attribute(doc.allocate_attribute("encoding","utf-8"));
+    xml_node<>* root = doc.allocate_node(node_element, "loadSong");
+
+    xml_node<>* root1 = doc.allocate_node(node_element, "Song");
+
+    root1->append_attribute(doc.allocate_attribute("name",song.c_str()));
+    root->append_node(root1);
+    xml_node<> *gender = doc.allocate_node(node_element,"Encode");
+    gender->value(encode.c_str());
+    root1->append_node(gender);
+    doc.append_node(root);
+
+    // Convert doc to string if needed
+    std::string xml_as_string;
+
+    rapidxml::print(std::back_inserter(xml_as_string), doc);
+    xml = xml_as_string;
+
+    return xml_as_string;
+}
