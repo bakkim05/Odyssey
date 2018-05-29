@@ -30,7 +30,7 @@ import other.ErrorHandlersK;
 import xml.writer;
 
 public class MainPController {
-	
+
 	Player player = new Player();
 	SocketClient sock;
 	public ChoiceBox<String> cb_Options;
@@ -43,122 +43,123 @@ public class MainPController {
 	ErrorHandlersK errHand = new ErrorHandlersK();
 	List MetaSongsList = new ArrayList<>();
 	@FXML
-	
-	private void initialize() {
-		
-		cb_Options.setItems(FXCollections.observableArrayList(
-			    "The Gene game!", "Log out", "Delete my account"));
-		
-		startAllListeners();
-		 
-	}
-	 
-	
 
-	
-	
+	private void initialize() {
+
+		cb_Options.setItems(FXCollections.observableArrayList(
+				"The Gene game!", "Log out", "Delete my account"));
+
+		startAllListeners();
+
+	}
+
+
+
+
+
 	//player.Encode()
 	public void playPauseMedia() {
-		
+
 		// Playing and pausing music
 		if(player.medPly.getStatus() == Status.PLAYING) {
-			
+
 			player.pauseMedia();
 			btn_playPause.setText("Play");
-			
+
 		}else if(player.medPly.getStatus() == Status.PAUSED) {
-			
+
 			player.runMedia();
 			player.mediaVisualizer(sbc_groovBox);
 			player.mediaTimeListener(slr_song, lbl_time);
 			btn_playPause.setText("Pause");
-		
-			
+
+
 		}else if(player.medPly.getStatus() == Status.READY) {
-			
+
 			player.runMedia();
 			player.mediaVisualizer(sbc_groovBox);
 			player.mediaTimeListener(slr_song, lbl_time);
 			btn_playPause.setText("Pause");
-			
+
 		}
-		
-		
-		
-		
-		
+
+
+
+
+
 	}
 
 	public void loadASong() {
-		
+
 		try {
+			System.out.println("esto no lo entiendo");
 			String message = callForMedia();		
 			if(message != null) {
-				System.out.println(message);
-				player.setMediaFromEncodedFile(message);
+				System.out.println("holi");
+				//player.setMediaFromEncodedFile(message);
 			}
 		} catch (XMLStreamException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		//load listeners	
-		startAllListeners();
-		
+		//startAllListeners();
+
 	}
-	
+
 	private String callForMedia() throws XMLStreamException {
-		
+		System.out.println("entro aqui al menos");
 		//Create XML
 		writer Writer = new writer();
 		Writer.setFile("config2.xml");
 		Writer.createMusic("", "", "", "", "", "", "", 4);
-		
+		System.out.println("ya supuestamente lei el streaming");
 		//Sends the XML
 		//SocketClient sock = new SocketClient("localhost");
 		sock.requestHostname();
-		
-		System.out.println(sock.message);
-		
+		System.out.print("que putas");
+		System.out.println("putas"+sock.message);
+
 		return sock.message;
 	}
-	
-	public void searchSong() throws Exception{
-		
-	if("good" == errHand.createMusicError(txt_songName.getText().toString(), txt_songArtist.getText().toString())) {
-		// load Variables
-				String songName = txt_songName.getText().toString();
-				String songArtist = txt_songArtist.getText().toString();
 
-		//Create XML
-				writer Writer = new writer();
-				Writer.setFile("config2.xml");
-				Writer.createMusic(songName, "", songArtist, "", "", "", "", 0);
-				
-		//Sends the XML
-				//SocketClient sock = new SocketClient("localhost");
-				sock.requestHostname();
-				
-				
-				
+	public void searchSong() throws Exception{
+
+		if("good" == errHand.createMusicError(txt_songName.getText().toString(), txt_songArtist.getText().toString())) {
+			// load Variables
+			String songName = txt_songName.getText().toString();
+			String songArtist = txt_songArtist.getText().toString();
+
+			//Create XML
+			writer Writer = new writer();
+			Writer.setFile("config2.xml");
+			Writer.createMusic(songName, "", songArtist, "", "", "", "", 0);
+
+			//Sends the XML
+			//SocketClient sock = new SocketClient("localhost");
+			sock.requestHostname();
+
+
+
+		}
+
+
+
+
 	}
-	
-	
-	
-		
-	}
-	
-	
+
+
 	public void connectToServer() {
-		
+
 		sock = new SocketClient("localhost");
-		
+
 	}
-	
+
 	private void startAllListeners() {
-		
+
 		// slider listener
-		
+
 		slr_song.valueProperty().addListener(new ChangeListener<Number>() {
 
 			@Override
@@ -169,16 +170,16 @@ public class MainPController {
 				}else {
 					player.medPly.seek(Duration.seconds((double)newValue));
 				}
-				
+
 			}
-            });
-		
-		
+		});
+
+
 		//
-		
-		
+
+
 		//cb_Options Listener
-		
+
 		cb_Options.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
 			@Override
@@ -197,42 +198,42 @@ public class MainPController {
 						e.printStackTrace();
 					}
 				}else if(newValue.equals(2)) {// Delete my account
-					
+
 				}
-				
+
 			}
-			
+
 		});
-		
+
 		// 
-		
+
 	}
-	
+
 	private void goToGenePage() throws IOException {
-		
+
 		Parent gui = FXMLLoader.load(getClass().getResource("/odyGUI/GenPage.fxml"));
 		Scene genePage = new Scene(gui);
-		
+
 		//this line optains the stage information
 		Stage window = (Stage)txt_songName.getScene().getWindow();
 		window.setScene(genePage); // txt_createUser is needed here to obtain the window its in
 		window.show();
-		
+
 	}
-	
+
 	private void goToStartPage() throws IOException {
-		
+
 		Parent gui = FXMLLoader.load(getClass().getResource("/odyGUI/StartPage.fxml"));
 		Scene startPage = new Scene(gui);
-		
+
 		//this line optains the stage information
 		Stage window = (Stage)txt_songName.getScene().getWindow();
 		window.setScene(startPage); // txt_createUser is needed here to obtain the window its in
 		window.show();
-		
+
 	}
-	
-	
+
+
 }
 
 

@@ -36,9 +36,13 @@ public class SocketClient {
                 InputStream is = conn.getInputStream();
                 InputStreamReader isr = new InputStreamReader(is);
                 while(reader.read() != 0) {
+                	if(isr.read() != 0) {
                 	message = Character.toString ((char) isr.read());
-                	System.out.print(message);
-                }
+                		System.out.print("quie"+message);
+                		message = "bullshit";
+                		}
+                	}
+                System.out.print("primera");
 
             }
             catch ( StreamCorruptedException sce) {
