@@ -211,3 +211,34 @@ string WriteDats::getXml()
 {
     return xml;
 }
+
+string WriteDats::getSong(string cd)
+{
+    cout << "Parsing songs..." << endl;
+    xml_document<> doc;
+    xml_node<> * root_node;
+
+    // Read the xml file into a vector
+    vector<char> buffer(cd.begin(),cd.end());
+     cout<<"holi"<<endl;
+    buffer.push_back('\0');
+    cout<<"holi"<<endl;
+    // Parse the buffer using the xml file parsing library into doc
+    doc.parse<0>(&buffer[0]);
+    cout<<"holi"<<endl;
+    // Find our root node
+   string nodoRoot = doc.first_node()->name();
+    cout<<nodoRoot<<endl;
+    if(nodoRoot == "Data"){
+        cout<<"parseo de musica"<<endl;
+        root_node = doc.first_node("Data");
+        xml_node<> * music_node = root_node->first_node("Music");
+        string nombreCancion = music_node->first_attribute("nombre")->value();
+        return nombreCancion;
+
+    }
+
+    // Find the music
+
+
+}

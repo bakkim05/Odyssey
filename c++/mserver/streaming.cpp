@@ -28,10 +28,11 @@ std::string streaming::streamin(int current)
          std::cout<<"no pos guau"<<marca<<std::endl;
         mp3In.close();
         const std::string s= "abec";
-        std::string enconde = base64_encode(reinterpret_cast<const unsigned char*>(s.c_str()),s.length());
-
         std::string str(marca);
         str = marca;
+        std::string enconde = base64_encode(reinterpret_cast<const unsigned char*>(str.c_str()),s.length());
+
+
         std::cout<<"encode"<<enconde<<std::endl;
         return enconde;
      }else{

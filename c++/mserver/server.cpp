@@ -63,6 +63,8 @@ void *loop (void *m) {
                 cout<<"Reproducir"<<endl;
                 //se envia el nombre de la cancion y se debe empezar a enviar los chunks
                 streaming *stream = new streaming();
+                string song = lr->getSong(str);
+                //aqui debo colocar en setFile el nombre de la cancion, que se debe almacenar con exactamente el mismo nombre.
                 stream->setFile("charlie-puth-how-long.mp3");
                 tcp.Send(stream->streamin(30));
                 tcp.clean();

@@ -16,6 +16,7 @@ public:
     string escribirUser(char* username,char* name, char* favSongs, char* password, char* friends, char* year1);
     int read(string cd);
     string getXml();
+    string getSong(string cd);
     string xml;
     void readsong(xml_node<> *root_node);
 };
