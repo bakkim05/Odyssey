@@ -41,11 +41,11 @@ public class SocketClient {
                 InputStream is = conn.getInputStream();
                 InputStreamReader isr = new InputStreamReader(is);
                 while(reader.read() != 0) {
-                	
+
                 	this.perdida = Character.toString ((char) isr.read());
                 	System.out.print(this.perdida);
                     concant(this.perdida);
-                	
+
                 }
             }
             catch ( StreamCorruptedException sce) {
@@ -64,18 +64,18 @@ public class SocketClient {
             }
         }
     }
-//clase sender 
+//clase sender
     class Sender {
-    	
+
         static final String DatosCancion = "<Data><Music nombre=\"dfgdf\"><Gender>pop</Gender><Artist>Camila Ca</Artist><Album>Camila</Album><Year>2018</Year><Category>latin pop</Category><Lyrics>dsfsdfds</Lyrics></Music><apCode>4</apCode></Data>";
         static final String InfoUser = "<InfoUser><Username username=\"Faridd\"><Name>Farid Marin</Name><Age>19</Age><FavSongs>Camila Cabello, howlong</FavSongs><password>12345</password><Friends>jung, kim</Friends></Username><apCode>0</apCode></InfoUser>";
         static final String Streaming = "Streaming";
-        
+
         Socket conn;
         BufferedOutputStream os = null;
 
         public Sender(Socket conn) {
-        	
+
             try {
                 this.conn = conn;
                 this.conn.setTcpNoDelay(true);
@@ -99,7 +99,7 @@ public class SocketClient {
 				}
 					//System.out.println(duf);
 		    		b.close();
-				
+
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -123,7 +123,7 @@ public class SocketClient {
 				}
 					System.out.println(duf);
 		    		b.close();
-				
+
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -149,7 +149,7 @@ public class SocketClient {
         }
         private void deserializeAndGetMs() {
         	try {
-        		
+
         	}catch(Exception e) {
         		e.printStackTrace();
         	}
