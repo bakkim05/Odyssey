@@ -15,11 +15,10 @@ public class SocketClient {
     public String message;
     public String concatenacion = "";
     public void concant(String value) {
-    	System.out.println("contact"+value);
+    	//System.out.println("contact"+value);
     	if(value != null) {
     		this.message += value;
-    		System.out.println("conca"+value);
-    		System.out.println("valor final: "+this.message);
+    		//System.out.println("valor final: "+this.message);
     	}else {
     		System.out.println("prueba");
     	}
@@ -27,7 +26,7 @@ public class SocketClient {
     class Listener extends Thread {
         Socket conn = null;
         boolean listening = true;
-        public String perdida = null;
+        public String perdida;
 
         public Listener(Socket conn) {
             this.conn = conn;
@@ -47,7 +46,7 @@ public class SocketClient {
                 InputStreamReader isr = new InputStreamReader(is);
                 while(reader.read() != 0) {
                 	this.perdida = Character.toString ((char) isr.read());
-                	System.out.print(this.perdida);
+                	//System.out.print(this.perdida);
                 	if(this.perdida == null) {
                 		System.out.println("buenas yogurt");
                 	}else {

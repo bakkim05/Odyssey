@@ -95,7 +95,7 @@ public class MainPController {
 		try {
 			String message = callForMedia();
 			if(message != null) {
-				System.out.println("holi"+message);
+				System.out.println("holi:"+message);
 				//player.setMediaFromEncodedFile(message);
 			}
 		} catch (XMLStreamException e) {
@@ -118,7 +118,7 @@ public class MainPController {
 		//SocketClient sock = new SocketClient("localhost");
 		sock.requestHostname();
 
-		System.out.println(sock.message);
+		System.out.println("callFO:"+sock.message);
 
 		return sock.message;
 	}
