@@ -14,6 +14,8 @@ import javax.xml.stream.events.EndElement;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 
+import factory.loadSong;
+
 
 public class StaXParser {
 	static final String NAME = "nombre";
@@ -25,7 +27,9 @@ public class StaXParser {
 	static final String CATEGORY = "Category";
 	static final String LYRICS = "Lyrics";
 	static final String APCODE = "apCode";
-
+	static final String LOASONG = "loadSong";
+	static final String SONG = "Song";
+	static final String ENCODE = "Encode";
 	@SuppressWarnings({ "unchecked", "null" })
 	public List<Item> readConfig(String configFile) {
 		List<Item> items = new ArrayList<Item>();
@@ -128,19 +132,74 @@ public class StaXParser {
 			//XMLEvent event = eventReader.nextEvent();
 			while (eventReader.hasNext()) {
 				XMLEvent event = eventReader.nextEvent();
+				if (event.isStartElement()) {
+					StartElement startElement = event.asStartElement();
+					name = startElement.getName().getLocalPart().toString();
+					return name;
+				}
+			}
+		} catch (XMLStreamException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return name;
+	}
+	public String getEncoderMusic(String XMLFile) {
+		XMLInputFactory inputFactory = XMLInputFactory.newInstance();
+		// Setup a new eventReader
+		InputStream in = null;
+		String encode = null;
+		try {
+			in = new FileInputStream(XMLFile);
+			XMLEventReader eventReader = inputFactory.createXMLEventReader(in);
+			//XMLEvent event = eventReader.nextEvent();
+			while (eventReader.hasNext()) {
+				XMLEvent event = eventReader.nextEvent();
+				if (event.isStartElement()) {
+					StartElement startElement = event.asStartElement();
+					// If we have an item element, we create a new item
+
+					if (startElement.getName().getLocalPart().equals(LOASONG)) {
+						// We read the attributes from this tag and add the date
+						// attribute to our object
+						Iterator<Attribute> attributes = startElement.getAttributes();
+					}
+
 					if (event.isStartElement()) {
-						StartElement startElement = event.asStartElement();
-						name = startElement.getName().getLocalPart().toString();
-						return name;
+						if (event.asStartElement().getName().getLocalPart()
+								.equals(SONG)) {
+							event = eventReader.nextEvent();
+							System.out.println(event.asCharacters().getData());
+							Iterator<Attribute> attributes = startElement.getAttributes();
+							while (attributes.hasNext()) {
+								Attribute attribute = attributes.next();
+									System.out.println(attribute.getName().toString());
+									System.out.println(attribute.getValue());
+							}
+							continue;
+						}
+					}
+					if (event.isStartElement()) {
+						if (event.asStartElement().getName().getLocalPart()
+								.equals(ENCODE)) {
+							event = eventReader.nextEvent();
+							encode = event.asCharacters().getData().toString();
+							System.out.print(encode);
+							return encode;
+						}
 					}
 				}
-			} catch (XMLStreamException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
-			return name;
+		} catch (XMLStreamException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		return encode;
 	}
+}

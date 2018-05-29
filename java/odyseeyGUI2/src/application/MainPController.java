@@ -98,7 +98,7 @@ public class MainPController {
 			if(message != null) {
 				System.out.println("holi:"+message);
 				//player.setMediaFromEncodedFile(message);
-				XMLInterface.getXML(message);
+				System.out.println("encode value: "+XMLInterface.getXML(message).getMusic());
 			}
 		} catch (XMLStreamException e) {
 			// TODO Auto-generated catch block

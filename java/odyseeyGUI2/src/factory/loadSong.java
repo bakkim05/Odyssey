@@ -1,4 +1,5 @@
 package factory;
+import xml.*;
 
 public class loadSong extends XMLFactory {
 	public String encode = null;
@@ -8,6 +9,9 @@ public class loadSong extends XMLFactory {
 		return 0;
 	}
 	public String getMusic() {
+		StaXParser hola = new StaXParser();
+		encode = hola.getEncoderMusic("config.xml");
+		System.out.println("dentro: "+ encode);
 		return encode;
 	}
 

@@ -35,7 +35,6 @@ public class XMLInterface {
         //Aqui agarro el valor del XML en el xml para saber que tipo de datos es
 		String tipoXml = hola.getName("config.xml");
 		if (tipoXml.equals("loadSong")) {
-
 			return new loadSong();
 		}
 		if(tipoXml.equals("InfoUser")) {
