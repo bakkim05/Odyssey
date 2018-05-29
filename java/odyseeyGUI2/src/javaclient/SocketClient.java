@@ -13,16 +13,21 @@ public class SocketClient {
     private Sender sender = null;
     public boolean connected = false;
     public String message;
+    public String concatenacion = "";
     public void concant(String value) {
     	System.out.println("contact"+value);
-    	if(value == null) {
-    		this.message.concat(value);
+    	if(value != null) {
+    		this.message += value;
+    		System.out.println("conca"+value);
+    		System.out.println("valor final: "+this.message);
+    	}else {
+    		System.out.println("prueba");
     	}
     }
     class Listener extends Thread {
         Socket conn = null;
         boolean listening = true;
-        public String perdida;
+        public String perdida = null;
 
         public Listener(Socket conn) {
             this.conn = conn;
@@ -41,10 +46,14 @@ public class SocketClient {
                 InputStream is = conn.getInputStream();
                 InputStreamReader isr = new InputStreamReader(is);
                 while(reader.read() != 0) {
-
                 	this.perdida = Character.toString ((char) isr.read());
                 	System.out.print(this.perdida);
-                    concant(this.perdida);
+                	if(this.perdida == null) {
+                		System.out.println("buenas yogurt");
+                	}else {
+                        concant(this.perdida);
+                	}
+
 
                 }
             }

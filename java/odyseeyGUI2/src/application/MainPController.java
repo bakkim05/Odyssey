@@ -61,6 +61,7 @@ public class MainPController {
 	public void playPauseMedia() {
 
 		// Playing and pausing music
+	
 		if(player.medPly.getStatus() == Status.PLAYING) {
 
 			player.pauseMedia();
@@ -92,7 +93,6 @@ public class MainPController {
 	public void loadASong() {
 
 		try {
-			System.out.println("esto no lo entiendo");
 			String message = callForMedia();
 			if(message != null) {
 				System.out.println("holi"+message);
@@ -110,17 +110,15 @@ public class MainPController {
 	}
 
 	private String callForMedia() throws XMLStreamException {
-		System.out.println("entro aqui al menos");
 		//Create XML
 		writer Writer = new writer();
 		Writer.setFile("config2.xml");
 		Writer.createMusic("", "", "", "", "", "", "", 4);
-		System.out.println("ya supuestamente lei el streaming");
 		//Sends the XML
 		//SocketClient sock = new SocketClient("localhost");
 		sock.requestHostname();
 
-		System.out.println("hl"+sock.message);
+		System.out.println(sock.message);
 
 		return sock.message;
 	}
