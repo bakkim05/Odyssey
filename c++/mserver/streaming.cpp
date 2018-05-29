@@ -25,16 +25,17 @@ std::string streaming::streamin(int current)
      if(current < size){
          mp3In.seekg(size-current, std::ios::cur);
          mp3In.read(marca,30);
-         std::cout<<"no pos guau"<<marca<<std::endl;
+         std::cout<<"valor sin enco de la cancion: "<<marca<<std::endl;
         mp3In.close();
-        const std::string s= "abec";
+        //agarro el valor del char que contiene la cancion y lo convierto a un string
         std::string str(marca);
         str = marca;
-        std::string enconde = base64_encode(reinterpret_cast<const unsigned char*>(str.c_str()),s.length());
-
-
+        std::string enconde = base64_encode(reinterpret_cast<const unsigned char*>(str.c_str()),str.length());
+        //retorno el valor encodificado
         std::cout<<"encode"<<enconde<<std::endl;
+
         return enconde;
+
      }else{
          std::cout<<"excede el tamano del archivo"<<std::endl;
          mp3In.close();
