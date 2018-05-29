@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.xml.stream.XMLStreamException;
 
+import factory.XMLInterface;
 import javaclient.SocketClient;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -97,6 +98,7 @@ public class MainPController {
 			if(message != null) {
 				System.out.println("holi:"+message);
 				//player.setMediaFromEncodedFile(message);
+				XMLInterface.getXML(message);
 			}
 		} catch (XMLStreamException e) {
 			// TODO Auto-generated catch block
