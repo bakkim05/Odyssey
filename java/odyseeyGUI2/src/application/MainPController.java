@@ -94,16 +94,17 @@ public class MainPController {
 		try {
 			String message = callForMedia();		
 			if(message != null) {
-				System.out.println(message);
-				player.setMediaFromEncodedFile(message);
+				System.out.println("holi"+message);
+				//player.setMediaFromEncodedFile(message);
 			}
 		} catch (XMLStreamException e) {
 			// TODO Auto-generated catch block
+			System.out.println("fallo catch");
 			e.printStackTrace();
 		}
 		
 		//load listeners	
-		startAllListeners();
+		//startAllListeners();
 		
 	}
 	
@@ -118,7 +119,7 @@ public class MainPController {
 		//SocketClient sock = new SocketClient("localhost");
 		sock.requestHostname();
 		
-		System.out.println(sock.message);
+		System.out.println("hl"+sock.message);
 		
 		return sock.message;
 	}

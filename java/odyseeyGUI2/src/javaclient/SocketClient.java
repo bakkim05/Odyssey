@@ -12,12 +12,17 @@ public class SocketClient {
     private Listener listener = null;
     private Sender sender = null;
     public boolean connected = false;
-   // ServerResponses viewer = null;
     public String message;
-
+    public void concant(String value) {
+    	System.out.println("contact"+value);
+    	if(value == null) {
+    		this.message.concat(value);
+    	}
+    }
     class Listener extends Thread {
         Socket conn = null;
         boolean listening = true;
+        public String perdida;
 
         public Listener(Socket conn) {
             this.conn = conn;
@@ -36,10 +41,12 @@ public class SocketClient {
                 InputStream is = conn.getInputStream();
                 InputStreamReader isr = new InputStreamReader(is);
                 while(reader.read() != 0) {
-                	message = Character.toString ((char) isr.read());
-                	System.out.print(message);
+                	
+                	this.perdida = Character.toString ((char) isr.read());
+                	System.out.print(this.perdida);
+                    concant(this.perdida);
+                	
                 }
-
             }
             catch ( StreamCorruptedException sce) {
                 // skip over the bad bytes
