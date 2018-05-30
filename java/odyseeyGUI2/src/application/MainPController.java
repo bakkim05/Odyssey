@@ -71,7 +71,7 @@ public class MainPController {
 				"Songs in Server"));
 		
 		//Starts all the listeners
-		startAllListeners();
+		//startAllListeners();
 		
 		//to test lv_myTracks
 		MetaSongs mt1 = new MetaSongs("la bamba", "21", "este otro", "el otro a", null, null, null);
@@ -139,15 +139,15 @@ public class MainPController {
 	}
 
 	public void loadASong() {
-/*
+
 		try {
 			String message = callForMedia();
 			if(message != null) {
 				System.out.println("holi:"+message);
 				//
-				String encodesong = XMLInterface.getXML(message).getMusic();
-				String namesong = XMLInterface.getXML(message).getSongName();
-				player.setMediaFromEncodedFile(encodesong);
+				//String encodesong = XMLInterface.getXML(message).getMusic();
+				//String namesong = XMLInterface.getXML(message).getSongName();
+				player.setMediaFromEncodedFile(message);
 			}
 		} catch (XMLStreamException e) {
 			// TODO Auto-generated catch block
@@ -157,7 +157,7 @@ public class MainPController {
 
 		//load listeners
 		 
-	 */
+	 
 		player.setMediaFromFileChooser();
 		//startAllListeners();
 

@@ -79,7 +79,7 @@ void *loop (void *m) {
                 stream->setFile("charlie-puth-how-long.mp3");
                 string encode =stream->streamin(30);
                 string loadXml = lr->writeStreaming(song,encode);
-                tcp.Send(loadXml);
+                tcp.Send(encode);
                 //tcp.clean();
                 break;
             }
