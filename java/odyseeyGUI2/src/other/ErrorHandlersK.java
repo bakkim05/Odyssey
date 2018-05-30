@@ -5,10 +5,16 @@ import javafx.scene.control.Alert.AlertType;
 
 public class ErrorHandlersK {
 
-	public String createUserErrors(String Username, String Password, String RepPassword) {
+	public String createUserErrors(String Username,String name, String age, String Password, String RepPassword) {
 		
 		if(Username.equals("")) {
 			return "Dont forget to create a Username!";
+		}
+		if(name.equals("")) {
+			return "Dont forget to add youre name!";
+		}
+		if(age.equals("")) {
+			return "Dont forget to add youre age!";
 		}
 		
 		if(Password.equals("")) {

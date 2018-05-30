@@ -21,11 +21,13 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.media.MediaPlayer.Status;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import mediaPlayer.MetaSongs;
 import mediaPlayer.Player;
 import other.ErrorHandlersK;
 import xml.writer;
@@ -35,14 +37,16 @@ public class MainPController {
 	Player player = new Player();
 	SocketClient sock;
 	public ChoiceBox<String> cb_Options;
+	public ChoiceBox<String> cb_sort;
 	public Button btn_playPause;
+	public ListView<String> lv_myTracks;
 	public TextField txt_songName;
 	public TextField txt_songArtist;
 	public Slider slr_song;
 	public Label lbl_time;
 	public BarChart<?,?> sbc_groovBox;
 	ErrorHandlersK errHand = new ErrorHandlersK();
-	List MetaSongsList = new ArrayList<>();
+	public static List<MetaSongs> MetaSongsList = new ArrayList<MetaSongs>();
 	@FXML
 
 	private void initialize() {
@@ -50,7 +54,21 @@ public class MainPController {
 		cb_Options.setItems(FXCollections.observableArrayList(
 				"The Gene game!", "Log out", "Delete my account"));
 
+		cb_sort.setItems(FXCollections.observableArrayList(
+				"Sort by song name", "Sort by song artist"));
+		
+		//Starts all the listeners
 		startAllListeners();
+		
+		//to test lv_myTracks
+		MetaSongs mt1 = new MetaSongs("la bamba", null, null, null, null, null, null);
+		MetaSongs mt2 = new MetaSongs("la merde", null, null, null, null, null, null);
+
+		MetaSongsList.add(mt1);
+		MetaSongsList.add(mt2);
+	
+		//Updates la list in lv_myTracks
+		updateMyTracks();
 
 	}
 
@@ -127,6 +145,30 @@ public class MainPController {
 		return sock.message;
 	}
 
+	
+	private void updateMyTracks(){
+		
+		if(MetaSongsList.isEmpty()) {
+			//MetaSongsList is empty!
+		}else {
+			
+			List<String> list = new ArrayList<String>();
+	        
+			for(MetaSongs mts : MetaSongsList) {
+				
+				list.add(mts.getSongName());
+				
+			}
+			
+	        ObservableList<String> obList = FXCollections.observableList(list);
+	        lv_myTracks.getItems().clear();
+	        lv_myTracks.setItems(obList);
+			
+		}
+		
+		
+	}
+	
 	public void searchSong() throws Exception{
 
 		if("good" == errHand.createMusicError(txt_songName.getText().toString(), txt_songArtist.getText().toString())) {
@@ -208,6 +250,24 @@ public class MainPController {
 
 		});
 
+		//
+		
+		
+		//cb_sort
+		
+		
+		cb_sort.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+
+				//add code here!!
+
+			}
+
+		});
+		
+		
 		//
 
 	}
