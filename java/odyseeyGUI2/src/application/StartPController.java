@@ -27,8 +27,10 @@ public class StartPController {
 	ErrorHandlersK errorHands = new ErrorHandlersK();
 	SocketClient sock;
 	public TextField txt_createUser;
+	public TextField txt_name;
+	public TextField txt_age;
 	public TextField txt_createPass;
-	public TextField txt_repeatPass;
+	public TextField txt_repeatPass;	
 	public TextField txt_password;
 	public TextField txt_username;
 	
@@ -71,17 +73,19 @@ public class StartPController {
 			
 		
 		String err = null;
-		 err = errorHands.createUserErrors(txt_createUser.getText().toString(), txt_createPass.getText().toString(), txt_repeatPass.getText().toString());
+		 err = errorHands.createUserErrors(txt_createUser.getText().toString(),txt_name.getText().toString(),txt_age.getText().toString(), txt_createPass.getText().toString(), txt_repeatPass.getText().toString());
 		if(err == "good") {
 			
 			// load Variables
 			String userName = txt_createUser.getText().toString();
 			String passw = txt_createPass.getText().toString();
+			String name = txt_name.getText().toString();
+			String age =  txt_age.getText().toString();
 
 	//Create XML
 			writer Writer = new writer();
 			Writer.setFile("config1.xml");
-			Writer.createUser(userName, "Bertha","21", "sdfd", passw, "sdsd", 10);
+			Writer.createUser(userName, name,age, "sdfd", passw, "sdsd", 10);
 			
 	//Sends the XML
 			sock = new SocketClient("localhost");
