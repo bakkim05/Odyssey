@@ -169,7 +169,7 @@ public class SocketClient {
             // Connect to the server at the given address on port 8080
             if ( IPAddress == null || IPAddress.length() == 0 )
                 IPAddress = "localhost";
-            Socket conn = new Socket( IPAddress, 8085 );
+            Socket conn = new Socket( IPAddress, 8080 );
             conn.setTcpNoDelay(true);
             this.listener = new Listener(conn);
             this.sender = new Sender(conn);

@@ -13,6 +13,7 @@ Maker::Maker()
 
 void Maker::addMusicJSON(cJSON *metadata, char *nombre, char *genero, char *artista, char *album, char *agno, char *categoria, char *letra)
 {
+
     for (int i = 0; i < cJSON_GetArraySize(metadata); i++)
     {
         if (strcmp(cJSON_GetArrayItem(metadata,i)->child->valuestring,nombre)==0)

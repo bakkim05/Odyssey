@@ -46,6 +46,7 @@
             <PasswordField fx:id="txt_repeatPass" layoutX="141.0" layoutY="303.0" prefHeight="26.0" prefWidth="96.0" />
             <PasswordField fx:id="txt_createPass" layoutX="141.0" layoutY="268.0" prefHeight="26.0" prefWidth="96.0" />
             <TextField fx:id="txt_createUser" layoutX="141.0" layoutY="238.0" prefHeight="26.0" prefWidth="96.0" />
+            <Button layoutX="303.0" layoutY="40.0" mnemonicParsing="false" onAction="#fuck" prefHeight="26.0" prefWidth="210.0" text="FFUUUCCCKKK!!!!!" />
          </children>
       </Pane>
    </children>

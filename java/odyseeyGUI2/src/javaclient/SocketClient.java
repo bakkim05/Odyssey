@@ -47,9 +47,10 @@ public class SocketClient {
                 System.out.println("prueba de listener");
                 InputStream is = conn.getInputStream();
                 InputStreamReader isr = new InputStreamReader(is);
-                System.out.println(reader.read());
+                System.out.println("reader: "+reader.read());
                 while(reader.read() != 0) {
                 	String message = Character.toString ((char) isr.read());
+                	System.out.println("bully");
                 	System.out.print(message);
                 	if(message !=null) {
                 		concant(message);
@@ -141,7 +142,7 @@ public class SocketClient {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-            serializeAndSendMessage(duf.toString());
+            serializeAndSendMessage(InfoUser);
         }
 
         public void requestRandomNumber() {

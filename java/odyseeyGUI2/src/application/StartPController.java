@@ -86,6 +86,8 @@ public class StartPController {
 	//Sends the XML
 			sock = new SocketClient("localhost");
 			sock.requestMemory();
+			String puto = sock.message;
+			System.out.println(puto);
 			//cclient lol = new cclient("localhost", 8085);
 			//lol.sendMessage("<?xml version=\"1.0\" encoding=\"UTF-8\"?><InfoUser>	<Username username=\"jung\">	<Name>Bertha</Name>	<Age>21</Age>	<FavSongs>sdfd</FavSongs>	<password>789</password>	<Friends>sdsd</Friends></Username>	<apCode>10</apCode></InfoUser>");
 		}else {
