@@ -50,13 +50,20 @@ void *loop (void *m) {
             case 1:
                 cout<<"Agregar cancion"<<endl;
                 //aqui se debe agregar la cancion, crear la estructura y el json
-                tcp.Send("agregada");
+
+                tcp.Send(lr->writeSucces("Data"));
                 break;
             case 2:
+            {
                 cout<<"Eliminar cancion"<<endl;
                 //aqui debe buscar y eliminar
-                tcp.Send("eliminada");
+                string namesong = lr->getSong(str);
+                char* userchar = new char[namesong.length()+1];
+                strcpy(userchar,namesong.c_str());
+                usuario->deleteSong(userchar);
+                tcp.Send(lr->writeSucces("Data"));
                 break;
+            }
             case 3:
                 cout<<"Actualizar"<<endl;
                 //aqui debe mdoficicar el json y enviar la nueva metadata
@@ -97,15 +104,35 @@ void *loop (void *m) {
                 break;
             }
             case 11:
+            {
                 cout<<"Log In"<<endl;
+                string username = lr->getUser(str);
+                string password = lr->getPassword(str);
+                char* userchar = new char[username.length()+1];
+                strcpy(userchar,username.c_str());
+                char* passchar = new char[password.length()+1];
+                strcpy(userchar,username.c_str());
+                if(usuario->compareHash(userchar,passchar)){
+                    tcp.Send(lr->writeSucces("InfoUser"));
+                }else{
+                    tcp.Send(lr->writeFail("InfoUser"));
+                }
+            }
+
                 //verificar todo
-                tcp.Send("Login success");
+
                 break;
             case 12:
                 //aqui eliminar de la lista de usuarios
+            {
+                string user = lr->getUser(str);
+                char* userchar = new char[user.length()+1];
+                strcpy(userchar,user.c_str());
+                usuario->deleteUser(userchar);
                 cout<<"Eliminar usuario"<<endl;
-                tcp.Send("Usuario eliminado");
+                tcp.Send(lr->writeSucces("InfoUser"));
                 break;
+            }
             default:
 
                 break;

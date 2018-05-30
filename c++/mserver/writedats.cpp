@@ -127,14 +127,14 @@ int WriteDats::read(string cd)
 
     // Read the xml file into a vector
     vector<char> buffer(cd.begin(),cd.end());
-     cout<<"holi"<<endl;
+    cout<<"holi"<<endl;
     buffer.push_back('\0');
     cout<<"holi"<<endl;
     // Parse the buffer using the xml file parsing library into doc
     doc.parse<0>(&buffer[0]);
     cout<<"holi"<<endl;
     // Find our root node
-   string nodoRoot = doc.first_node()->name();
+    string nodoRoot = doc.first_node()->name();
     cout<<nodoRoot<<endl;
     if(nodoRoot == "Data"){
         cout<<"parseo de musica"<<endl;
@@ -220,14 +220,14 @@ string WriteDats::getSong(string cd)
 
     // Read the xml file into a vector
     vector<char> buffer(cd.begin(),cd.end());
-     cout<<"holi"<<endl;
+    cout<<"holi"<<endl;
     buffer.push_back('\0');
     cout<<"holi"<<endl;
     // Parse the buffer using the xml file parsing library into doc
     doc.parse<0>(&buffer[0]);
     cout<<"holi"<<endl;
     // Find our root node
-   string nodoRoot = doc.first_node()->name();
+    string nodoRoot = doc.first_node()->name();
     cout<<nodoRoot<<endl;
     if(nodoRoot == "Data"){
         cout<<"parseo de musica"<<endl;
@@ -278,14 +278,14 @@ string WriteDats::getUser(string cd)
 
     // Read the xml file into a vector
     vector<char> buffer(cd.begin(),cd.end());
-     cout<<"holi"<<endl;
+    cout<<"holi"<<endl;
     buffer.push_back('\0');
     cout<<"holi"<<endl;
     // Parse the buffer using the xml file parsing library into doc
     doc.parse<0>(&buffer[0]);
     cout<<"holi"<<endl;
     // Find our root node
-   string nodoRoot = doc.first_node()->name();
+    string nodoRoot = doc.first_node()->name();
     cout<<nodoRoot<<endl;
     if(nodoRoot == "InfoUser"){
         cout<<"parseo de la info"<<endl;
@@ -318,4 +318,71 @@ string WriteDats::writeSucces(string tipoXML)
     xml = xml_as_string;
 
     return xml_as_string;
+}
+string WriteDats::writeFail(string tipoXML)
+{
+    cout<<"Writing xml Documents"<<endl;
+    xml_document<> doc;
+    xml_node<> *decl = doc.allocate_node(node_declaration);
+    decl->append_attribute(doc.allocate_attribute("version", "1.0"));
+    decl->append_attribute(doc.allocate_attribute("encoding","utf-8"));
+    xml_node<>* root = doc.allocate_node(node_element, tipoXML.c_str());
+
+    xml_node<> *answer = doc.allocate_node(node_element,"Answer");
+    answer->value("Fail");
+    root->append_node(answer);
+    doc.append_node(root);
+
+    // Convert doc to string if needed
+    std::string xml_as_string;
+
+    rapidxml::print(std::back_inserter(xml_as_string), doc);
+    xml = xml_as_string;
+
+    return xml_as_string;
+}
+
+string WriteDats::getPassword(string cd)
+{
+    cout << "Parsing songs..." << endl;
+    xml_document<> doc;
+    xml_node<> * root_node;
+    string passwoerd;
+    // Read the xml file into a vector
+    vector<char> buffer(cd.begin(),cd.end());
+    cout<<"holi"<<endl;
+    buffer.push_back('\0');
+    cout<<"holi"<<endl;
+    // Parse the buffer using the xml file parsing library into doc
+    doc.parse<0>(&buffer[0]);
+    cout<<"holi"<<endl;
+    // Find our root node
+    string nodoRoot = doc.first_node()->name();
+    cout<<nodoRoot<<endl;
+    cout<<"parseo de user"<<endl;
+    root_node = doc.first_node("InfoUser");
+    xml_node<> * music_node = root_node->first_node("Username");
+    cout<<"Nombre usuario: "<<music_node->first_attribute("username")->value()<<endl;
+    //print the atribute of the music
+
+    xml_node<> * gender = music_node->first_node("Name");
+    cout<<"nombre del usuario: "<<gender->value()<<endl;
+
+    xml_node<> * Artist = music_node->first_node("Age");
+    cout<<"edad del usuario: "<<Artist->value()<<endl;
+
+    xml_node<> * Album = music_node->first_node("FavSongs");
+    cout<<"canciones fav: "<<Album->value()<<endl;
+
+    xml_node<> * year = music_node->first_node("password");
+    passwoerd = year->value();
+    cout<<"valor contrasena: "<<passwoerd<<endl;
+
+    xml_node<> * category = music_node->first_node("Friends");
+    cout<<"Amigos:: "<<category->value()<<endl;
+
+    return passwoerd;
+
+    cout<<"mos se "<<endl;
+    // Find the music
 }

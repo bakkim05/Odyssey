@@ -148,6 +148,46 @@ public class StaXParser {
 		}
 		return name;
 	}
+	public String getAnswer(String XMLFile) {
+		XMLInputFactory inputFactory = XMLInputFactory.newInstance();
+		// Setup a new eventReader
+		InputStream in = null;
+		String encode = null;
+		try {
+			in = new FileInputStream(XMLFile);
+			XMLEventReader eventReader = inputFactory.createXMLEventReader(in);
+			//XMLEvent event = eventReader.nextEvent();
+			while (eventReader.hasNext()) {
+				XMLEvent event = eventReader.nextEvent();
+				if (event.isStartElement()) {
+					StartElement startElement = event.asStartElement();
+					// If we have an item element, we create a new item
+
+					if (startElement.getName().getLocalPart().equals("InfoUser")) {
+						// We read the attributes from this tag and add the date
+						// attribute to our object
+						Iterator<Attribute> attributes = startElement.getAttributes();
+					}
+
+					if (event.isStartElement()) {
+						if (event.asStartElement().getName().getLocalPart()
+								.equals("Answer")) {
+							event = eventReader.nextEvent();
+							encode = event.asCharacters().getData().toString();
+							return encode;
+						}
+					}
+				}
+			}
+		} catch (XMLStreamException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return encode;
+	}
 	public String getEncoderMusic(String XMLFile) {
 		XMLInputFactory inputFactory = XMLInputFactory.newInstance();
 		// Setup a new eventReader

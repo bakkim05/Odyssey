@@ -22,6 +22,8 @@ public:
     string writeStreaming(string song, string encode);
     string getUser(string cd);
     string writeSucces(string tipoXML);
+    string getPassword(string cd);
+    string writeFail(string tipoXML);
 };
 
 #endif // WRITEDATS_H

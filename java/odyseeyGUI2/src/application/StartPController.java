@@ -6,6 +6,8 @@ import javax.xml.stream.XMLStreamException;
 
 import org.json.simple.JSONObject;
 
+import factory.XMLFactory;
+import factory.XMLInterface;
 import javafx.event.ActionEvent;
 import jSON.CreateJson;
 import javaclient.SocketClient;
@@ -51,8 +53,21 @@ public class StartPController {
 						Writer.createUser(userName, "","", "", passw, "", 11);
 						
 				//Sends the XML
-						SocketClient sock = new SocketClient("localhost");
+						
 						sock.requestMemory();
+						String answer = sock.message;
+						answer = "null<InfoUser><Answer>Success</Answer></InfoUser>";
+						XMLFactory encodesong = XMLInterface.getXML(answer);
+						System.out.println("enco"+ encodesong);
+						boolean value = encodesong.getAnswer(answer);
+						System.out.println("valor prueba"+value);
+						if(value){
+							System.out.println("puede ingresar");
+							
+						}
+						else {
+							System.out.println("No pueden existir dos usuarios con el mismo username");
+						}
 				//changes stages
 						headToMainPage();
 			
@@ -90,10 +105,20 @@ public class StartPController {
 	//Sends the XML
 			sock = new SocketClient("localhost");
 			sock.requestMemory();
-			String puto = sock.message;
-			System.out.println(puto);
-			//cclient lol = new cclient("localhost", 8085);
-			//lol.sendMessage("<?xml version=\"1.0\" encoding=\"UTF-8\"?><InfoUser>	<Username username=\"jung\">	<Name>Bertha</Name>	<Age>21</Age>	<FavSongs>sdfd</FavSongs>	<password>789</password>	<Friends>sdsd</Friends></Username>	<apCode>10</apCode></InfoUser>");
+			
+			String answer = sock.message;
+			answer = "null<InfoUser><Answer>Success</Answer></InfoUser>";
+			XMLFactory encodesong = XMLInterface.getXML(answer);
+			System.out.println("enco"+ encodesong);
+			boolean value = encodesong.getAnswer(answer);
+			System.out.println("valor prueba"+value);
+			if(value){
+				System.out.println("puede ingresar");
+				//registro exitoso
+			}
+			else {
+				System.out.println("No pueden existir dos usuarios con el mismo username");
+			}
 		}else {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Odyssey Help!");

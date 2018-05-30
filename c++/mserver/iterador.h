@@ -9,6 +9,7 @@ class Iterador
 public:
     Iterador();
     void fullJsonUser(string fileXML, Maker *maker);
+    void fullXMLSong();
 };
 
 #endif // ITERADOR_H

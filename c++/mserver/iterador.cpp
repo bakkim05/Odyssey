@@ -56,10 +56,16 @@ void Iterador::fullJsonUser(string fileXML, Maker *maker)
             cout<<"valor de la categoria: "<<friends<<endl;
 
             //xml = buffer;
-            maker->addUserJSON(maker->Usuarios,username,name,age,favsong,password,friends);
+            maker->addUserJSON(maker->Usuarios,username,name,age,password);
     }
     else{
         cout<<"no pos no"<<endl;
     }
     cout<<"mos se "<<endl;
+}
+
+void Iterador::fullXMLSong()
+{
+    cout<<"Writing xml Documents"<<endl;
+
 }
