@@ -13,7 +13,7 @@
          <children>
             <TextField fx:id="txt_inputText" layoutX="160.0" layoutY="54.0" prefHeight="26.0" prefWidth="280.0" />
             <Label layoutX="144.0" layoutY="27.0" text="Sentence to complete:" />
-            <Label layoutX="291.0" layoutY="27.0" text="Type * in the missing parts..." textFill="#e3b749" />
+            <Label layoutX="291.0" layoutY="27.0" text="Type &quot;rpc&quot; in the missing parts..." textFill="#e3b749" />
             <Button layoutX="223.0" layoutY="337.0" mnemonicParsing="false" onAction="#btnExecuteAlgo" text="Execute algorithm" textFill="#e3b749" />
             <TextField fx:id="txt_outputText" editable="false" layoutX="157.0" layoutY="166.0" prefHeight="26.0" prefWidth="280.0" promptText="Sentence..." />
             <Button layoutX="524.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnGoBack" text="Go back" />

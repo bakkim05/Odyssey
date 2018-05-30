@@ -25,6 +25,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.media.MediaPlayer.Status;
@@ -39,6 +40,11 @@ public class MainPController {
 
 	Player player = new Player();
 	SocketClient sock;
+	public TextField txt_gender;
+	public TextField txt_artist;
+	public TextField txt_album;
+	public TextField txt_year;
+	public TextArea txt_lyrics;
 	public ChoiceBox<String> cb_Options;
 	public ChoiceBox<String> cb_sort;
 	public ChoiceBox<String> cb_songsInServer;
@@ -56,6 +62,7 @@ public class MainPController {
 	ErrorHandlersK errHand = new ErrorHandlersK();
 	public static List<MetaSongs> MetaSongsList = new ArrayList<MetaSongs>();
 	public ObservableList<MetaSongs> dataInTable;
+	private MetaSongs metaSongToChange;
 	
 	@FXML
 
@@ -183,32 +190,26 @@ public class MainPController {
 		if(MetaSongsList.isEmpty()) {
 			//MetaSongsList is empty!
 		}else {
-			/*
+			
+			//Updates the lv_myTracks
 			List<String> list = new ArrayList<String>();
 	        
-			for(MetaSongs mts : MetaSongsList) {
-				
-				list.add(mts.getSongName());
-			
-			
+			for(MetaSongs mts : MetaSongsList) {	
+				list.add(mts.getSongName());			
 			}
-		
-		*/
+	        ObservableList<String> obList = FXCollections.observableList(list);
+			lv_myTracks.getItems().clear();
+	        lv_myTracks.setItems(obList);
 			
 		
+	        // Updates table_myTracks
 		dataInTable = FXCollections.observableArrayList();
 		for(MetaSongs mts : MetaSongsList) {			
 			dataInTable.add(mts);					
 		}
 		tbv_myTracks.setItems(dataInTable);
 		
-		/*
-	        ObservableList<String> obList = FXCollections.observableList(list);
-	        lv_myTracks.getItems().clear();
-	        lv_myTracks.setItems(obList);
-		*/
-		
-		
+			
 		}
 		
 		
@@ -239,6 +240,13 @@ public class MainPController {
 
 	}
 
+	
+	
+	public void btnChangeMeta() {
+		
+	}
+	
+	
 
 	public void connectToServer() {
 
@@ -338,6 +346,37 @@ public class MainPController {
 		
 		
 		//
+		
+		// lv_myTracks
+		
+		
+		lv_myTracks.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+		    @Override
+		    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+		        
+		    	for(MetaSongs mmt : MetaSongsList) {
+		    	    if(mmt.getSongName().equals(newValue)) {
+		    	    	
+		    	    	metaSongToChange = mmt;
+		    	    	
+		    	    	txt_gender.setText(mmt.getGender());
+		    	    	txt_artist.setText(mmt.getArtist());
+		    	    	txt_album.setText(mmt.getAlbum());
+		    	    	 txt_year.setText(mmt.getYear());
+		    	    	 txt_lyrics.setText(mmt.getLyrics());
+		    	    	
+		    	    	 break;
+		    	    	 
+		    	    }
+		    	}
+		    	
+		    	
+		    }
+		});
+		
+		
+		//
+		
 		
 		
 		
