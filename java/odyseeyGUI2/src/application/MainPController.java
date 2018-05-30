@@ -41,6 +41,7 @@ public class MainPController {
 	SocketClient sock;
 	public ChoiceBox<String> cb_Options;
 	public ChoiceBox<String> cb_sort;
+	public ChoiceBox<String> cb_songsInServer;
 	public Button btn_playPause;
 	public ListView<String> lv_myTracks;
 	public TableView<MetaSongs> tbv_myTracks;
@@ -61,10 +62,13 @@ public class MainPController {
 	private void initialize() {
 
 		cb_Options.setItems(FXCollections.observableArrayList(
-				"The Gene game!", "Log out", "Delete my account"));
+				"The Gene game!","Complete the sentence!", "Log out", "Delete my account"));
 
 		cb_sort.setItems(FXCollections.observableArrayList(
 				"Sort by song name", "Sort by song artist"));
+		
+		cb_songsInServer.setItems(FXCollections.observableArrayList(
+				"Songs in Server"));
 		
 		//Starts all the listeners
 		startAllListeners();
@@ -277,16 +281,23 @@ public class MainPController {
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
-				}else if(newValue.equals(1)) {// Log out
+				}else if(newValue.equals(1)) {// complete the sentence
+					try {
+						goToGene2Page();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}else if(newValue.equals(2)) {// Log out
 					try {
 						goToStartPage();
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
-				}else if(newValue.equals(2)) {// Delete my account
 
+				}else if(newValue.equals(3)) {//delete account
+					// insert code here
 				}
-
+				
 			}
 
 		});
@@ -311,6 +322,25 @@ public class MainPController {
 		
 		//
 
+		//cb_songsInServer
+		
+		
+		cb_songsInServer.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+
+			@Override
+			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+
+				System.out.println("cb_songsInServer is working");
+				
+			}
+
+		});
+		
+		
+		//
+		
+		
+		
 	}
 
 	private void goToGenePage() throws IOException {
@@ -319,19 +349,34 @@ public class MainPController {
 		Scene genePage = new Scene(gui);
 
 		//this line optains the stage information
-		Stage window = (Stage)txt_songName.getScene().getWindow();
+		Stage window = (Stage)lbl_time.getScene().getWindow();
 		window.setScene(genePage); // txt_createUser is needed here to obtain the window its in
 		window.show();
 
 	}
 
+	
+	private void goToGene2Page() throws IOException {
+
+		Parent gui = FXMLLoader.load(getClass().getResource("/odyGUI/Gen2Page.fxml"));
+		Scene gen2Page = new Scene(gui);
+
+		//this line optains the stage information
+		Stage window = (Stage)lbl_time.getScene().getWindow();
+		window.setScene(gen2Page); // txt_createUser is needed here to obtain the window its in
+		window.show();
+
+	}
+
+	
+	
 	private void goToStartPage() throws IOException {
 
 		Parent gui = FXMLLoader.load(getClass().getResource("/odyGUI/StartPage.fxml"));
 		Scene startPage = new Scene(gui);
 
 		//this line optains the stage information
-		Stage window = (Stage)txt_songName.getScene().getWindow();
+		Stage window = (Stage)lbl_time.getScene().getWindow();
 		window.setScene(startPage); // txt_createUser is needed here to obtain the window its in
 		window.show();
 
