@@ -23,7 +23,10 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Slider;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.media.MediaPlayer.Status;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -40,6 +43,10 @@ public class MainPController {
 	public ChoiceBox<String> cb_sort;
 	public Button btn_playPause;
 	public ListView<String> lv_myTracks;
+	public TableView<MetaSongs> tbv_myTracks;
+	public TableColumn<MetaSongs, String> clm_song;
+	public TableColumn<MetaSongs, String> clm_artist;
+	public TableColumn<MetaSongs, String> clm_album;
 	public TextField txt_songName;
 	public TextField txt_songArtist;
 	public Slider slr_song;
@@ -47,6 +54,8 @@ public class MainPController {
 	public BarChart<?,?> sbc_groovBox;
 	ErrorHandlersK errHand = new ErrorHandlersK();
 	public static List<MetaSongs> MetaSongsList = new ArrayList<MetaSongs>();
+	public ObservableList<MetaSongs> dataInTable;
+	
 	@FXML
 
 	private void initialize() {
@@ -61,13 +70,29 @@ public class MainPController {
 		startAllListeners();
 		
 		//to test lv_myTracks
-		MetaSongs mt1 = new MetaSongs("la bamba", null, null, null, null, null, null);
-		MetaSongs mt2 = new MetaSongs("la merde", null, null, null, null, null, null);
+		MetaSongs mt1 = new MetaSongs("la bamba", "21", "este otro", "el otro a", null, null, null);
+		MetaSongs mt2 = new MetaSongs("la merde", "25", "el men", "el album", null, null, null);
+		MetaSongs mt3 = new MetaSongs("quiero rep", "regue", "Ozuna", "odisea", null, null, null);
 
+		
 		MetaSongsList.add(mt1);
 		MetaSongsList.add(mt2);
+		MetaSongsList.add(mt3);
+
 	
-		//Updates la list in lv_myTracks
+		//...CREATES THE MUSIC TABLE...
+		
+		 // Set up the table data
+        clm_song.setCellValueFactory(
+            new PropertyValueFactory<MetaSongs,String>("songName")
+        );
+        clm_artist.setCellValueFactory(
+            new PropertyValueFactory<MetaSongs,String>("Artist")
+        );
+        clm_album.setCellValueFactory(
+            new PropertyValueFactory<MetaSongs,String>("Album")
+        );
+		
 		updateMyTracks();
 
 	}
@@ -110,7 +135,7 @@ public class MainPController {
 	}
 
 	public void loadASong() {
-
+/*
 		try {
 			String message = callForMedia();
 			if(message != null) {
@@ -127,6 +152,9 @@ public class MainPController {
 		}
 
 		//load listeners
+		 
+	 */
+		player.setMediaFromFileChooser();
 		//startAllListeners();
 
 	}
@@ -151,19 +179,32 @@ public class MainPController {
 		if(MetaSongsList.isEmpty()) {
 			//MetaSongsList is empty!
 		}else {
-			
+			/*
 			List<String> list = new ArrayList<String>();
 	        
 			for(MetaSongs mts : MetaSongsList) {
 				
 				list.add(mts.getSongName());
-				
-			}
 			
+			
+			}
+		
+		*/
+			
+		
+		dataInTable = FXCollections.observableArrayList();
+		for(MetaSongs mts : MetaSongsList) {			
+			dataInTable.add(mts);					
+		}
+		tbv_myTracks.setItems(dataInTable);
+		
+		/*
 	        ObservableList<String> obList = FXCollections.observableList(list);
 	        lv_myTracks.getItems().clear();
 	        lv_myTracks.setItems(obList);
-			
+		*/
+		
+		
 		}
 		
 		

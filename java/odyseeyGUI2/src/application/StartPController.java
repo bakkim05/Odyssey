@@ -76,7 +76,7 @@ public class StartPController {
 		 err = errorHands.createUserErrors(txt_createUser.getText().toString(),txt_name.getText().toString(),txt_age.getText().toString(), txt_createPass.getText().toString(), txt_repeatPass.getText().toString());
 		if(err == "good") {
 			
-			// load Variables
+	// load Variables
 			String userName = txt_createUser.getText().toString();
 			String passw = txt_createPass.getText().toString();
 			String name = txt_name.getText().toString();

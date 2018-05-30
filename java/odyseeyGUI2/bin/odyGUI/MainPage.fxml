@@ -12,15 +12,17 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="444.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainPController">
+<AnchorPane prefHeight="446.0" prefWidth="712.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainPController">
 
 
-<VBox layoutY="-1.0" prefHeight="438.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+<VBox layoutY="-1.0" prefHeight="438.0" prefWidth="712.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <MenuBar VBox.vgrow="NEVER">
          <menus>
@@ -33,20 +35,27 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
-            <SplitPane dividerPositions="0.29797979797979796" layoutY="38.0" prefHeight="364.0" prefWidth="640.0">
+            <SplitPane dividerPositions="0.3464788732394366" layoutY="38.0" prefHeight="364.0" prefWidth="712.0">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                      <children>
-                        <Label layoutY="14.0" text="My tracks">
+                        <Label layoutY="2.0" text="My tracks">
                            <font>
                               <Font size="19.0" />
                            </font>
                         </Label>
-                           <ListView fx:id="lv_myTracks" layoutY="70.0" prefHeight="291.0" prefWidth="186.0" />
-                           <ChoiceBox fx:id="cb_sort" layoutY="38.0" prefWidth="150.0" />
+                           <ListView fx:id="lv_myTracks" layoutX="363.0" layoutY="20.0" prefHeight="36.0" prefWidth="84.0" />
+                           <ChoiceBox fx:id="cb_sort" layoutY="25.0" prefWidth="150.0" />
+                           <TableView fx:id="tbv_myTracks" layoutY="57.0" prefHeight="305.0" prefWidth="226.0">
+                             <columns>
+                               <TableColumn fx:id="clm_song" prefWidth="75.0" text="Song" />
+                               <TableColumn fx:id="clm_artist" prefWidth="75.0" text="Artist" />
+                                 <TableColumn fx:id="clm_album" prefWidth="75.0" text="Album" />
+                             </columns>
+                           </TableView>
                      </children>
                   </AnchorPane>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="362.0" prefWidth="457.0">
                      <children>
                         <Slider fx:id="slr_song" layoutX="83.0" layoutY="298.0" prefHeight="16.0" prefWidth="278.0" />
                         <Button fx:id="btn_playPause" layoutX="26.0" layoutY="293.0" mnemonicParsing="false" onAction="#playPauseMedia" text="play" />
@@ -75,7 +84,7 @@
                <TextField fx:id="txt_songName" layoutY="14.0" promptText="Song Name" />
                <TextField fx:id="txt_songArtist" layoutX="171.0" layoutY="14.0" promptText="Artist" />
                <Button layoutX="342.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchSong" text="Search" />
-               <Button layoutX="421.0" layoutY="14.0" mnemonicParsing="false" onAction="#connectToServer" text="Take me somewere beautifull" />
+               <Button layoutX="486.0" layoutY="14.0" mnemonicParsing="false" onAction="#connectToServer" text="Take me somewere beautifull" />
          </children>
     </AnchorPane>
   </children>
