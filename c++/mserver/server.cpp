@@ -29,7 +29,7 @@ void *loop (void *m) {
         string str = tcp.getMessage();
         cout<<"mesage"<<str<<endl;
         //base64 *nose = new base64();
-       // nose->encode(p2, 11);
+        // nose->encode(p2, 11);
 
 
         //tcp.Send("prueba bebe");
@@ -83,8 +83,16 @@ void *loop (void *m) {
                 string username = lr->getUser(str);
                 char* userchar = new char[username.length()+1];
                 strcpy(userchar,username.c_str());
+                if(usuario->searchUser(userchar)){
+                    cout<<"Hay alguien con ese nombre"<<endl;
+                    tcp.Send("Usuario no creado");
+                }else{
+                    iterado->fullJsonUser(str,usuario);
+                    cout<<"no hay nadie"<<endl;
 
-                tcp.Send("Usuario creado");
+                    tcp.Send(lr->writeSucces("InfoUser"));
+                }
+                //tcp.Send("Usuario creado");
                 //tcp.clean();
                 break;
             }

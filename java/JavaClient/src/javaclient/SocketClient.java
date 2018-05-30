@@ -13,11 +13,22 @@ public class SocketClient {
     private Sender sender = null;
     public boolean connected = false;
     ServerResponses viewer = null;
+    public String message;
+    public void concant(String value) {
+    	System.out.println("contact"+value);
+    	if(value != null) {
+    		this.message += value;
+    		System.out.println(this.message);
+    	}else {
+    		System.out.println("prueba");
+    	}
+    }
 
     class Listener extends Thread {
         Socket conn = null;
         boolean listening = true;
-
+        public String perdida;
+        
         public Listener(Socket conn) {
             this.conn = conn;
             this.setName("JavaClientSocketListener");
@@ -38,6 +49,9 @@ public class SocketClient {
                 while(reader.read() != 0) {
                 	String message = Character.toString ((char) isr.read());
                 	System.out.print(message);
+                	if(message !=null) {
+                		concant(message);
+                	}
                 }
 
             }

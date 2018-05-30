@@ -49,8 +49,7 @@ public class StartPController {
 						
 				//Sends the XML
 						SocketClient sock = new SocketClient("localhost");
-						sock.SendUser();
-						
+						sock.requestMemory();
 				//changes stages
 						headToMainPage();
 			
@@ -84,10 +83,10 @@ public class StartPController {
 			Writer.createUser(userName, "Bertha","21", "sdfd", passw, "sdsd", 10);
 			
 	//Sends the XML
-			//SocketClient sock = new SocketClient("localhost");
-			//sock.SendUser();
-			cclient lol = new cclient("localhost", 8085);
-			lol.sendMessage("<?xml version=\"1.0\" encoding=\"UTF-8\"?><InfoUser>	<Username username=\"jung\">	<Name>Bertha</Name>	<Age>21</Age>	<FavSongs>sdfd</FavSongs>	<password>789</password>	<Friends>sdsd</Friends></Username>	<apCode>10</apCode></InfoUser>");
+			SocketClient sock = new SocketClient("localhost");
+			sock.requestMemory();
+			//cclient lol = new cclient("localhost", 8085);
+			//lol.sendMessage("<?xml version=\"1.0\" encoding=\"UTF-8\"?><InfoUser>	<Username username=\"jung\">	<Name>Bertha</Name>	<Age>21</Age>	<FavSongs>sdfd</FavSongs>	<password>789</password>	<Friends>sdsd</Friends></Username>	<apCode>10</apCode></InfoUser>");
 		}else {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Odyssey Help!");

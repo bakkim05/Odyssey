@@ -4,30 +4,33 @@ import java.io.*;
 import java.net.*;
 import java.util.List;
 
+import javaclient.SocketClient.Listener;
+import javaclient.SocketClient.Sender;
+
 
 /**
  * @author Eric Bruno
  */
 public class SocketClient {
-    private Listener listener = null;
+	private Listener listener = null;
     private Sender sender = null;
     public boolean connected = false;
     public String message;
-    public String concatenacion = "";
     public void concant(String value) {
     	System.out.println("contact"+value);
     	if(value != null) {
     		this.message += value;
-    		System.out.println("valor final: "+this.message);
+    		System.out.println(this.message);
     	}else {
     		System.out.println("prueba");
     	}
     }
+
     class Listener extends Thread {
         Socket conn = null;
         boolean listening = true;
         public String perdida;
-
+        
         public Listener(Socket conn) {
             this.conn = conn;
             this.setName("JavaClientSocketListener");
@@ -39,22 +42,24 @@ public class SocketClient {
             InputStream instream = null;
 
             try {
-                InputStreamReader in = new InputStreamReader(conn.getInputStream());
-                BufferedReader bre = new BufferedReader(in);
-                String reply = "";
-                System.out.println("hola ");
-                for(int i =0; i<9; i++) {
-                	System.out.println("se despicho");
-                	System.out.println(bre.readLine());
-                	reply += bre.readLine();
-                	
+                BufferedReader reader =
+                    new BufferedReader(new InputStreamReader(conn.getInputStream()));
+                System.out.println("prueba de listener");
+                InputStream is = conn.getInputStream();
+                InputStreamReader isr = new InputStreamReader(is);
+                System.out.println(reader.read());
+                while(reader.read() != 0) {
+                	String message = Character.toString ((char) isr.read());
+                	System.out.print(message);
+                	if(message !=null) {
+                		concant(message);
+                	}
                 }
-                conn.shutdownOutput();
-                System.out.println("mesage: "+reply);
+
             }
             catch ( StreamCorruptedException sce) {
-            	
                 // skip over the bad bytes
+            	System.out.println("voy al catch");
                 try {
                     if ( instream != null )
                         instream.skip(instream.available());
@@ -69,18 +74,18 @@ public class SocketClient {
             }
         }
     }
-//clase sender
+//clase sender 
     class Sender {
-
+    	
         static final String DatosCancion = "<Data><Music nombre=\"dfgdf\"><Gender>pop</Gender><Artist>Camila Ca</Artist><Album>Camila</Album><Year>2018</Year><Category>latin pop</Category><Lyrics>dsfsdfds</Lyrics></Music><apCode>4</apCode></Data>";
-        static final String InfoUser = "<InfoUser><Username username=\"Faridd\"><Name>Farid Marin</Name><Age>19</Age><FavSongs>Camila Cabello, howlong</FavSongs><password>12345</password><Friends>jung, kim</Friends></Username><apCode>4</apCode></InfoUser>";
+        static final String InfoUser = "<InfoUser><Username username=\"Faridd\"><Name>Farid Marin</Name><Age>19</Age><FavSongs>Camila Cabello, howlong</FavSongs><password>12345</password><Friends>jung, kim</Friends></Username><apCode>0</apCode></InfoUser>";
         static final String Streaming = "Streaming";
-
+        
         Socket conn;
         BufferedOutputStream os = null;
 
         public Sender(Socket conn) {
-
+        	
             try {
                 this.conn = conn;
                 this.conn.setTcpNoDelay(true);
@@ -104,7 +109,7 @@ public class SocketClient {
 				}
 					//System.out.println(duf);
 		    		b.close();
-
+				
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -128,7 +133,7 @@ public class SocketClient {
 				}
 					System.out.println(duf);
 		    		b.close();
-
+				
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -154,7 +159,7 @@ public class SocketClient {
         }
         private void deserializeAndGetMs() {
         	try {
-
+        		
         	}catch(Exception e) {
         		e.printStackTrace();
         	}
@@ -171,7 +176,6 @@ public class SocketClient {
             this.listener = new Listener(conn);
             this.sender = new Sender(conn);
             this.connected = true;
-            //this.viewer = viewer;
         }
         catch ( Exception e ) {
             connected = false;
@@ -183,12 +187,12 @@ public class SocketClient {
         return connected;
     }
 
-    public void sendMusic() {
+    public void requestHostname() {
     	String file = "config2.xml";
         sender.RequestMetadata(file);
     }
 
-    public void SendUser() {
+    public void requestMemory() {
     	String file = "config1.xml";
         sender.InfoUser(file);
     }

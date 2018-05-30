@@ -120,7 +120,7 @@ public class MainPController {
 		Writer.createMusic("", "", "", "", "", "", "", 4);
 		//Sends the XML
 		//SocketClient sock = new SocketClient("localhost");
-		sock.sendMusic();
+		sock.requestHostname();
 
 		System.out.println("callFO:"+sock.message);
 
@@ -141,7 +141,7 @@ public class MainPController {
 
 			//Sends the XML
 			//SocketClient sock = new SocketClient("localhost");
-			sock.sendMusic();
+			sock.requestHostname();
 
 
 
