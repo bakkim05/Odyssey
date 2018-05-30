@@ -36,7 +36,7 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
-            <SplitPane dividerPositions="0.9943661971830986" layoutY="38.0" prefHeight="364.0" prefWidth="712.0">
+            <SplitPane dividerPositions="0.34225352112676055" layoutY="38.0" prefHeight="364.0" prefWidth="712.0">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="362.0" prefWidth="504.0">
                      <children>

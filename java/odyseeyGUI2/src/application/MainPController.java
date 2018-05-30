@@ -63,7 +63,7 @@ public class MainPController {
 	public static List<MetaSongs> MetaSongsList = new ArrayList<MetaSongs>();
 	public ObservableList<MetaSongs> dataInTable;
 	private MetaSongs metaSongToChange;
-	
+
 	@FXML
 
 	private void initialize() {
@@ -73,26 +73,26 @@ public class MainPController {
 
 		cb_sort.setItems(FXCollections.observableArrayList(
 				"Sort by song name", "Sort by song artist"));
-		
+
 		cb_songsInServer.setItems(FXCollections.observableArrayList(
 				"Songs in Server"));
-		
+
 		//Starts all the listeners
 		//startAllListeners();
-		
+
 		//to test lv_myTracks
 		MetaSongs mt1 = new MetaSongs("la bamba", "21", "este otro", "el otro a", null, null, null);
 		MetaSongs mt2 = new MetaSongs("la merde", "25", "el men", "el album", null, null, null);
 		MetaSongs mt3 = new MetaSongs("quiero rep", "regue", "Ozuna", "odisea", null, null, null);
 
-		
+
 		MetaSongsList.add(mt1);
 		MetaSongsList.add(mt2);
 		MetaSongsList.add(mt3);
 
-	
+
 		//...CREATES THE MUSIC TABLE...
-		
+
 		 // Set up the table data
         clm_song.setCellValueFactory(
             new PropertyValueFactory<MetaSongs,String>("songName")
@@ -103,7 +103,7 @@ public class MainPController {
         clm_album.setCellValueFactory(
             new PropertyValueFactory<MetaSongs,String>("Album")
         );
-		
+
 		updateMyTracks();
 
 	}
@@ -117,7 +117,7 @@ public class MainPController {
 
 		// Playing and pausing music
 		System.out.println("play");
-		
+
 		if(player.medPly.getStatus() == Status.PLAYING) {
 
 			player.pauseMedia();
@@ -170,8 +170,8 @@ public class MainPController {
 		}
 
 		//load listeners
-		 
-	 
+
+
 		//player.setMediaFromFileChooser();
 		//startAllListeners();
 
@@ -191,37 +191,38 @@ public class MainPController {
 		return sock.message;
 	}
 
-	
+
 	private void updateMyTracks(){
-		
+
 		if(MetaSongsList.isEmpty()) {
 			//MetaSongsList is empty!
 		}else {
-			
+
 			//Updates the lv_myTracks
 			List<String> list = new ArrayList<String>();
-	        
-			for(MetaSongs mts : MetaSongsList) {	
-				list.add(mts.getSongName());			
+
+			for(MetaSongs mts : MetaSongsList) {
+				list.add(mts.getSongName());
 			}
 	        ObservableList<String> obList = FXCollections.observableList(list);
 			lv_myTracks.getItems().clear();
 	        lv_myTracks.setItems(obList);
-			
-		
+
+
 	        // Updates table_myTracks
 		dataInTable = FXCollections.observableArrayList();
-		for(MetaSongs mts : MetaSongsList) {			
-			dataInTable.add(mts);					
+		for(MetaSongs mts : MetaSongsList) {
+			dataInTable.add(mts);
 		}
+		tbv_myTracks.getItems().clear();
 		tbv_myTracks.setItems(dataInTable);
-		
-			
+
+
 		}
-		
-		
+
+
 	}
-	
+
 	public void searchSong() throws Exception{
 
 		if("good" == errHand.createMusicError(txt_songName.getText().toString(), txt_songArtist.getText().toString())) {
@@ -247,26 +248,32 @@ public class MainPController {
 
 	}
 
-	
-	
+
+
 	public void btnChangeMeta() {
-		String year = metaSongToChange.getYear();
-		String genero = metaSongToChange.getGender();
-		String album = metaSongToChange.getAlbum();
-		String artista = metaSongToChange.getArtist();
-		String cancion = metaSongToChange.getSongName();
-		String letra = metaSongToChange.getLyrics();
-		writer nuevoData = new writer();
-		try {
-			nuevoData.createMusic(cancion, genero, artista, album, year, letra, " ", 3);
-			sock.requestHostname();
-		} catch (XMLStreamException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+
+		for(MetaSongs meta : MetaSongsList) {
+
+			if(meta.getSongName().equals(metaSongToChange.getSongName())) {
+
+				meta.setGender(txt_gender.getText());
+    	    	meta.setArtist(txt_artist.getText());
+    	    	meta.setAlbum(txt_album.getText());
+    	    	meta.setYear(txt_year.getText());
+    	    	meta.setLyrics(txt_lyrics.getText());
+    	    	updateMyTracks();
+
+    	    	 break;
+
+			}
+
 		}
+
+
+
 	}
-	
-	
+
+
 
 	public void connectToServer() {
 
@@ -325,17 +332,17 @@ public class MainPController {
 				}else if(newValue.equals(3)) {//delete account
 					// insert code here
 				}
-				
+
 			}
 
 		});
 
 		//
-		
-		
+
+
 		//cb_sort
-		
-		
+
+
 		cb_sort.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
 			@Override
@@ -346,60 +353,60 @@ public class MainPController {
 			}
 
 		});
-		
-		
+
+
 		//
 
 		//cb_songsInServer
-		
-		
+
+
 		cb_songsInServer.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 
 			@Override
 			public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
 
 				System.out.println("cb_songsInServer is working");
-				
+
 			}
 
 		});
-		
-		
+
+
 		//
-		
+
 		// lv_myTracks
-		
-		
+
+
 		lv_myTracks.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 		    @Override
 		    public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-		        
+
 		    	for(MetaSongs mmt : MetaSongsList) {
 		    	    if(mmt.getSongName().equals(newValue)) {
-		    	    	
+
 		    	    	metaSongToChange = mmt;
-		    	    	
+
 		    	    	txt_gender.setText(mmt.getGender());
 		    	    	txt_artist.setText(mmt.getArtist());
 		    	    	txt_album.setText(mmt.getAlbum());
 		    	    	 txt_year.setText(mmt.getYear());
 		    	    	 txt_lyrics.setText(mmt.getLyrics());
-		    	    	
+
 		    	    	 break;
-		    	    	 
+
 		    	    }
 		    	}
-		    	
-		    	
+
+
 		    }
 		});
-		
-		
+
+
 		//
-		
-		
-		
-		
+
+
+
+
 	}
 
 	private void goToGenePage() throws IOException {
@@ -414,7 +421,7 @@ public class MainPController {
 
 	}
 
-	
+
 	private void goToGene2Page() throws IOException {
 
 		Parent gui = FXMLLoader.load(getClass().getResource("/odyGUI/Gen2Page.fxml"));
@@ -427,8 +434,8 @@ public class MainPController {
 
 	}
 
-	
-	
+
+
 	private void goToStartPage() throws IOException {
 
 		Parent gui = FXMLLoader.load(getClass().getResource("/odyGUI/StartPage.fxml"));
