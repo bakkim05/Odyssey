@@ -39,25 +39,18 @@ public class SocketClient {
             InputStream instream = null;
 
             try {
-                BufferedReader reader =
-                    new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                System.out.println("prueba de listener");
-                InputStream is = conn.getInputStream();
-                InputStreamReader isr = new InputStreamReader(is);
-                System.out.println("reader:"+ reader.read());
-                while(reader.read() != 0) {
-                	System.out.println("no me hagas lo mismo ahora");
-                	this.perdida = Character.toString ((char) isr.read());
-                	System.out.print(this.perdida);
-                	System.out.println("porfis");
-                	if(this.perdida == null) {
-                		System.out.println("buenas yogurt");
-                	}else {
-                        concant(this.perdida);
-                	}
-                	isr.close();
-
+                InputStreamReader in = new InputStreamReader(conn.getInputStream());
+                BufferedReader bre = new BufferedReader(in);
+                String reply = "";
+                System.out.println("hola ");
+                for(int i =0; i<9; i++) {
+                	System.out.println("se despicho");
+                	System.out.println(bre.readLine());
+                	reply += bre.readLine();
+                	
                 }
+                conn.shutdownOutput();
+                System.out.println("mesage: "+reply);
             }
             catch ( StreamCorruptedException sce) {
             	
@@ -80,7 +73,7 @@ public class SocketClient {
     class Sender {
 
         static final String DatosCancion = "<Data><Music nombre=\"dfgdf\"><Gender>pop</Gender><Artist>Camila Ca</Artist><Album>Camila</Album><Year>2018</Year><Category>latin pop</Category><Lyrics>dsfsdfds</Lyrics></Music><apCode>4</apCode></Data>";
-        static final String InfoUser = "<InfoUser><Username username=\"Faridd\"><Name>Farid Marin</Name><Age>19</Age><FavSongs>Camila Cabello, howlong</FavSongs><password>12345</password><Friends>jung, kim</Friends></Username><apCode>0</apCode></InfoUser>";
+        static final String InfoUser = "<InfoUser><Username username=\"Faridd\"><Name>Farid Marin</Name><Age>19</Age><FavSongs>Camila Cabello, howlong</FavSongs><password>12345</password><Friends>jung, kim</Friends></Username><apCode>4</apCode></InfoUser>";
         static final String Streaming = "Streaming";
 
         Socket conn;

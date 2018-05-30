@@ -85,8 +85,8 @@ void *loop (void *m) {
                 strcpy(userchar,username.c_str());
 
                 tcp.Send("Usuario creado");
-                tcp.clean();
-                //break;
+                //tcp.clean();
+                break;
             }
             case 11:
                 cout<<"Log In"<<endl;
