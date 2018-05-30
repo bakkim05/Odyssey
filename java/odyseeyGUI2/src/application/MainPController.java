@@ -117,6 +117,7 @@ public class MainPController {
 
 		// Playing and pausing music
 		System.out.println("play");
+		
 		if(player.medPly.getStatus() == Status.PLAYING) {
 
 			player.pauseMedia();
@@ -154,7 +155,13 @@ public class MainPController {
 				//
 				//String encodesong = XMLInterface.getXML(message).getMusic();
 				//String namesong = XMLInterface.getXML(message).getSongName();
-				player.setMediaFromEncodedFile(message);
+				String mse = message;
+				String result = mse.substring(4, message.length());// inicia en la posicion 4 hasta el largo del string
+				System.out.println("result"+result);
+				if(result != null) {
+				 System.out.println("entre al if");
+				 player.setMediaFromEncodedFile(result);
+				}
 			}
 		} catch (XMLStreamException e) {
 			// TODO Auto-generated catch block
@@ -165,7 +172,7 @@ public class MainPController {
 		//load listeners
 		 
 	 
-		player.setMediaFromFileChooser();
+		//player.setMediaFromFileChooser();
 		//startAllListeners();
 
 	}

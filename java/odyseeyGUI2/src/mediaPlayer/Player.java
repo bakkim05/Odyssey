@@ -45,9 +45,10 @@ public class Player {
 	public void setMediaFromEncodedFile(String EncodedFile) {
 		byte[] decodedMedia = null;
 		File MediaReady = null;
-		
+		System.out.println("EncodeFile" + EncodedFile);
 		// Decodes the media 
 		try {
+			System.out.println("EncodeFile" + EncodedFile);
 			decodedMedia = Decode(EncodedFile);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -65,6 +66,7 @@ public class Player {
 		// Fills the new .mp3 File with its information (Decoded Media)
 		FileOutputStream outP;
 		try {
+			System.out.println("triy to");
 			outP = new FileOutputStream(MediaReady);
 			outP.write(decodedMedia);
 			outP.close();
