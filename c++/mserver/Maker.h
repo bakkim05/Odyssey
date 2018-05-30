@@ -22,7 +22,7 @@ public:
     Maker();
 
     void searchSong(char* nombreCancion); //case0
-    void addMusicJSON(cJSON* metadata, char* nombre, char* genero,char* artista, char* album, char* agno, char* categoria, char* letra); //case1
+    void addMusicJSON(cJSON* metadata, char* nombre, char* genero,char* artista, char* album, char* agno, char* letra); //case1
     void deleteSong(char* nombreCancion); //case2
     void editSong(char* nombreCancion, cJSON* metadata, char* nombre, char* genero,char* artista, char* album, char* agno, char* categoria, char* letra);//case3
 
@@ -56,12 +56,13 @@ public:
 
     void getSongInfo(char* songName);
 
-    void recomendFriend(cJSON* Usuarios);
-    void orderAlbum (BinarySearchTree <std::string> albumTree);
-    void orderSong (BinarySearchTree <std::string> songTree);
-
-    void orderArtist (BinarySearchTree <std::string> songTree);
     void filemaker ();
+
+    void getSongOrdered(char* songName);
+    void getAlbumOrdered(char* albumName);
+    void getArtistOrdered(char* artistName);
+
+    void getSpecificData(char* option, char* name);
 
 };
 

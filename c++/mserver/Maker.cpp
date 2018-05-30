@@ -15,7 +15,7 @@ Maker::Maker()
     loadJSON("music");
     loadJSON("user");
 }
-void Maker::addMusicJSON(cJSON* metadata , char* nombre, char* genero,char* artista, char* album, char* agno,char* categoria, char* letra)
+void Maker::addMusicJSON(cJSON* metadata , char* nombre, char* genero,char* artista, char* album, char* agno, char* letra)
 {
     addSongUser(nombre,artista,album);
     for (int i = 0; i < cJSON_GetArraySize(metadata); i++)
@@ -31,12 +31,11 @@ void Maker::addMusicJSON(cJSON* metadata , char* nombre, char* genero,char* arti
     cJSON_AddItemToObject(songName, "Artist", cJSON_CreateString(artista));
     cJSON_AddItemToObject(songName, "Album", cJSON_CreateString(album));
     cJSON_AddItemToObject(songName, "Year", cJSON_CreateString(agno));
-    cJSON_AddItemToObject(songName, "Category", cJSON_CreateString(categoria));
     cJSON_AddItemToObject(songName, "Lyrics", cJSON_CreateString(letra));
 
     addTreeSong(nombre);
-//    addTreeArtist(artista);
-//    addTreeAlbum(album);
+    addTreeArtist(artista);
+    addTreeAlbum(album);
 
     saveJSON("music");
 }
@@ -52,19 +51,11 @@ void Maker::searchSong(char* nombreCancion)
             cJSON* current = cJSON_GetArrayItem(metadata,i)->child;
             for (int j = 0; j < cJSON_GetArraySize(root->child->child); j++)
             {
-                //cout << cJSON_GetArrayItem(metadata,1)->child->valuestring;
-                //cout << current->string << ": ";
-                //cout << current->valuestring << endl;
                 input[j] = current->valuestring;
                 current = current->next;
             }
         }
     }
-
-    wd.escribirMetadata(input[0],input[1],input[2],input[3],input[4],input[6], input[5]);
-
-
-    //cout << cJSON_GetArrayItem(metadata,1)->child->valuestring;
 }
 void Maker::deleteSong(char *nombreCancion)
 {
@@ -537,4 +528,92 @@ void Maker::filemaker()
     strcpy(cstr, currentUserJSON.c_str());
     currentUserChar = cstr;
 }
+
+void Maker::getSpecificData(char* option, char* name)
+{
+    if (strcmp(option,"song")==0)
+    {
+        string artist, album;
+        cout << cJSON_GetArraySize(Canciones) << endl;
+        for (int i = 0; i < cJSON_GetArraySize(Canciones); i++)
+        {
+            if (strcmp(cJSON_GetArrayItem(Canciones, i)->child->valuestring, name) == 0)
+            {
+                cJSON *current = cJSON_GetArrayItem(Canciones, i)->child;
+                while (current!=nullptr)
+                {
+                    if (strcmp(current->string, "Artist")==0)
+                    {
+                        artist = current->valuestring;
+                        cout << artist << endl;
+
+                    }
+                    if (strcmp(current->string, "Album")==0)
+                    {
+                        album = current->valuestring;
+                        cout << album << endl;
+                    }
+                    current = current->next;
+                }
+                return;
+            }
+        }
+    }
+
+    if (strcmp(option,"artist")==0)
+    {
+        string song, album;
+        for (int i = 0; i < cJSON_GetArraySize(Canciones); i++)
+        {
+            if (strcmp(cJSON_GetArrayItem(Canciones, i)->child->next->valuestring, name) == 0)
+            {
+                cJSON *current = cJSON_GetArrayItem(Canciones, i)->child;
+                while (current!=nullptr)
+                {
+                    if (strcmp(current->string, "Name")==0)
+                    {
+                        song = current->valuestring;
+                        cout << song << endl;
+                    }
+                    if (strcmp(current->string, "Album")==0)
+                    {
+                        album = current->valuestring;
+                        cout << album << endl;
+                    }
+                    current = current->next;
+                }
+                return;
+            }
+        }
+    }
+
+    if (strcmp(option,"album")==0)
+    {
+        string song, album;
+        cout << cJSON_GetArraySize(Canciones) << endl;
+        for (int i = 0; i < cJSON_GetArraySize(Canciones); i++)
+        {
+            if (strcmp(cJSON_GetArrayItem(Canciones, i)->child->next->next->valuestring, name) == 0)
+            {
+                cJSON *current = cJSON_GetArrayItem(Canciones, i)->child;
+                while (current!=nullptr)
+                {
+                    if (strcmp(current->string, "Name")==0)
+                    {
+                        song = current->valuestring;
+                        cout << song << endl;
+                    }
+                    if (strcmp(current->string, "Artist")==0)
+                    {
+                        album = current->valuestring;
+                        cout << album << endl;
+                    }
+                    current = current->next;
+                }
+                return;
+            }
+        }
+    }
+}
+
 
