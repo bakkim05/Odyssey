@@ -73,7 +73,7 @@ void *loop (void *m) {
                 string encode =stream->streamin(30);
                 string loadXml = lr->writeStreaming(song,encode);
                 tcp.Send(loadXml);
-                tcp.clean();
+                //tcp.clean();
                 break;
             }
             case 10:
@@ -83,15 +83,10 @@ void *loop (void *m) {
                 string username = lr->getUser(str);
                 char* userchar = new char[username.length()+1];
                 strcpy(userchar,username.c_str());
-                if(usuario->searchUser(userchar)){
-                   cout<<"Hay alguien con ese nombre"<<endl;
-                }else{
-                    iterado->fullJsonUser(str,usuario);
-                    cout<<"no hay nadie"<<endl;
-                }
+
                 tcp.Send("Usuario creado");
                 tcp.clean();
-                break;
+                //break;
             }
             case 11:
                 cout<<"Log In"<<endl;

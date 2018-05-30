@@ -15,10 +15,10 @@ public class SocketClient {
     public String message;
     public String concatenacion = "";
     public void concant(String value) {
-    	//System.out.println("contact"+value);
+    	System.out.println("contact"+value);
     	if(value != null) {
     		this.message += value;
-    		//System.out.println("valor final: "+this.message);
+    		System.out.println("valor final: "+this.message);
     	}else {
     		System.out.println("prueba");
     	}
@@ -44,19 +44,23 @@ public class SocketClient {
                 System.out.println("prueba de listener");
                 InputStream is = conn.getInputStream();
                 InputStreamReader isr = new InputStreamReader(is);
+                System.out.println("reader:"+ reader.read());
                 while(reader.read() != 0) {
+                	System.out.println("no me hagas lo mismo ahora");
                 	this.perdida = Character.toString ((char) isr.read());
-                	//System.out.print(this.perdida);
+                	System.out.print(this.perdida);
+                	System.out.println("porfis");
                 	if(this.perdida == null) {
                 		System.out.println("buenas yogurt");
                 	}else {
                         concant(this.perdida);
                 	}
-
+                	isr.close();
 
                 }
             }
             catch ( StreamCorruptedException sce) {
+            	
                 // skip over the bad bytes
                 try {
                     if ( instream != null )

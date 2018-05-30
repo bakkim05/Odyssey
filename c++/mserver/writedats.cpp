@@ -296,3 +296,26 @@ string WriteDats::getUser(string cd)
 
     }
 }
+
+string WriteDats::writeSucces(string tipoXML)
+{
+    cout<<"Writing xml Documents"<<endl;
+    xml_document<> doc;
+    xml_node<> *decl = doc.allocate_node(node_declaration);
+    decl->append_attribute(doc.allocate_attribute("version", "1.0"));
+    decl->append_attribute(doc.allocate_attribute("encoding","utf-8"));
+    xml_node<>* root = doc.allocate_node(node_element, tipoXML.c_str());
+
+    xml_node<> *answer = doc.allocate_node(node_element,"Answer");
+    answer->value("Success");
+    root->append_node(answer);
+    doc.append_node(root);
+
+    // Convert doc to string if needed
+    std::string xml_as_string;
+
+    rapidxml::print(std::back_inserter(xml_as_string), doc);
+    xml = xml_as_string;
+
+    return xml_as_string;
+}
