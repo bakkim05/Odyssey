@@ -22,6 +22,7 @@ public class Gen2PageController {
 	public TextField txt_wordToFind;
 	public TextField txt_mutationR;
 	public TextField txt_popuSize;
+	String foundW = null;
 
 	//GenAlgorithm thread
 		Thread t1 = new Thread(new Runnable() {
@@ -68,16 +69,17 @@ private  void geneticAlgorithm() throws InterruptedException {
 			//showPopulation(population.showPopulation(),population.showbestIndividual());
 			for(popmember ppmbr : population.showPopulation()) {
 				if(ppmbr.Word.equals(txt_wordToFind.getText().toString())) {
+					foundW = ppmbr.Word.toString();
 					num = 20000;
-					break;
+					//break;
 				}
 			}
 			population.MateThePopulation();
 			
 			//num++;
 		}
-		showPopulation(population.showPopulation(),population.showbestIndividual());			
-		
+		//showPopulation(population.showPopulation(),population.showbestIndividual());			
+		txt_outputText.setText(txt_inputText.getText().toString().replaceAll("rpc", foundW));
 	}
 	
 	
@@ -97,11 +99,12 @@ private void showPopulation(List<popmember> population, String Bestindividual) {
 	*/
 	bestIndi = Bestindividual;
 	for(popmember ppmbr : population) {
-		if(ppmbr.Word.equals(txt_wordToFind.getText().toString())) {
-			bestIndi = ppmbr.Word.toString();
-			//lbl_closestWord.setText(ppmbr.Word.toString());
-			break;
+			
+			if(ppmbr.Word.equals(txt_wordToFind.getText().toString())) {
+				bestIndi = ppmbr.Word.toString();
+				//lbl_closestWord.setText(ppmbr.Word.toString());
 		}
+		
 	}
 	
 	txt_outputText.setText(theSentence.replaceAll("rpc", bestIndi));
