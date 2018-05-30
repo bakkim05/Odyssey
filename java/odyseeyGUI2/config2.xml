@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><Data>
-	<Music nombre="la bamba">	<Gender>21</Gender>
-	<Artist>este otro</Artist>
-	<Album>el otro a</Album>
+	<Music nombre="">	<Gender></Gender>
+	<Artist></Artist>
+	<Album></Album>
 	<Year></Year>
-	<Category> pop</Category>
+	<Category></Category>
 	<Lyrics></Lyrics>
 
-</Music>	<apCode>3</apCode>
+</Music>	<apCode>4</apCode>
 </Data>
