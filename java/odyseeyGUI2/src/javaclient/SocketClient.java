@@ -118,7 +118,7 @@ public class SocketClient {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-            serializeAndSendMessage(DatosCancion);
+            serializeAndSendMessage(duf.toString());
         }
 
         public void InfoUser(String file) {

@@ -250,7 +250,20 @@ public class MainPController {
 	
 	
 	public void btnChangeMeta() {
-		
+		String year = metaSongToChange.getYear();
+		String genero = metaSongToChange.getGender();
+		String album = metaSongToChange.getAlbum();
+		String artista = metaSongToChange.getArtist();
+		String cancion = metaSongToChange.getSongName();
+		String letra = metaSongToChange.getLyrics();
+		writer nuevoData = new writer();
+		try {
+			nuevoData.createMusic(cancion, genero, artista, album, year, letra, " ", 3);
+			sock.requestHostname();
+		} catch (XMLStreamException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	
