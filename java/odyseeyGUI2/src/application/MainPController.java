@@ -396,7 +396,22 @@ public class MainPController {
 
 		    	    }
 		    	}
-
+		    	String year = metaSongToChange.getYear();
+		    	String artist = metaSongToChange.getArtist();
+		    	String album = metaSongToChange.getAlbum();
+		    	String letra = metaSongToChange.getLyrics();
+		    	String song = metaSongToChange.getSongName();
+		    	String gender = metaSongToChange.getGender();
+		    	writer wrsong = new writer();
+		    	try {
+		    		System.out.println("es solo escribir");
+		    		wrsong.setFile("config2.xml");
+					wrsong.createMusic(song, gender, artist, album, year, letra, " pop", 3);
+					sock.requestHostname();
+				} catch (XMLStreamException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 
 		    }
 		});
