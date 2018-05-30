@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Gen2PageController">
+   <children>
+      <Pane layoutX="-1.0" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <TextField fx:id="txt_inputText" layoutX="160.0" layoutY="54.0" prefHeight="26.0" prefWidth="280.0" />
+            <Label layoutX="144.0" layoutY="27.0" text="Sentence to complete:" />
+            <Label layoutX="291.0" layoutY="27.0" text="Type &quot;rpc&quot; in the missing parts..." textFill="#e3b749" />
+            <Button layoutX="223.0" layoutY="337.0" mnemonicParsing="false" onAction="#btnExecuteAlgo" text="Execute algorithm" textFill="#e3b749" />
+            <TextField fx:id="txt_outputText" editable="false" layoutX="157.0" layoutY="166.0" prefHeight="26.0" prefWidth="280.0" promptText="Sentence..." />
+            <Button layoutX="524.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnGoBack" text="Go back" />
+            <TextArea editable="false" layoutX="32.0" layoutY="215.0" prefHeight="42.0" prefWidth="519.0" text="Con el proposito de lograr resolver la oracion, el algoritmo hara la revision automaticamente" wrapText="true" />
+            <TextField fx:id="txt_wordToFind" layoutX="126.0" layoutY="268.0" />
+            <Label layoutX="32.0" layoutY="273.0" text="Word to find:" />
+            <Label layoutX="32.0" layoutY="306.0" />
+            <Label layoutX="32.0" layoutY="306.0" text="Mutation rate:" />
+            <TextField fx:id="txt_mutationR" layoutX="126.0" layoutY="301.0" prefHeight="26.0" prefWidth="34.0" />
+            <TextField fx:id="txt_popuSize" layoutX="144.0" layoutY="337.0" prefHeight="26.0" prefWidth="42.0" />
+            <Label layoutX="32.0" layoutY="342.0" text="Population size:" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -14,7 +14,6 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -81,10 +80,9 @@
                   </AnchorPane>
               </items>
             </SplitPane>
-               <TextField fx:id="txt_songName" layoutY="14.0" promptText="Song Name" />
-               <TextField fx:id="txt_songArtist" layoutX="171.0" layoutY="14.0" promptText="Artist" />
-               <Button layoutX="342.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchSong" text="Search" />
                <Button layoutX="486.0" layoutY="14.0" mnemonicParsing="false" onAction="#connectToServer" text="Take me somewere beautifull" />
+               <ChoiceBox fx:id="cb_songsInServer" layoutX="14.0" layoutY="14.0" prefWidth="150.0" />
+               <Label layoutX="177.0" layoutY="19.0" text="Songs in server" />
          </children>
     </AnchorPane>
   </children>
