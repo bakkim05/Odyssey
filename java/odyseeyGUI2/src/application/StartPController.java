@@ -25,6 +25,7 @@ import xml.writer;
 public class StartPController {
 
 	ErrorHandlersK errorHands = new ErrorHandlersK();
+	SocketClient sock;
 	public TextField txt_createUser;
 	public TextField txt_createPass;
 	public TextField txt_repeatPass;
@@ -83,7 +84,7 @@ public class StartPController {
 			Writer.createUser(userName, "Bertha","21", "sdfd", passw, "sdsd", 10);
 			
 	//Sends the XML
-			SocketClient sock = new SocketClient("localhost");
+			sock = new SocketClient("localhost");
 			sock.requestMemory();
 			//cclient lol = new cclient("localhost", 8085);
 			//lol.sendMessage("<?xml version=\"1.0\" encoding=\"UTF-8\"?><InfoUser>	<Username username=\"jung\">	<Name>Bertha</Name>	<Age>21</Age>	<FavSongs>sdfd</FavSongs>	<password>789</password>	<Friends>sdsd</Friends></Username>	<apCode>10</apCode></InfoUser>");
@@ -97,7 +98,9 @@ public class StartPController {
 			
 	}
 	
-	
+	public void fuck() {
+		sock = new SocketClient("localhost");
+	}
 	
 	private void headToMainPage() throws IOException {
 		
