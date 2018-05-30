@@ -137,10 +137,10 @@ return encoded;
 
 
 
-public byte[] Decode(String toDecode) throws IOException {
+byte[] Decode(String toDecode) throws IOException {
 	
 	byte[] decoded = Base64.getDecoder().decode(toDecode);
-
+	
 	return decoded;
 	
 }
