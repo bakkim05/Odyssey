@@ -3,15 +3,21 @@
 			"Username":	"karilang1999",
 			"Name":	"Karina Lang",
 			"Age":	"18",
-			"FavSongs":	"Waves",
-			"password":	"4180379611",
-			"friend":	"Mari Lu"
+			"password":	"4180379611"
 		}, {
 			"Username":	"Beatvc",
 			"Name":	"Beatriz Vargas",
 			"Age":	"20",
-			"FavSongs":	"It's a Beautiful Day",
-			"password":	"4006602746",
-			"friend":	"Ivannia Herrera"
+			"password":	"4006602746"
+		}, {
+			"Username":	"Princess69",
+			"Name":	"Nicole Coberly",
+			"Age":	"17",
+			"password":	"3323806932"
+		}, {
+			"Username":	"Yuberthec",
+			"Name":	"Yuberth",
+			"Age":	"20",
+			"password":	"189481169"
 		}]
 }

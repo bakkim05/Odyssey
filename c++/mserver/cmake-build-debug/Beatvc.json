@@ -1,0 +1,20 @@
+{
+	"Canciones":	[{
+			"Name":	"Nena Maldicion",
+			"Artist":	"Paulo Londra",
+			"Album":	"Nena Maldicion"
+		}, {
+			"Name":	"Quiero Repetir",
+			"Artist":	"Ozuna",
+			"Album":	"Odisea"
+		}, {
+			"Name":	"Candy",
+			"Artist":	"Plan B",
+			"Album":	"Love and Sex"
+		}, {
+			"Name":	"Aprender A Quererte",
+			"Artist":	"Morat",
+			"Album":	"Sobre El Amor Y Sus Efectos Secundarios"
+		}],
+	"Amigos":	[]
+}

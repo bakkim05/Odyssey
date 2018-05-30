@@ -17,12 +17,11 @@ Maker::Maker()
 }
 void Maker::addMusicJSON(cJSON* metadata , char* nombre, char* genero,char* artista, char* album, char* agno,char* categoria, char* letra)
 {
+    addSongUser(nombre,artista,album);
     for (int i = 0; i < cJSON_GetArraySize(metadata); i++)
     {
         if (strcmp(cJSON_GetArrayItem(metadata,i)->child->valuestring,nombre)==0)
         {
-            cout << "La cuenta ya existe" << endl;
-
             return;
         }
     }
@@ -36,9 +35,10 @@ void Maker::addMusicJSON(cJSON* metadata , char* nombre, char* genero,char* arti
     cJSON_AddItemToObject(songName, "Lyrics", cJSON_CreateString(letra));
 
     addTreeSong(nombre);
-    addTreeArtist(artista);
-    addTreeAlbum(album);
+//    addTreeArtist(artista);
+//    addTreeAlbum(album);
 
+    saveJSON("music");
 }
 void Maker::searchSong(char* nombreCancion)
 {
@@ -96,6 +96,8 @@ void Maker::deleteSong(char *nombreCancion)
             }
         }
     }
+
+    saveJSON("music");
 }
 void Maker::editSong(char* nombreCancion, cJSON* metadata, char* nombre, char* genero,char* artista, char* album, char* agno, char* categoria, char* letra)
 {
@@ -139,9 +141,8 @@ void Maker::editSong(char* nombreCancion, cJSON* metadata, char* nombre, char* g
             }
         }
     }
-
     wd.escribirMetadata(nombre, genero, artista, album, agno, categoria, letra);
-
+    saveJSON("music");
 }
 void Maker::addTreeSong (char* song)
 {
@@ -186,15 +187,13 @@ void Maker::deleteTreeAlbum (char* album)
         albumTree.remove(album);
     }
 }
-void Maker::addUserJSON(cJSON* Usuarios, char* cuenta, char* nombre,char* edad, char* favoritos, char* contrasegna, char* amigos)
+void Maker::addUserJSON(cJSON* Usuarios, char* cuenta, char* nombre,char* edad, char* contrasegna)
 {
 //    cJSON* current = Usuarios->next;
     for (int i = 0; i < cJSON_GetArraySize(Usuarios); i++)
     {
         if (strcmp(cJSON_GetArrayItem(Usuarios,i)->child->valuestring,cuenta)==0)
         {
-            cout << "La cuenta ya existe" << endl;
-
             return;
         }
     }
@@ -202,15 +201,12 @@ void Maker::addUserJSON(cJSON* Usuarios, char* cuenta, char* nombre,char* edad, 
     cJSON_AddItemToObject(usuarioArray, "Username", cJSON_CreateString(cuenta));
     cJSON_AddItemToObject(usuarioArray, "Name", cJSON_CreateString(nombre));
     cJSON_AddItemToObject(usuarioArray, "Age", cJSON_CreateString(edad));
-    cJSON_AddItemToObject(usuarioArray, "FavSongs", cJSON_CreateString(favoritos));
     cJSON_AddItemToObject(usuarioArray, "password", cJSON_CreateString(hashPassword(contrasegna)));
-    cJSON_AddItemToObject(usuarioArray, "friend", cJSON_CreateString(amigos));
-
     addTreeUser(cuenta);
+    saveJSON("user");
 }
 void Maker::deleteUser (char* nombreUsuario)
 {
-
     for (int i = 0; i < cJSON_GetArraySize(Usuarios); i++)
     {
         if (strcmp(cJSON_GetArrayItem(Usuarios, i)->child->valuestring, nombreUsuario) == 0)
@@ -221,6 +217,7 @@ void Maker::deleteUser (char* nombreUsuario)
 
         }
     }
+    saveJSON("user");
 }
 bool Maker::searchUser (char* nombreUsuario)
 {
@@ -236,15 +233,11 @@ bool Maker::searchUser (char* nombreUsuario)
 
 
 }
-void Maker::searchUserdata(char *nombreUsuario)
-{
-
-}
 void Maker::addTreeUser (char* userName)
 {
-    if (userTree.search(userName))
+    if (!userTree.search(userName))
     {
-        userTree.remove(userName);
+        userTree.insert(userName);
     }
 
 }
@@ -273,23 +266,31 @@ bool Maker::compareHash(char* inputUser,char *inputPassword)
 {
     for (int i = 0; i < cJSON_GetArraySize(Usuarios); i++)
     {
-        //cout << "No entro" << endl;
-        //cout << cJSON_GetArrayItem(Usuarios,i)->child->valuestring << " == " << inputUser << endl;
+        if (i >= cJSON_GetArraySize(Usuarios))
+        {
+            return false;
+        }
+
         if (strcmp(cJSON_GetArrayItem(Usuarios,i)->child->valuestring,inputUser)==0)
         {
-            //cout <<"Si entro" << endl;
             cJSON* current = cJSON_GetArrayItem(Usuarios,i)->child;
 
             while (current->string != "password")
             {
-                //cout << current->string << endl;
                 if (strcmp(current->string, "password") == 0)
                 {
                     if (strcmp(current->valuestring, hashPassword(inputPassword))==0)
                     {
-                        //cout << current->valuestring << " == " << hashPassword(inputPassword) << endl;
                         cout << "true" << endl;
 
+                        currentUser = cJSON_GetArrayItem(Usuarios,i)->child;
+                        currentUserName = currentUser->valuestring;
+                        filemaker();
+                        loadJSON(currentUserChar);
+
+                        loadTree("songTree");
+                        loadTree("artistTree");
+                        loadTree("albumTree");
 
                         return true;
 
@@ -332,10 +333,9 @@ void Maker::loadJSON(char* option)
         metadata = root->child;
 
         return;
-    }
 
-    if (strcmp(option,"user")==0)
-    {
+    }else if (strcmp(option,"user")==0) {
+
         std::ostringstream sstream;
         std::ifstream fs("userJSON.json");
 
@@ -355,7 +355,38 @@ void Maker::loadJSON(char* option)
         userRoot = cJSON_Parse(ptr);
         Usuarios = userRoot->child;
 
+        loadTree("userTree");
+
         return;
+
+    }else {
+
+        std::ostringstream sstream;
+        std::ifstream fs(currentUserChar);
+
+        if(fs.fail())
+        {
+            loadRoot = cJSON_CreateObject();
+            Canciones = cJSON_CreateArray();
+            Amigos = cJSON_CreateArray();
+            cJSON_AddItemToObject(loadRoot,"Canciones", Canciones);
+            cJSON_AddItemToObject(loadRoot,"Amigos", Amigos);
+
+            return;
+        }
+
+        sstream << fs.rdbuf();
+        const std::string str(sstream.str());
+        const char* ptr = str.c_str();
+
+        loadRoot = cJSON_Parse(ptr);
+        Canciones = loadRoot->child;
+        Amigos = loadRoot->child->next;
+
+        //loadTree("userTree");
+
+        return;
+
     }
 }
 void Maker::saveJSON(char* option)
@@ -364,24 +395,146 @@ void Maker::saveJSON(char* option)
     {
         std::ofstream file_stored("userJSON.json");
         file_stored << cJSON_Print(userRoot);
-    }
+        return;
 
-    if (strcmp(option,"music")==0)
+    }else if (strcmp(option,"music")==0)
     {
+
         std::ofstream file_stored("musicJSON.json");
         file_stored << cJSON_Print(root);
+        return;
+
+    } else{
+
+        std::ofstream file_stored(currentUserChar);
+        file_stored << cJSON_Print(loadRoot);
+        return;
     }
 }
-char* Maker::searchInformation(cJSON *jsonChild, char *string)
+void Maker::loadTree(char* tree)
 {
-//    for (int i = 0; i < cJSON_GetArraySize(jsonChild); i++)
-//    {
-//        cJSON* current = cJSON_GetArrayItem(jsonChild,i)->child;
-//        for ()
-//        if (strcmp(current->valuestring,string)==0)
-//        {
-//            cout << "La cuenta ya existe" << endl;
-//
-//        }
-//    }
-//}
+    if (strcmp(tree,"songTree")==0) {
+
+        for (int i = 0; i < cJSON_GetArraySize(Canciones); i++)
+        {
+            LoopSong:
+            if (i >= cJSON_GetArraySize(Canciones))
+            {
+                return;
+            }
+            cJSON *current = cJSON_GetArrayItem(Canciones, i)->child;
+            while (current->string != "Name")
+            {
+                if (strcmp(current->string, "Name") == 0)
+                {
+                    addTreeSong(current->valuestring);
+                    i++;
+                    goto LoopSong;
+                }
+                current = current->next;
+            }
+        }
+    }
+
+    if (strcmp(tree,"albumTree")==0) {
+        for (int i = 0; i < cJSON_GetArraySize(Canciones); i++)
+        {
+            LoopAlbum:
+            if (i >= cJSON_GetArraySize(Canciones))
+            {
+                return;
+            }
+            cJSON *current = cJSON_GetArrayItem(Canciones, i)->child;
+            while (current->string != "Album")
+            {
+                if (strcmp(current->string, "Album") == 0)
+                {
+                    addTreeAlbum(current->valuestring);
+                    i++;
+                    goto LoopAlbum;
+                }
+                current = current->next;
+            }
+        }
+    }
+    if (strcmp(tree,"artistTree")==0) {
+        for (int i = 0; i < cJSON_GetArraySize(Canciones); i++)
+        {
+            LoopArtist:
+            if (i >= cJSON_GetArraySize(Canciones))
+            {
+                return;
+            }
+            cJSON *current = cJSON_GetArrayItem(Canciones, i)->child;
+            while (current->string != "Artist")
+            {
+                if (strcmp(current->string, "Artist") == 0)
+                {
+                    addTreeArtist(current->valuestring);
+                    i++;
+                    goto LoopArtist;
+                }
+                current = current->next;
+            }
+        }
+    }
+    if (strcmp(tree,"userTree")==0) {
+        for (int i = 0; i < cJSON_GetArraySize(Usuarios); i++)
+        {
+            LoopUser:
+            if (i >= cJSON_GetArraySize(Usuarios))
+            {
+                return;
+            }
+            cJSON *current = cJSON_GetArrayItem(Usuarios, i)->child;
+            while (current->string != "Username")
+            {
+                if (strcmp(current->string, "Username") == 0)
+                {
+                    addTreeUser(current->valuestring);
+                    i++;
+                    goto LoopUser;
+                }
+                current = current->next;
+            }
+        }
+    }
+}
+void Maker::addSongUser(char* nombreCancion, char* nombreArtista, char* nombreAlbum)
+{
+    for (int i = 0; i < cJSON_GetArraySize(Canciones); i++)
+    {
+        if (strcmp(cJSON_GetArrayItem(Canciones,i)->child->valuestring,nombreCancion)==0)
+        {
+            return;
+        }
+    }
+    cJSON_AddItemToArray(Canciones, CancionesArray = cJSON_CreateObject());
+    cJSON_AddItemToObject(CancionesArray, "Name", cJSON_CreateString(nombreCancion));
+    cJSON_AddItemToObject(CancionesArray, "Artist", cJSON_CreateString(nombreArtista));
+    cJSON_AddItemToObject(CancionesArray, "Album", cJSON_CreateString(nombreAlbum));
+
+    saveJSON(currentUserChar);
+}
+void Maker::addFriendUser(char* nUsuario)
+{
+    for (int i = 0; i < cJSON_GetArraySize(Amigos); i++)
+    {
+        if (strcmp(cJSON_GetArrayItem(Amigos,i)->child->valuestring,nUsuario)==0)
+        {
+            return;
+        }
+    }
+    cJSON_AddItemToArray(Amigos,AmigosArray = cJSON_CreateObject());
+    cJSON_AddItemToObject(AmigosArray, "NombreUsuario", cJSON_CreateString(nUsuario));
+
+}
+
+void Maker::filemaker()
+{
+    string currentUserJSON = (currentUserName+(string)(".json"));
+    char *cstr = new char[currentUserJSON.length() + 1];
+    strcpy(cstr, currentUserJSON.c_str());
+    currentUserChar = cstr;
+}
+
