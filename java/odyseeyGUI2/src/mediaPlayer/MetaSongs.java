@@ -1,11 +1,13 @@
 package mediaPlayer;
 
+import javafx.beans.property.SimpleStringProperty;
+
 public class MetaSongs {
 
-	String songName = "";
+	public SimpleStringProperty songName = new SimpleStringProperty();
 	String gender = "";
-	String Artist = "";
-	String Album = "";
+	public SimpleStringProperty Artist = new SimpleStringProperty();
+	public SimpleStringProperty Album = new SimpleStringProperty();
 	String year = "";
 	String Lyrics = ""; 
 	String Category = "";
@@ -13,10 +15,10 @@ public class MetaSongs {
 	public MetaSongs(String songName, String gender, String artist, String album, String year, String lyrics,
 			String category) {
 		super();
-		this.songName = songName;
+		this.songName.setValue(songName);
 		this.gender = gender;
-		Artist = artist;
-		Album = album;
+		Artist.setValue(artist);
+		Album.setValue(album);
 		this.year = year;
 		Lyrics = lyrics;
 		Category = category;
@@ -26,16 +28,16 @@ public class MetaSongs {
 	
 	//getters
 	public String getSongName() {
-		return songName;
+		return songName.getValue();
 	}
 	public String getGender() {
 		return gender;
 	}
 	public String getArtist() {
-		return Artist;
+		return Artist.getValue();
 	}
 	public String getAlbum() {
-		return Album;
+		return Album.getValue();
 	}
 	public String getYear() {
 		return year;
@@ -54,10 +56,10 @@ public class MetaSongs {
 		this.gender = gender;
 	}
 	public void setArtist(String artist) {
-		Artist = artist;
+		Artist.setValue(artist);
 	}
 	public void setAlbum(String album) {
-		Album = album;
+		Album.set(album);
 	}
 	public void setYear(String year) {
 		this.year = year;
