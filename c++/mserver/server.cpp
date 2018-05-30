@@ -67,7 +67,8 @@ void *loop (void *m) {
             case 3:
                 cout<<"Actualizar"<<endl;
                 //aqui debe mdoficicar el json y enviar la nueva metadata
-                tcp.Send(lr->writeSucces("Data"));
+
+                tcp.Send(str);
                 break;
             case 4:
             {

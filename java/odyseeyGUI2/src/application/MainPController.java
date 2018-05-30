@@ -408,6 +408,12 @@ public class MainPController {
 		    		wrsong.setFile("config2.xml");
 					wrsong.createMusic(song, gender, artist, album, year, letra, " pop", 3);
 					sock.requestHostname();
+					if(sock.message !=null) {
+						System.out.println("mensaje");
+						//String message = 
+						//String namesong = XMLInterface.getXML(message);
+						
+					}
 				} catch (XMLStreamException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
