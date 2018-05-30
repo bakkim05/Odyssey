@@ -207,6 +207,7 @@ public class MainPController {
 		for(MetaSongs mts : MetaSongsList) {			
 			dataInTable.add(mts);					
 		}
+		tbv_myTracks.getItems().clear();
 		tbv_myTracks.setItems(dataInTable);
 		
 			
@@ -243,6 +244,25 @@ public class MainPController {
 	
 	
 	public void btnChangeMeta() {
+		
+		for(MetaSongs meta : MetaSongsList) {
+			
+			if(meta.getSongName().equals(metaSongToChange.getSongName())) {
+				
+				meta.setGender(txt_gender.getText());
+    	    	meta.setArtist(txt_artist.getText());
+    	    	meta.setAlbum(txt_album.getText());
+    	    	meta.setYear(txt_year.getText());
+    	    	meta.setLyrics(txt_lyrics.getText());
+    	    	updateMyTracks();
+    	    	
+    	    	 break;
+				
+			}
+			
+		}
+		
+		
 		
 	}
 	
