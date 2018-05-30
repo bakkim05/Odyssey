@@ -48,7 +48,7 @@ public class StartPController {
 						
 				//Sends the XML
 						SocketClient sock = new SocketClient("localhost");
-						sock.requestMemory();
+						sock.SendUser();
 						
 				//changes stages
 						headToMainPage();
@@ -80,11 +80,11 @@ public class StartPController {
 	//Create XML
 			writer Writer = new writer();
 			Writer.setFile("config1.xml");
-			Writer.createUser(userName, "","", "", passw, "", 10);
+			Writer.createUser(userName, "Bertha","21", "sdfd", passw, "sdsd", 10);
 			
 	//Sends the XML
 			SocketClient sock = new SocketClient("localhost");
-			sock.requestMemory();
+			sock.SendUser();
 			
 		}else {
 			Alert alert = new Alert(AlertType.ERROR);

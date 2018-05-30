@@ -269,3 +269,30 @@ string WriteDats::writeStreaming(string song, string encode)
 
     return xml_as_string;
 }
+
+string WriteDats::getUser(string cd)
+{
+    cout << "Parsing user xml..." << endl;
+    xml_document<> doc;
+    xml_node<> * root_node;
+
+    // Read the xml file into a vector
+    vector<char> buffer(cd.begin(),cd.end());
+     cout<<"holi"<<endl;
+    buffer.push_back('\0');
+    cout<<"holi"<<endl;
+    // Parse the buffer using the xml file parsing library into doc
+    doc.parse<0>(&buffer[0]);
+    cout<<"holi"<<endl;
+    // Find our root node
+   string nodoRoot = doc.first_node()->name();
+    cout<<nodoRoot<<endl;
+    if(nodoRoot == "InfoUser"){
+        cout<<"parseo de la info"<<endl;
+        root_node = doc.first_node("InfoUser");
+        xml_node<> * music_node = root_node->first_node("Username");
+        string nombreUsua = music_node->first_attribute("username")->value();
+        return nombreUsua;
+
+    }
+}

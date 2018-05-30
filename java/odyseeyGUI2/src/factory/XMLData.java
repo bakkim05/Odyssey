@@ -7,5 +7,11 @@ public class XMLData extends XMLFactory{
  // TODO Auto-generated method stub
  return getImporte()*1.07;
  }
+
+@Override
+public String getSongName() {
+	// TODO Auto-generated method stub
+	return null;
+}
  
 }

@@ -54,14 +54,16 @@ SOURCES       = ../mserver/server.cpp \
 		../mserver/writedats.cpp \
 		../mserver/cJSON.c \
 		../mserver/streaming.cpp \
+		../mserver/base64.cpp \
 		../mserver/maker.cpp \
-		../mserver/base64.cpp 
+		../mserver/iterador.cpp 
 OBJECTS       = server.o \
 		writedats.o \
 		cJSON.o \
 		streaming.o \
+		base64.o \
 		maker.o \
-		base64.o
+		iterador.o
 DIST          = ../../../Qt/5.11.0/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.11.0/gcc_64/mkspecs/common/unix.conf \
 		../../../Qt/5.11.0/gcc_64/mkspecs/common/linux.conf \
@@ -254,7 +256,6 @@ DIST          = ../../../Qt/5.11.0/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.11.0/gcc_64/mkspecs/features/yacc.prf \
 		../../../Qt/5.11.0/gcc_64/mkspecs/features/lex.prf \
 		../mserver/mserver.pro ../mserver/tcpserver.h \
-		json.hpp \
 		../mserver/writedats.h \
 		../mserver/rapidxml.hpp \
 		../mserver/rapidxml_utils.hpp \
@@ -268,14 +269,16 @@ DIST          = ../../../Qt/5.11.0/gcc_64/mkspecs/features/spec_pre.prf \
 		../mserver/BTree/btree.h \
 		../mserver/BTree/BTNode.h \
 		../mserver/streaming.h \
-		../mserver/maker.h \
 		../mserver/BTree/bt.h \
-		../mserver/base64.h ../mserver/server.cpp \
+		../mserver/base64.h \
+		../mserver/maker.h \
+		../mserver/iterador.h ../mserver/server.cpp \
 		../mserver/writedats.cpp \
 		../mserver/cJSON.c \
 		../mserver/streaming.cpp \
+		../mserver/base64.cpp \
 		../mserver/maker.cpp \
-		../mserver/base64.cpp
+		../mserver/iterador.cpp
 QMAKE_TARGET  = mserver
 DESTDIR       = 
 TARGET        = mserver
@@ -693,8 +696,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/5.11.0/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../mserver/tcpserver.h json.hpp ../mserver/writedats.h ../mserver/rapidxml.hpp ../mserver/rapidxml_utils.hpp ../mserver/rapidxml_print.hpp ../mserver/rapidxml_iterators.hpp ../mserver/cJSON.h ../mserver/rapidxml.hpp ../mserver/rapidxml_utils.hpp ../mserver/rapidxml_print.hpp ../mserver/rapidxml_iterators.hpp ../mserver/BTree/btree.h ../mserver/BTree/BTNode.h ../mserver/streaming.h ../mserver/maker.h ../mserver/BTree/bt.h ../mserver/base64.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../mserver/server.cpp ../mserver/writedats.cpp ../mserver/cJSON.c ../mserver/streaming.cpp ../mserver/maker.cpp ../mserver/base64.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../mserver/tcpserver.h ../mserver/writedats.h ../mserver/rapidxml.hpp ../mserver/rapidxml_utils.hpp ../mserver/rapidxml_print.hpp ../mserver/rapidxml_iterators.hpp ../mserver/cJSON.h ../mserver/rapidxml.hpp ../mserver/rapidxml_utils.hpp ../mserver/rapidxml_print.hpp ../mserver/rapidxml_iterators.hpp ../mserver/BTree/btree.h ../mserver/BTree/BTNode.h ../mserver/streaming.h ../mserver/BTree/bt.h ../mserver/base64.h ../mserver/maker.h ../mserver/iterador.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../mserver/server.cpp ../mserver/writedats.cpp ../mserver/cJSON.c ../mserver/streaming.cpp ../mserver/base64.cpp ../mserver/maker.cpp ../mserver/iterador.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -862,7 +865,11 @@ server.o: ../mserver/server.cpp ../mserver/tcpserver.cpp \
 		../mserver/writedats.h \
 		../mserver/rapidxml.hpp \
 		../mserver/streaming.h \
-		../mserver/base64.h
+		../mserver/base64.h \
+		../mserver/maker.h \
+		../mserver/cJSON.h \
+		../mserver/BTree/bt.h \
+		../mserver/iterador.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o server.o ../mserver/server.cpp
 
 writedats.o: ../mserver/writedats.cpp ../mserver/writedats.h \
@@ -873,18 +880,29 @@ writedats.o: ../mserver/writedats.cpp ../mserver/writedats.h \
 cJSON.o: ../mserver/cJSON.c ../mserver/cJSON.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o cJSON.o ../mserver/cJSON.c
 
-streaming.o: ../mserver/streaming.cpp ../mserver/streaming.h
+streaming.o: ../mserver/streaming.cpp ../mserver/streaming.h \
+		../mserver/base64.h \
+		../mserver/writedats.h \
+		../mserver/rapidxml.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o streaming.o ../mserver/streaming.cpp
 
-maker.o: ../mserver/maker.cpp ../mserver/writedats.h \
+base64.o: ../mserver/base64.cpp ../mserver/base64.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o base64.o ../mserver/base64.cpp
+
+maker.o: ../mserver/maker.cpp ../mserver/maker.h \
+		../mserver/cJSON.h \
+		../mserver/BTree/bt.h \
+		../mserver/writedats.h \
+		../mserver/rapidxml.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o maker.o ../mserver/maker.cpp
+
+iterador.o: ../mserver/iterador.cpp ../mserver/iterador.h \
+		../mserver/writedats.h \
 		../mserver/rapidxml.hpp \
 		../mserver/maker.h \
 		../mserver/cJSON.h \
 		../mserver/BTree/bt.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o maker.o ../mserver/maker.cpp
-
-base64.o: ../mserver/base64.cpp ../mserver/base64.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o base64.o ../mserver/base64.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o iterador.o ../mserver/iterador.cpp
 
 ####### Install
 

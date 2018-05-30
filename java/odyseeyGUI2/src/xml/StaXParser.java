@@ -30,6 +30,7 @@ public class StaXParser {
 	static final String LOASONG = "loadSong";
 	static final String SONG = "Song";
 	static final String ENCODE = "Encode";
+	static final String NAMEM = "name";
 	@SuppressWarnings({ "unchecked", "null" })
 	public List<Item> readConfig(String configFile) {
 		List<Item> items = new ArrayList<Item>();
@@ -121,7 +122,7 @@ public class StaXParser {
 		}
 		return items;
 	}
-	public String getName(String XMLFile) {
+	public String getXMLName(String XMLFile) {
 		XMLInputFactory inputFactory = XMLInputFactory.newInstance();
 		// Setup a new eventReader
 		InputStream in = null;
@@ -187,7 +188,6 @@ public class StaXParser {
 								.equals(ENCODE)) {
 							event = eventReader.nextEvent();
 							encode = event.asCharacters().getData().toString();
-							System.out.print(encode);
 							return encode;
 						}
 					}
@@ -201,5 +201,63 @@ public class StaXParser {
 			e.printStackTrace();
 		}
 		return encode;
+	}
+	public String getSongMusic(String XMLFile) {
+		XMLInputFactory inputFactory = XMLInputFactory.newInstance();
+		// Setup a new eventReader
+		InputStream in = null;
+		String name = null;
+		try {
+			in = new FileInputStream(XMLFile);
+			XMLEventReader eventReader = inputFactory.createXMLEventReader(in);
+			//XMLEvent event = eventReader.nextEvent();
+			while (eventReader.hasNext()) {
+				XMLEvent event = eventReader.nextEvent();
+				if (event.isStartElement()) {
+					StartElement startElement = event.asStartElement();
+					// If we have an item element, we create a new item
+
+					if (startElement.getName().getLocalPart().equals(LOASONG)) {
+						// We read the attributes from this tag and add the date
+						// attribute to our object
+						Iterator<Attribute> attributes = startElement.getAttributes();
+					}
+
+					if (event.isStartElement()) {
+						if (event.asStartElement().getName().getLocalPart()
+								.equals(SONG)) {
+							event = eventReader.nextEvent();
+							System.out.println(event.asCharacters().getData());
+							Iterator<Attribute> attributes = startElement.getAttributes();
+							while (attributes.hasNext()) {
+								Attribute attribute = attributes.next();
+								if (attribute.getName().toString().equals(NAME)) {
+									name = attribute.getValue();
+									System.out.println("valor"+ name);
+									return name.toString();
+								}
+
+							}
+							continue;
+						}
+					}
+					if (event.isStartElement()) {
+						if (event.asStartElement().getName().getLocalPart()
+								.equals(ENCODE)) {
+							event = eventReader.nextEvent();
+							System.out.print(event.asCharacters().getData().toString());
+						
+						}
+					}
+				}
+			}
+		} catch (XMLStreamException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return name;
 	}
 }

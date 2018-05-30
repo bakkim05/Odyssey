@@ -18,4 +18,5 @@ public String getMusic() {
  }
  
  public abstract double getImporteIva();
+ public abstract String getSongName();
 }

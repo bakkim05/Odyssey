@@ -186,12 +186,12 @@ public class SocketClient {
         return connected;
     }
 
-    public void requestHostname() {
+    public void sendMusic() {
     	String file = "config2.xml";
         sender.RequestMetadata(file);
     }
 
-    public void requestMemory() {
+    public void SendUser() {
     	String file = "config1.xml";
         sender.InfoUser(file);
     }

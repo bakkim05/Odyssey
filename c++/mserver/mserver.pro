@@ -19,13 +19,13 @@ SOURCES += server.cpp \
     writedats.cpp \
     cJSON.c \
     streaming.cpp \
-    maker.cpp \
     base64.cpp \
+    maker.cpp \
+    iterador.cpp
 
 
 HEADERS += \
     tcpserver.h \
-    json.hpp \
     writedats.h \
     rapidxml.hpp \
     rapidxml_utils.hpp \
@@ -39,6 +39,7 @@ HEADERS += \
     BTree/btree.h \
     BTree/BTNode.h \
     streaming.h \
-    maker.h \
     BTree/bt.h \
     base64.h \
+    maker.h \
+    iterador.h

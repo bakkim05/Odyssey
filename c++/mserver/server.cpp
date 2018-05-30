@@ -9,6 +9,8 @@
 #include <sstream>
 #include <string.h>
 #include <base64.h>
+#include <maker.h>
+#include <iterador.h>
 
 using namespace std;
 using namespace rapidxml;
@@ -36,6 +38,8 @@ void *loop (void *m) {
 
             cout<<"message difeten"<<endl;
             // WriteDats *es = new
+            Maker *usuario = new Maker();
+            Iterador *iterado = new Iterador();
             WriteDats *lr = new WriteDats();
             int descision = lr->read(str);
             switch (descision) {
@@ -73,10 +77,22 @@ void *loop (void *m) {
                 break;
             }
             case 10:
+            {
                 cout<<"Usuario nuevo"<<endl;
                 //Aqui se debe hacer todas las verificaciones del caso y crear el hash para la contrsena
+                string username = lr->getUser(str);
+                char* userchar = new char[username.length()+1];
+                strcpy(userchar,username.c_str());
+                if(usuario->searchUser(userchar)){
+                   cout<<"Hay alguien con ese nombre"<<endl;
+                }else{
+                    iterado->fullJsonUser(str,usuario);
+                    cout<<"no hay nadie"<<endl;
+                }
                 tcp.Send("Usuario creado");
+                tcp.clean();
                 break;
+            }
             case 11:
                 cout<<"Log In"<<endl;
                 //verificar todo

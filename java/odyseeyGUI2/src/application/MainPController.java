@@ -62,7 +62,7 @@ public class MainPController {
 	public void playPauseMedia() {
 
 		// Playing and pausing music
-	
+		System.out.println("play");
 		if(player.medPly.getStatus() == Status.PLAYING) {
 
 			player.pauseMedia();
@@ -97,8 +97,10 @@ public class MainPController {
 			String message = callForMedia();
 			if(message != null) {
 				System.out.println("holi:"+message);
-				//player.setMediaFromEncodedFile(message);
-				System.out.println("encode value: "+XMLInterface.getXML(message).getMusic());
+				//
+				String encodesong = XMLInterface.getXML(message).getMusic();
+				String namesong = XMLInterface.getXML(message).getSongName();
+				player.setMediaFromEncodedFile(encodesong);
 			}
 		} catch (XMLStreamException e) {
 			// TODO Auto-generated catch block
@@ -118,7 +120,7 @@ public class MainPController {
 		Writer.createMusic("", "", "", "", "", "", "", 4);
 		//Sends the XML
 		//SocketClient sock = new SocketClient("localhost");
-		sock.requestHostname();
+		sock.sendMusic();
 
 		System.out.println("callFO:"+sock.message);
 
@@ -139,7 +141,7 @@ public class MainPController {
 
 			//Sends the XML
 			//SocketClient sock = new SocketClient("localhost");
-			sock.requestHostname();
+			sock.sendMusic();
 
 
 
